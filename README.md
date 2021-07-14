@@ -40,6 +40,8 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 | 5.1       | 11.x | 4.0.x | 13.0+ | Deprecated |
 | 5.3       | 12.1 | 3.1.x | 11.0+ | Supported |
 
+In order to check the last updates please check our [changelog](https://bitbucket.org/meetingdoctors-team/ios-sdk-sample/src/master/CHANGELOG.md).
+
 ## Instalation
 
 To install the MediQuo library you must first include MediQuo private pods repository to the Cocoapods list using the following command:
@@ -127,8 +129,8 @@ public struct Configuration {
     public let secret: String
     // If is `.development`, SDK will be comunicate with sandbox environment. if is `.production` interact with Production environment. Finally if value is `.staging` SDK wil be comunicate with staging environment. By default is `.production`
     public let environment: MediQuoCore.EnvironmentType
-    // videocall apiKey, if is nil, videocall feature is disabled.
-    public let videoCallApiKey: String?
+    // If is `true`, SDK let perform the videocall flow. If is `false`, SDK will return an error when you try to request a videocall. By default this parámeter is `false`.
+    public let enableVideoCall: Bool
     // call sound for videocall screen when professional is calling. File name must be the same for call notification.
     public let videCallSoundFileName: String?
 }
@@ -235,6 +237,7 @@ if let wrapController = result.value {
 }
 [...]
 ```
+**NOTE**: Medical Prescription (aka Receta electrónica) it's inside the Medical History flow. To check the medical prescription you must show the Medical History flow inside your app.
 
 
 ### Filtered contact list
@@ -560,7 +563,7 @@ func application(_ application: UIApplication,
 
 ## Videocall
 
-- To enable videocall feature, first, you must configure videocallApiKey in the configuration structure before initialize SDk as mentioned in [Integration](#Integration).
+- To enable videocall feature, first, you must configure `enableVideoCall` in the configuration structure before initialize SDk as mentioned in [Integration](#Integration).
 
 - Next you need to configure push to hear videocall push noticiation to update videocall status:
 
