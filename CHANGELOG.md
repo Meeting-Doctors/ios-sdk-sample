@@ -39,10 +39,11 @@ Released: Aug 09, 2021
 
 #### Added
   * Launch VC whuen calling push arrive
+  * Bug fixed when an specialist has not a 5 days schedule with the same working hours every day
 
 
- ### 3.1.6
- Released:  Jul 28, 2021
+### 3.1.6
+Released:  Jul 28, 2021
 
 #### Added
   * Added new specialities: doctroGoHealthAdvisor, fitnessCoaching, nutritionalCoaching

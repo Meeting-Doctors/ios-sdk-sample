@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         if let clientName: String = MediQuo.getClientName(),
             let clientSecret: String = MediQuo.getClientSecret() {
-            let configuration = MediQuo.Configuration(id: clientName, secret: clientSecret, isDemo: true)
+            let configuration = MediQuo.Configuration(id: clientName, secret: clientSecret, environment: .development)
             let uuid: UUID? = MediQuo.initialize(with: configuration, options: launchOptions) {  result in
                 guard let value = result.value else {
                     NSLog("[AppDelegate] Installation failed: '\(String(describing: result.error))'")

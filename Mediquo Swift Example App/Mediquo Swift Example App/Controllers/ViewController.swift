@@ -78,6 +78,7 @@ class ViewController: UIViewController {
     private func present() {
         let messengerResult = MediQuo.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
+            controller.modalPresentationStyle = .overFullScreen
             self.present(controller, animated: true)
         } else {
             NSLog("[ViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
