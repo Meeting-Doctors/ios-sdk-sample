@@ -219,44 +219,6 @@ if let wrapController = result.value {
 [...]
 ```
 
-## Specialist Profile view controller
-
-A fix related with the professional's schedule is deployed on version 3.17.0
-
-The fix is applied on the ProfileViewModel.swift and consists on showing the correct working days of the specialist when the number of working days is different than 5 and the schedule is the same each day.
-
-```swift
-[...]
-guard areDifferent || !self.hasOnlyWorkDaysSchedule() else {
-    if let intervals: [DateTimeInterval?] = weekDaySchedule[.monday],
-        let firstInterval: DateTimeInterval = intervals.first ?? nil,
-        let secondInterval: DateTimeInterval = intervals.last ?? nil {
-        if firstInterval.intersects(secondInterval) {
-            return R.string.localizable.mediquoProfileScheduleWorkDayIntertersection.localizedFormat(values: firstInterval.start.string(custom: format),
-                                                                                                     secondInterval.end.string(custom: format))
-        } else {
-            return R.string.localizable.mediquoProfileScheduleWorkDayNormal.localizedFormat(values: firstInterval.start.string(custom: format),
-                                                                                            firstInterval.end.string(custom: format),
-                                                                                            secondInterval.start.string(custom: format),
-                                                                                            secondInterval.end.string(custom: format))
-        }
-    } else {
-        return nil
-    }
-}
-[...]
-func hasOnlyWorkDaysSchedule() -> Bool {
-    let scheduleEnabled = schedules.filter { $0.state == .enabled }
-
-    if scheduleEnabled.count == 5 {
-        return scheduleEnabled.first?.weekDay == .monday && scheduleEnabled.last?.weekDay == .friday
-    }
-
-    return false
-}
-[...]
-```
-
 ## Medical History view controller
 
 Once we initialized the SDK and authenticated the user, we can retrieve the MediQuo UI using the following method:
@@ -564,40 +526,6 @@ func userNotificationCenter(_ userNotificationCenter: UNUserNotificationCenter,
             })
         }
     }
-```
-
-On version 3.17.0, there is a fix applied on the function userNotificationCenter(...) that solves the problem when a professional is calling the user and the user tap on the notification it didn't do nothing.
-
-```swift
-[...]
-if case .assigned = model {
-
-    // do nothing
-
-    completion(.success([]))
-
-} else if case .calling = model {
-
-    // show video call when professional is calling user
-
-    self.deeplink(.videoCall, origin: MediQuo.topViewController(), animated: true) { result in
-
-        result.process(doSuccess: { _ in
-
-            NSLog("success")
-
-        }, doFailure: { error in
-
-            NSLog("failure: \(error)")
-
-        })
-
-    }
-
-    completion(.success([]))
-
-}
-[...]
 ```
 
 If you have Firebase notifications by certificates instead `Key Authorization` (.p8), you must add the next piece of code:
