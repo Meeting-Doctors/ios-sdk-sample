@@ -8,7 +8,7 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 **Table of contents**
 -----------------------
 - [ Requirements ](#Requirements)
-- [ Instalation ](#Instalation)
+- [ Installation ](#Installation)
 - [ Access permissions ](#Access-permissions)
 - [ Integration ](#Integration)
 - [ Authentication ](#Authentication)
@@ -26,6 +26,7 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 - [ Firebase configuration ](#Firebase-configuration)
 - [ Push notifications ](#Push-notifications)
 - [ Videocall ](#Videocall)
+- [ Notifications ](#Notifications)
 - [Migration to 4.0 and 3.0.14+](#Migration-to-4.0-and-3.0.14+)
 - [Uploading app to AppStore](#Uploading-app-to-AppStore)
 
@@ -643,9 +644,143 @@ The properties that you need configure are these:
         }
 ````
 
+# Notifications
+
+There are some notifications of events that can be observed by the integrator.
+
+- MediQuo.Authentication.Succeed (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando se ha autenticado el usuario
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Authentication
+
+        Clase del modelo de datos -> AccountModel
+
+- MediQuo.Authentication.UserStatusChanged (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando se ha actualizado la info del usuario y su estado ha cambiado
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Authentication
+
+        Clase del modelo de datos -> AccountModel
+
+- MediQuo.Authentication.UserBannedChanged (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando se ha actualizado la info del usuario y su estado de baneado ha cambiado
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Authentication
+
+        Clase del modelo de datos -> AccountModel
+
+- MediQuo.CustomerAuthentication.Succeed (forma parte del SDK de Grupos):
+
+        Cuándo se notifica -> Cuando se registra el token de Firebase para las notificaciones
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.CustomerAuthentication
+
+        Clase del modelo de datos -> CustomerAuthModel
+
+- Notification.Name.MediQuo.Deauthentication.Succeed (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando se desloguea el usuario
+
+        Clave del modelo de datos -> nil
+
+        Clase del modelo de datos -> nil
+
+- Notification.Name.MediQuo.Socket.StatusChanged (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando el status del socket cambia
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Socket.StatusChanged
+
+        Clase del modelo de datos -> ConnectionStatusModel
+
+- Notification.Name.MediQuo.Socket.MessageRead (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando el usuario lee un mensaje
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Socket.MessageRead
+
+        Clase del modelo de datos -> MessageStatusSchema
+
+- Notification.Name.MediQuo.Socket.WatchDogAct (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando el Watchdog entra en acción
+
+        Clave del modelo de datos -> nil
+
+        Clase del modelo de datos -> nil
+
+- Notification.Name.MediQuo.Socket.MessageReceived (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando se recibe un mensaje
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Socket.MessageReceived
+
+        Clase del modelo de datos -> MessageSchema
+
+- Notification.Name.MediQuo.Message.UnreadChanged (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el número de mensajes pendientes de leer ha cambiado
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Message.UnreadChanged
+
+        Clase del modelo de datos -> Int
+
+- Notification.Name.MediQuo.Message.Sent (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario envía un mensaje
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Message.Sent
+
+        Clase del modelo de datos -> MediQuoMessage
+
+- Notification.Name.MediQuo.Message.Read (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario lee un mensaje
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Message.Read
+
+        Clase del modelo de datos -> MediQuoMessage
+
+- Notification.Name.MediQuo.Messenger.ChatEntered (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando el usuario entra en un chat
+
+        Clave del modelo de datos -> nil
+
+        Clase del modelo de datos -> nil
+
+- Notification.Name.MediQuo.Messenger.ChatLeft (se envía en el SDK y debe observarlo la app integradora):
+
+        Cuándo se notifica -> Cuando el usuario sale de un chat
+
+        Clave del modelo de datos -> nil
+
+        Clase del modelo de datos -> nil
+
+- Notification.Name.MediQuo.NPS.NPSSendSucceed (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario recibe una push de NPS
+
+        Clave del modelo de datos -> Notification.Key.MediQuo.Message.Read
+
+        Clase del modelo de datos -> MediQuoMessage
+
+- Notification.Name.MediQuoVideoCall.Push (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario recibe una push de VideoCall
+
+        Clave del modelo de datos -> Notification.Key.MediQuoVideoCall.Push
+
+        Clase del modelo de datos -> MediQuoVideoCallStatus
+
+
+
 # Migration to 4.0 and 3.0.14+
 
-To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new version 4.0 and 3.0.14+, yo must change all the references form `MediQuo.Result` to `MediQuoResult`
+To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new version 4.0 and 3.0.14+, you must change all the references form `MediQuo.Result` to `MediQuoResult`
 
 # Uploading app to AppStore
 
