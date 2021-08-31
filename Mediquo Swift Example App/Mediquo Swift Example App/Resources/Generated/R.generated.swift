@@ -21,9 +21,39 @@ struct R: Rswift.Validatable {
     /// Image `Fingerprint`.
     static let fingerprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fingerprint")
     
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
+    
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    
+    static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chat")
+    
+    static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
+    
+    static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
+    
     /// `UIImage(named: "Fingerprint", bundle: ..., traitCollection: ...)`
     static func fingerprint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fingerprint, compatibleWith: traitCollection)
+    }
+    
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    
+    static func videoCallDoctorNotAssigned(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.videoCallDoctorNotAssigned, compatibleWith: traitCollection)
+    }
+    
+    static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    
+    static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.medicalHistory, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}

@@ -5,6 +5,7 @@
 import MediQuo
 import AppTrackingTransparency
 import AdSupport
+import MediQuoCore
 
 class ViewController: UIViewController {
     @IBOutlet weak var welcomeTitleLabel: UILabel!
@@ -179,3 +180,78 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension UIViewController {
+    func checkVideoCallPermissions(success: @escaping () -> Void) {
+        self.checkCameraPermissions { granted in
+            if granted {
+                self.checkMicPermission(completion: { granted in
+                    if granted {
+                        success()
+                    }
+                })
+            }
+        }
+    }
+
+    func checkCameraPermissions(completion: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            PermissionWrapper.checkVideoCameraAvailable(completion: { status in
+                switch status {
+                case .authorized:
+                    // show mic permission
+                    completion(true)
+                default:
+                    completion(false)
+                    // show message
+                    //                R.string.localizable.permissionCameraMessage()
+                    let alert = UIAlertController(title: "Permisos de cámara", message: "Hpabilita los ermisos de cámara", preferredStyle: .alert)
+
+                    let actionSettings = UIAlertAction(title: "Permisos de cámara", style: .default, handler: { _ in
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            if UIApplication.shared.canOpenURL(url) {
+                                UIApplication.shared.open(url, completionHandler: { _ in
+                                })
+                            }
+                        }
+                    })
+                    let actionCancel = UIAlertAction(title: "Cancelar", style: .default, handler: { _ in })
+                    alert.addAction(actionSettings)
+                    alert.addAction(actionCancel)
+
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true, completion: {})
+                    }
+                }
+            })
+        }
+    }
+
+    func checkMicPermission(completion: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            PermissionWrapper.checkMicrophoneAvailable { granted in
+                if !granted {
+                    // show message
+                    let alert = UIAlertController(title: "Permisos de micro", message: "Habilita los permisos de micro", preferredStyle: .alert)
+
+                    let actionSettings = UIAlertAction(title: "Permisos de micro", style: .default, handler: { _ in
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            if UIApplication.shared.canOpenURL(url) {
+                                UIApplication.shared.open(url, completionHandler: { _ in
+                                })
+                            }
+                        }
+                    })
+                    let actionCancel = UIAlertAction(title: "Cancelar", style: .default, handler: { _ in })
+                    alert.addAction(actionSettings)
+                    alert.addAction(actionCancel)
+
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true, completion: {})
+                    }
+                }
+                completion(granted)
+            }
+        }
+    }
+}

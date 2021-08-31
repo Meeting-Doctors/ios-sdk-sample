@@ -114,15 +114,60 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
+    /// Image `Back`.
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
+    /// Image `Chat`.
+    static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chat")
     /// Image `Fingerprint`.
     static let fingerprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fingerprint")
+    /// Image `Icon`.
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `MedicalHistory`.
+    static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
+    /// Image `videoCallDoctorNotAssigned`.
+    static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Chat", bundle: ..., traitCollection: ...)`
+    static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Fingerprint", bundle: ..., traitCollection: ...)`
     static func fingerprint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fingerprint, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MedicalHistory", bundle: ..., traitCollection: ...)`
+    static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.medicalHistory, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "videoCallDoctorNotAssigned", bundle: ..., traitCollection: ...)`
+    static func videoCallDoctorNotAssigned(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallDoctorNotAssigned, compatibleWith: traitCollection)
     }
     #endif
 
@@ -237,14 +282,32 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = MenuTypeSelectorViewController
 
       let bundle = R.hostingBundle
+      let menuOptionSelectorTableViewController = StoryboardViewControllerResource<MenuOptionSelectorTableViewController>(identifier: "MenuOptionSelectorTableViewController")
+      let menuTypeSelectorViewController = StoryboardViewControllerResource<MenuTypeSelectorViewController>(identifier: "MenuTypeSelectorViewController")
       let name = "Main"
+      let tabBarMenuViewController = StoryboardViewControllerResource<TabBarMenuViewController>(identifier: "TabBarMenuViewController")
+
+      func menuOptionSelectorTableViewController(_: Void = ()) -> MenuOptionSelectorTableViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuOptionSelectorTableViewController)
+      }
+
+      func menuTypeSelectorViewController(_: Void = ()) -> MenuTypeSelectorViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuTypeSelectorViewController)
+      }
+
+      func tabBarMenuViewController(_: Void = ()) -> TabBarMenuViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tabBarMenuViewController)
+      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().menuOptionSelectorTableViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuOptionSelectorTableViewController' could not be loaded from storyboard 'Main' as 'MenuOptionSelectorTableViewController'.") }
+        if _R.storyboard.main().menuTypeSelectorViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuTypeSelectorViewController' could not be loaded from storyboard 'Main' as 'MenuTypeSelectorViewController'.") }
+        if _R.storyboard.main().tabBarMenuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tabBarMenuViewController' could not be loaded from storyboard 'Main' as 'TabBarMenuViewController'.") }
       }
 
       fileprivate init() {}
