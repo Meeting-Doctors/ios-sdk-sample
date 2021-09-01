@@ -39,8 +39,8 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.videoCallBackgroundImage = R.image.icon()
         style.videoCallTopBackgroundColor = UIColor(red: 73 / 255, green: 19 / 255, blue: 164 / 255, alpha: 1)
         style.videoCallBottomBackgroundColor = UIColor(red: 215 / 255, green: 209 / 255, blue: 226 / 255, alpha: 1)
-        style.videoCallTopBackgroundImageTintColor = UIColor(red: 97 / 255, green: 51 / 255, blue: 176 / 255, alpha: 1)
-        style.videoCallBottomBackgroundImageTintColor = UIColor(red: 232 / 255, green: 229 / 255, blue: 238 / 255, alpha: 1)
+        style.videoCallTopBackgroundImageTintColor = UIColor(red: 97 / 255, green: 51 / 255, blue: 176 / 255, alpha: 0.5)
+        style.videoCallBottomBackgroundImageTintColor = UIColor(red: 232 / 255, green: 229 / 255, blue: 238 / 255, alpha: 0.5)
         style.videoCallAcceptButtonBackgroundColor = UIColor(red: 56 / 255, green: 201 / 255, blue: 201 / 255, alpha: 1.0)
         style.videoCallCancelButtonBackgroundColor = UIColor(red: 248 / 255, green: 0 / 255, blue: 80 / 255, alpha: 1.0)
         style.videoCallCancelButtonTextColor = .white
@@ -64,6 +64,8 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.emptyView = emptyView
         style.medicalHistoryOptions = [.allergy(nil), .disease(nil), .medication(nil), .myDocuments, .videoCallReport(nil)]
 
+        style.preferredStatusBarStyle = .lightContent
+        
         return style
     }()
     
