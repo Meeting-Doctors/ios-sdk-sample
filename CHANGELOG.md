@@ -38,7 +38,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 Released: Aug 09, 2021
 
 #### Added
-  * Launch VC whuen calling push arrive
+  * Launch VC when calling push arrive
   * Bug fixed when an specialist has not a 5 days schedule with the same working hours every day
 
 
