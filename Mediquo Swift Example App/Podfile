@@ -4,7 +4,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MediQuo', '3.1.1'
+    pod 'MediQuo'
 end
 
 target 'Mediquo Swift Example App' do

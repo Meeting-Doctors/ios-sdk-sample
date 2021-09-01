@@ -101,7 +101,7 @@ PODS:
   - SwipeCellKit (2.5.4)
 
 DEPENDENCIES:
-  - MediQuo (= 3.1.1)
+  - MediQuo
 
 SPEC REPOS:
   https://bitbucket.org/meetingdoctors-team/cocoapods-specs.git:
@@ -183,6 +183,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   SwipeCellKit: 4eada3884ab1bbae5e8d2fb9030c242aa23d7f42
 
-PODFILE CHECKSUM: 476faa25389ac0539d37d62c2c6d0e738bf39a7c
+PODFILE CHECKSUM: 3596770fb9b9a392bdf9a21cabee8976140f11f0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0
