@@ -8,17 +8,145 @@
 
 import UIKit
 import MediQuo
+import MediQuoSchema
+import MediQuoController
 import AppTrackingTransparency
 
 class MenuTypeSelectorViewController: UIViewController {
-
+    
     private var isAuthenticated: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.bindNotifications()
 
         self.configureStyle()
         
+    }
+    
+    //MARK: - Notification Center Events
+    func bindNotifications() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.authenticationSucceded(notification:)), name: Notification.Name.MediQuo.Authentication.Succeed, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userUpdated(notification:)), name: Notification.Name.MediQuo.Authentication.UserStatusChanged, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(styleChanged(notification:)), name: Notification.Name.MediQuo.Style.StyleChanged, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userUpdated(notification:)), name: Notification.Name.MediQuo.Authentication.UserBannedChanged, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(socketMessageRead(notification:)), name: Notification.Name.MediQuo.Socket.MessageRead, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.messageReceived(notification:)), name: Notification.Name.MediQuo.Socket.MessageReceived, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(watchDogAct), name: Notification.Name.MediQuo.Socket.WatchDogAct, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.unreadMessagesChanged(notification:)), name: Notification.Name.MediQuo.Message.UnreadChanged, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.messageSent(notification:)), name: Notification.Name.MediQuo.Message.Sent, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.messageRead(notification:)), name: Notification.Name.MediQuo.Message.Read, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.chatEntered), name: Notification.Name.MediQuo.Messenger.ChatEntered, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.chatLeft), name: Notification.Name.MediQuo.Messenger.ChatLeft, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.prepareNpsButton), name: Notification.Name.MediQuo.NPS.NPSSendSucceed, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pushNotification(notification:)), name: Notification.Name.MediQuoVideoCall.Push, object: nil)
+    }
+    
+    @objc func authenticationSucceded(notification: Notification) {
+        guard let account: MediQuoController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MediQuoController.AccountModel else {
+            NSLog("Account model could not be obtained from successful authentication notification event")
+            return
+        }
+        
+        NSLog("You have the account model available to use")
+        
+    }
+    
+    @objc func userUpdated(notification: Notification) {
+        guard let account: MediQuoController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MediQuoController.AccountModel else {
+            NSLog("Account model could not be obtained from successful authentication notification event")
+            return
+        }
+        
+        NSLog("You have the account model available to use")
+    }
+    
+    @objc func styleChanged(notification: Notification) {
+        guard let style: MediQuoStyle = notification.userInfo?[Notification.Key.MediQuo.Style] as? MediQuoStyle else {
+            NSLog("Style could not be obtained from successful style changed notification event")
+            return
+        }
+        NSLog("You have the style object available to use")
+    }
+    
+    @objc func socketMessageRead(notification: Notification) {
+        guard let message: MediQuoSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageRead] as? MediQuoSchema.MessageSchema else {
+            NSLog("Message model could not be obtained from successful message read notification event")
+            return
+        }
+        NSLog("You have the message model available to use")
+    }
+    
+    @objc func messageReceived(notification: Notification) {
+        guard let message: MediQuoSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageReceived] as? MediQuoSchema.MessageSchema else {
+            NSLog("Message model could not be obtained from successful message received notification event")
+            return
+        }
+        NSLog("You have the message model available to use")
+    }
+    
+    @objc func watchDogAct() {
+        NSLog("You are observing the watchDogAct event")
+    }
+    
+    @objc func unreadMessagesChanged(notification: Notification) {
+        guard let unreadMessages: Int = notification.userInfo?[Notification.Key.MediQuo.Message.UnreadChanged] as? Int else {
+            NSLog("Number of unread message could not be obtained from successful unreadMessagesChanged notification event")
+            return
+        }
+        NSLog("You have \(unreadMessages) unread messages")
+    }
+    
+    @objc func messageSent(notification: Notification) {
+        guard let message: MediQuoMessageType = notification.userInfo?[Notification.Key.MediQuo.Message.Sent] as? MediQuoMessageType else {
+            NSLog("Message sent could not be obtained from successful message notification event")
+            return
+        }
+        NSLog("Message sent for speciality: \(message.contactSpeciality)")
+    }
+    
+    @objc func messageRead(notification: Notification) {
+        guard let message: MediQuoMessageType = notification.userInfo?[Notification.Key.MediQuo.Message.Read] as? MediQuoMessageType else {
+            NSLog("Message read could not be obtained from successful message notification event")
+            return
+        }
+        NSLog("Message read for speciality: \(message.contactSpeciality)")
+    }
+    
+    @objc func chatEntered() {
+        NSLog("You are observing the chat entered event")
+    }
+    
+    @objc func chatLeft() {
+        NSLog("You are observing the chat left event")
+    }
+    
+    @objc func prepareNpsButton() {
+        NSLog("You are observing the NPS send succeed left event")
+    }
+    
+    @objc private func pushNotification(notification: Notification) {
+        guard let status = notification.userInfo?[Notification.Key.MediQuoVideoCall.Push] as? MediQuoVideoCallStatus else {
+            NSLog("MediQuoVideoCallStatus could not be obtained from successful message notification event")
+            return
+        }
+        
+        NSLog("MediQuoVideoCallStatus is available to use")
     }
 
     @IBAction func navControllerBtnPressed(_ sender: Any) {

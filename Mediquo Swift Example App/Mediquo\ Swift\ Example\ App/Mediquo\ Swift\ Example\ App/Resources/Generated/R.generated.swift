@@ -114,7 +114,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
     /// Image `Back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
@@ -126,6 +126,8 @@ struct R: Rswift.Validatable {
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
     /// Image `MedicalHistory`.
     static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
+    /// Image `VideoCallCamera`.
+    static let videoCallCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallCamera")
     /// Image `videoCallDoctorNotAssigned`.
     static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
 
@@ -161,6 +163,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "MedicalHistory", bundle: ..., traitCollection: ...)`
     static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.medicalHistory, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "VideoCallCamera", bundle: ..., traitCollection: ...)`
+    static func videoCallCamera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallCamera, compatibleWith: traitCollection)
     }
     #endif
 

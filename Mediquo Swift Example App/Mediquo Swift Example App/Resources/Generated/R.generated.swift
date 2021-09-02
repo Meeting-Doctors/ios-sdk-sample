@@ -27,6 +27,8 @@ struct R: Rswift.Validatable {
     
     static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chat")
     
+    static let videocallCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallCamera")
+    
     static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
     
     static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
@@ -50,6 +52,10 @@ struct R: Rswift.Validatable {
     
     static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    
+    static func videocallCamera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.videocallCamera, compatibleWith: traitCollection)
     }
     
     static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {

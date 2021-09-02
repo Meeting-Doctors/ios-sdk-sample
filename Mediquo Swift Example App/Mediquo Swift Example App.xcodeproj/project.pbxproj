@@ -30,6 +30,8 @@
 		69BC17DD1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
 		69BC17DE1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
 		69BC17DF1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
+		7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */; };
+		7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C291026E0BADF0053401E /* UIImage+Extension.swift */; };
 		7E225C1E26DCC15000D54957 /* TabBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E225C1D26DCC15000D54957 /* TabBarMenuViewController.swift */; };
 		7E225C2A26DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E225C2926DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift */; };
 		7E5C3A7826CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C3A7726CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift */; };
@@ -81,6 +83,8 @@
 		69BC17D81FBC8BDC0025CC42 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = ../es.lproj/Main.strings; sourceTree = "<group>"; };
 		69BC17D91FBC8BDD0025CC42 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69BC17DC1FBC8DB20025CC42 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7E1C291026E0BADF0053401E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7E225C1D26DCC15000D54957 /* TabBarMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuViewController.swift; sourceTree = "<group>"; };
 		7E225C2926DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediquoSwiftExampleAppPlugin.swift; sourceTree = "<group>"; };
 		7E5C3A7726CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionSelectorTableViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				D585EEF421E6173300D3A21B /* MediQuo+Extension.swift */,
+				7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */,
+				7E1C291026E0BADF0053401E /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -598,6 +604,8 @@
 				69BC17BB1FBC8B6C0025CC42 /* ViewController.swift in Sources */,
 				7E225C1E26DCC15000D54957 /* TabBarMenuViewController.swift in Sources */,
 				7E225C2A26DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift in Sources */,
+				7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */,
+				7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */,
 				69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */,
 				D585EEF521E6173300D3A21B /* MediQuo+Extension.swift in Sources */,
 				69BC17DD1FBC8DB20025CC42 /* R.generated.swift in Sources */,

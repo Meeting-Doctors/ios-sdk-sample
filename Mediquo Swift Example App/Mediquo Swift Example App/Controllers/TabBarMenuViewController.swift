@@ -39,7 +39,7 @@ class TabBarMenuViewController: UITabBarController {
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
             self.chatViewController.title = "Chat"
-            self.chatViewController.tabBarItem.image = R.image.chat()
+            self.chatViewController.tabBarItem.image = R.image.chat()?.imageByMakingWhiteBackgroundTransparent()
             self.viewControllers?.insert(self.chatViewController, at: 0)
         } else {
             NSLog("[BottomBarViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
@@ -47,6 +47,7 @@ class TabBarMenuViewController: UITabBarController {
         
         let navController = UINavigationController(rootViewController: VideoCallViewController())
         navController.title = "VideoCall"
+        navController.tabBarItem.image = R.image.videocallCamera()?.image(alpha: 1)
         self.viewControllers?.insert(navController, at: 1)
         
         do {

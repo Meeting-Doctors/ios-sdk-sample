@@ -13,13 +13,13 @@ class MediquoSwiftExampleAppPlugin: NSObject {
 
     static let style: MediQuoStyleType = {
         var style: MediQuoStyle = MediQuoStyle()
-        style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
-        style.inboxCellStyle = .mediquo(overlay: UIColor(red: 146 / 255, green: 122 / 255, blue: 198 / 255, alpha: 64 / 255),
-                                        badge: UIColor(red: 66 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1),
-                                        speciality: UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1),
-                                        specialityIcon: .white,
+        style.navigationBarColor = UIColor(from: 0x00BAF3)
+        style.inboxCellStyle = .mediquo(overlay: .clear,
+                                        badge: UIColor(from: 0x00BAF3),
+                                        speciality: UIColor(from: 0x00BAF3),
+                                        specialityIcon: .clear,
                                         hideSchedule: false)
-        style.accentTintColor = UIColor(red: 0, green: 244 / 255, blue: 187 / 255, alpha: 1)
+        style.accentTintColor = UIColor(from: 0x00BAF3)
         style.navigationBarBackIndicatorImage = R.image.back()
         style.preferredStatusBarStyle = .lightContent
         style.titleFont = UIFont.systemFont(ofSize: 17)
@@ -29,28 +29,28 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.titleColor = .white
 
         // style.showMediQuoBackgroundImage = false
-        style.secondaryTintColor = UIColor(red: 76 / 255, green: 214 / 255, blue: 215 / 255, alpha: 1)
+        style.secondaryTintColor = UIColor(from: 0x0059A6)
 
         style.showCollegiateNumber = true
 
         // MARK: VideoCall
 
         style.videoCallIconDoctorNotAssignedImage = R.image.videoCallDoctorNotAssigned()
-        style.videoCallBackgroundImage = R.image.icon()
-        style.videoCallTopBackgroundColor = UIColor(red: 73 / 255, green: 19 / 255, blue: 164 / 255, alpha: 1)
-        style.videoCallBottomBackgroundColor = UIColor(red: 215 / 255, green: 209 / 255, blue: 226 / 255, alpha: 1)
-        style.videoCallTopBackgroundImageTintColor = UIColor(red: 97 / 255, green: 51 / 255, blue: 176 / 255, alpha: 0.5)
-        style.videoCallBottomBackgroundImageTintColor = UIColor(red: 232 / 255, green: 229 / 255, blue: 238 / 255, alpha: 0.5)
-        style.videoCallAcceptButtonBackgroundColor = UIColor(red: 56 / 255, green: 201 / 255, blue: 201 / 255, alpha: 1.0)
-        style.videoCallCancelButtonBackgroundColor = UIColor(red: 248 / 255, green: 0 / 255, blue: 80 / 255, alpha: 1.0)
+        style.videoCallBackgroundImage = R.image.icon()?.imageByMakingWhiteBackgroundTransparent()
+        style.videoCallTopBackgroundColor = UIColor(from: 0x00BAF3)
+        style.videoCallBottomBackgroundColor = UIColor(from: 0x00BAF3).withAlphaComponent(0.4)
+        style.videoCallTopBackgroundImageTintColor = nil
+        style.videoCallBottomBackgroundImageTintColor = nil
+        style.videoCallAcceptButtonBackgroundColor = UIColor(red: 3 / 255, green: 243 / 255, blue: 180 / 255, alpha: 1.0)
+        style.videoCallCancelButtonBackgroundColor = UIColor(red: 239 / 255, green: 35 / 255, blue: 54 / 255, alpha: 1.0)
         style.videoCallCancelButtonTextColor = .white
         style.videoCallAcceptButtonTextColor = .white
         style.videoCallTitleTextColor = .white
-        style.videoCallNextAppointmentTextColor = UIColor(red: 54 / 255, green: 54 / 255, blue: 54 / 255, alpha: 1)
-        style.videoCallProfessionalNameTextColor = UIColor(red: 73 / 255, green: 19 / 255, blue: 164 / 255, alpha: 1)
-        style.videoCallProfessionalSpecialityTextColor = UIColor(red: 64 / 255, green: 64 / 255, blue: 64 / 255, alpha: 1)
-        style.videoCallIconDoctorNotAssignedImageTintColor = UIColor(red: 73 / 255, green: 19 / 255, blue: 164 / 255, alpha: 1)
-        style.videoCallIconDoctorBackgroundColor = style.videoCallBottomBackgroundColor ?? .white
+        style.videoCallNextAppointmentTextColor = UIColor(from: 0x00BAF3)
+        style.videoCallProfessionalNameTextColor = .black
+        style.videoCallProfessionalSpecialityTextColor = UIColor(from: 0x00BAF3)
+        style.videoCallIconDoctorNotAssignedImageTintColor = UIColor(from: 0x00BAF3)
+        style.videoCallIconDoctorBackgroundColor = .white
 
         let emptyView = UIView()
         emptyView.backgroundColor = .yellow
