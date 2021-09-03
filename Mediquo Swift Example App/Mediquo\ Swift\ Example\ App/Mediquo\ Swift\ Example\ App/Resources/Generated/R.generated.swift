@@ -114,22 +114,65 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 18 images.
   struct image {
+    /// Image `AllergiesIcon`.
+    static let allergiesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergiesIcon")
+    /// Image `AllergyRateOff`.
+    static let allergyRateOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOff")
+    /// Image `AllergyRateOn`.
+    static let allergyRateOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOn")
     /// Image `Back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
+    /// Image `CellArrow`.
+    static let cellArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellArrow")
     /// Image `Chat`.
     static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chat")
+    /// Image `DerivationsIcon`.
+    static let derivationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DerivationsIcon")
+    /// Image `DiseasesIcon`.
+    static let diseasesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DiseasesIcon")
     /// Image `Fingerprint`.
     static let fingerprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fingerprint")
     /// Image `Icon`.
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
     /// Image `MedicalHistory`.
     static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
+    /// Image `MedicationsIcon`.
+    static let medicationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicationsIcon")
+    /// Image `MyDocumentsIcon`.
+    static let myDocumentsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyDocumentsIcon")
+    /// Image `RecipeIcon`.
+    static let recipeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "RecipeIcon")
     /// Image `VideoCallCamera`.
     static let videoCallCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallCamera")
+    /// Image `VideoCallReportIcon`.
+    static let videoCallReportIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallReportIcon")
+    /// Image `download`.
+    static let download = Rswift.ImageResource(bundle: R.hostingBundle, name: "download")
     /// Image `videoCallDoctorNotAssigned`.
     static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergiesIcon", bundle: ..., traitCollection: ...)`
+    static func allergiesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergiesIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergyRateOff", bundle: ..., traitCollection: ...)`
+    static func allergyRateOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergyRateOff, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergyRateOn", bundle: ..., traitCollection: ...)`
+    static func allergyRateOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergyRateOn, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Back", bundle: ..., traitCollection: ...)`
@@ -139,9 +182,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "CellArrow", bundle: ..., traitCollection: ...)`
+    static func cellArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cellArrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Chat", bundle: ..., traitCollection: ...)`
     static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "DerivationsIcon", bundle: ..., traitCollection: ...)`
+    static func derivationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.derivationsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "DiseasesIcon", bundle: ..., traitCollection: ...)`
+    static func diseasesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.diseasesIcon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -167,9 +231,44 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MedicationsIcon", bundle: ..., traitCollection: ...)`
+    static func medicationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.medicationsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MyDocumentsIcon", bundle: ..., traitCollection: ...)`
+    static func myDocumentsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.myDocumentsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "RecipeIcon", bundle: ..., traitCollection: ...)`
+    static func recipeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recipeIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "VideoCallCamera", bundle: ..., traitCollection: ...)`
     static func videoCallCamera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.videoCallCamera, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "VideoCallReportIcon", bundle: ..., traitCollection: ...)`
+    static func videoCallReportIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallReportIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "download", bundle: ..., traitCollection: ...)`
+    static func download(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.download, compatibleWith: traitCollection)
     }
     #endif
 

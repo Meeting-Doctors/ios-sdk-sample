@@ -59,6 +59,30 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.videoCallIconDoctorNotAssignedImageTintColor = UIColor(from: 0x00BAF3)
         style.videoCallIconDoctorBackgroundColor = .white
 
+        ///Customizable images
+        style.images.mediQuoMedicalHistoryImages.allergiesIcon = R.image.allergiesIcon()
+        style.images.mediQuoMedicalHistoryImages.derivationsIcon = R.image.derivationsIcon()
+        style.images.mediQuoMedicalHistoryImages.diseasesIcon = R.image.diseasesIcon()
+        style.images.mediQuoMedicalHistoryImages.medicationsIcon = R.image.medicationsIcon()
+        style.images.mediQuoMedicalHistoryImages.myDocumentsIcon = R.image.myDocumentsIcon()
+        style.images.mediQuoMedicalHistoryImages.recipeIcon = R.image.recipeIcon()
+        style.images.mediQuoMedicalHistoryImages.videoCallReportIcon = R.image.videocallCamera()
+        
+        ///Customizable strings
+        style.strings.mediQuoMedicalHistoryStrings.recipeBodyMessage = "Texto del cuerpo de la receta médica."
+        style.strings.mediQuoMedicalHistoryStrings.recipeDisclaimerDescription = "Texto descriptivo del disclaimer de la receta médica."
+        style.strings.mediQuoMedicalHistoryStrings.recipeDisclaimerTitle = "Título del disclaimer de la receta médica."
+        style.strings.mediQuoMedicalHistoryStrings.recipeEmptyMessage = "Texto de receta vacía."
+        
+        style.strings.mediQuoVideoCallStrings.videoCallPrepareCallingDoctorCurrentStatusCall = "Preparando videollamada."
+        style.strings.mediQuoVideoCallStrings.videoCallPrepareCallingDoctorNextAppointment = "Siguiente cita."
+        style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorAssignedDoctor = "Médico asignado."
+        style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorCurrentStatusCall = "Esperando al médico."
+        style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorNextAppointment = "Esperando al siguiente médico."
+        
+        
+        style.conditionsDismiss = {}
+        
         let emptyView = UIView()
         emptyView.backgroundColor = .yellow
         let button = UIButton()
@@ -69,8 +93,8 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         }
         emptyView.addSubviewFullViewFit(to: button)
         style.emptyView = emptyView
-        style.medicalHistoryOptions = [.allergy(nil), .disease(nil), .medication(nil), .myDocuments, .videoCallReport(nil)]
-
+        style.medicalHistoryOptions = [.allergy(nil), .disease(nil), .medication(nil), .myDocuments, .videoCallReport(nil), .prescription]
+        
         style.preferredStatusBarStyle = .lightContent
         
         return style

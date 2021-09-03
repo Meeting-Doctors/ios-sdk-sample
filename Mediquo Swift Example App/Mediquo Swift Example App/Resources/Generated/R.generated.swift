@@ -33,6 +33,53 @@ struct R: Rswift.Validatable {
     
     static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
     
+    static let allergiesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergiesIcon")
+    /// Image `AllergyRateOff`.
+    static let allergyRateOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOff")
+    /// Image `AllergyRateOn`.
+    static let allergyRateOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOn")
+    /// Image `Appointment`.
+    static let appointment = Rswift.ImageResource(bundle: R.hostingBundle, name: "Appointment")
+    /// Image `Arrow`.
+    static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Arrow")
+    /// Image `Camera`.
+    static let camera = Rswift.ImageResource(bundle: R.hostingBundle, name: "Camera")
+    /// Image `CellArrow`.
+    static let cellArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellArrow")
+    /// Image `CellFollowers`.
+    static let cellFollowers = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellFollowers")
+    /// Image `CellMembers`.
+    static let cellMembers = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellMembers")
+    /// Image `CellMessages`.
+    static let cellMessages = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellMessages")
+    /// Image `CheckAll`.
+    static let checkAll = Rswift.ImageResource(bundle: R.hostingBundle, name: "CheckAll")
+    /// Image `Check`.
+    static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "Check")
+    /// Image `Clock`.
+    static let clock = Rswift.ImageResource(bundle: R.hostingBundle, name: "Clock")
+    /// Image `Close`.
+    static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Close")
+    /// Image `CompleteSeparator`.
+    static let completeSeparator = Rswift.ImageResource(bundle: R.hostingBundle, name: "CompleteSeparator")
+    /// Image `Delete`.
+    static let delete = Rswift.ImageResource(bundle: R.hostingBundle, name: "Delete")
+    /// Image `DerivationsIcon`.
+    static let derivationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DerivationsIcon")
+    /// Image `DiseasesIcon`.
+    static let diseasesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DiseasesIcon")
+    /// Image `DoctorIcon`.
+    static let doctorIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DoctorIcon")
+    
+    /// Image `MedicationsIcon`.
+    static let medicationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicationsIcon")
+    
+    /// Image `MyDocumentsIcon`.
+    static let myDocumentsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyDocumentsIcon")
+    
+    /// Image `RecipeIcon`.
+    static let recipeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "RecipeIcon")
+    
     /// `UIImage(named: "Fingerprint", bundle: ..., traitCollection: ...)`
     static func fingerprint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fingerprint, compatibleWith: traitCollection)
@@ -61,6 +108,161 @@ struct R: Rswift.Validatable {
     static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.medicalHistory, compatibleWith: traitCollection)
     }
+    
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "RecipeIcon", bundle: ..., traitCollection: ...)`
+        static func recipeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.recipeIcon, compatibleWith: traitCollection)
+        }
+    #endif
+    
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "MyDocumentsIcon", bundle: ..., traitCollection: ...)`
+        static func myDocumentsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.myDocumentsIcon, compatibleWith: traitCollection)
+        }
+    #endif
+    
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "MedicationsIcon", bundle: ..., traitCollection: ...)`
+        static func medicationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.medicationsIcon, compatibleWith: traitCollection)
+        }
+    #endif
+    
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "AllergiesIcon", bundle: ..., traitCollection: ...)`
+        static func allergiesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.allergiesIcon, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "AllergyRateOff", bundle: ..., traitCollection: ...)`
+        static func allergyRateOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.allergyRateOff, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "AllergyRateOn", bundle: ..., traitCollection: ...)`
+        static func allergyRateOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.allergyRateOn, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Appointment", bundle: ..., traitCollection: ...)`
+        static func appointment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.appointment, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Arrow", bundle: ..., traitCollection: ...)`
+        static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.arrow, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Camera", bundle: ..., traitCollection: ...)`
+        static func camera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.camera, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CellArrow", bundle: ..., traitCollection: ...)`
+        static func cellArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.cellArrow, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CellFollowers", bundle: ..., traitCollection: ...)`
+        static func cellFollowers(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.cellFollowers, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CellMembers", bundle: ..., traitCollection: ...)`
+        static func cellMembers(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.cellMembers, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CellMessages", bundle: ..., traitCollection: ...)`
+        static func cellMessages(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.cellMessages, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Check", bundle: ..., traitCollection: ...)`
+        static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.check, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CheckAll", bundle: ..., traitCollection: ...)`
+        static func checkAll(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.checkAll, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Clock", bundle: ..., traitCollection: ...)`
+        static func clock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.clock, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Close", bundle: ..., traitCollection: ...)`
+        static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.close, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "CompleteSeparator", bundle: ..., traitCollection: ...)`
+        static func completeSeparator(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.completeSeparator, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Delete", bundle: ..., traitCollection: ...)`
+        static func delete(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.delete, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "DerivationsIcon", bundle: ..., traitCollection: ...)`
+        static func derivationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.derivationsIcon, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "DiseasesIcon", bundle: ..., traitCollection: ...)`
+        static func diseasesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.diseasesIcon, compatibleWith: traitCollection)
+        }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "DoctorIcon", bundle: ..., traitCollection: ...)`
+        static func doctorIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.doctorIcon, compatibleWith: traitCollection)
+        }
+    #endif
+
     
     fileprivate init() {}
   }
