@@ -38,7 +38,6 @@ class TabBarMenuViewController: UITabBarController {
         let messengerResult = MediQuo.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
-            self.chatViewController.title = "Chat"
             self.chatViewController.tabBarItem.image = R.image.chat()?.imageByMakingWhiteBackgroundTransparent()
             self.viewControllers?.insert(self.chatViewController, at: 0)
         } else {

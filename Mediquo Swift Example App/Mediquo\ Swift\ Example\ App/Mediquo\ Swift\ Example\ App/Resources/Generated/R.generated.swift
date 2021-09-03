@@ -183,6 +183,40 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `DividerContentView`.
+    static let dividerContentView = _R.nib._DividerContentView()
+    /// Nib `DividerTopContentView`.
+    static let dividerTopContentView = _R.nib._DividerTopContentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DividerContentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dividerContentView) instead")
+    static func dividerContentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dividerContentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DividerTopContentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dividerTopContentView) instead")
+    static func dividerTopContentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dividerTopContentView)
+    }
+    #endif
+
+    static func dividerContentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerContentView? {
+      return R.nib.dividerContentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerContentView
+    }
+
+    static func dividerTopContentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerTopContentView? {
+      return R.nib.dividerTopContentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerTopContentView
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
     /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
@@ -258,9 +292,50 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _DividerTopContentView.validate()
+    }
+
+    struct _DividerContentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DividerContentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerContentView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerContentView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DividerTopContentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DividerTopContentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerTopContentView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerTopContentView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "VideoCallCamera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'VideoCallCamera' is used in nib 'DividerTopContentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

@@ -174,8 +174,56 @@ class MenuTypeSelectorViewController: UIViewController {
         }
     }
     
+    private var mediquoDivider: MediQuoDivider<UIView>? {
+        var divider: MediQuoDivider<UIView>
+        let rect: CGRect = CGRect(origin: .zero, size: CGSize(width: 375, height: 350))
+        let dividerView: DividerContentView = DividerContentView(frame: rect)
+        divider = MediQuoDivider(view: dividerView)
+
+        return divider.add(configuration: { (cell, _) -> Void in
+            cell.selectionStyle = .none
+        }).add(selector: { (_, _, speciality, authorized, _) -> Bool in
+            NSLog("[MediQuoLoader] Inbox item '\(speciality)' selected and authorized '\(authorized)'")
+
+            return authorized
+        })
+    }
+
+    private var mediquoTopDivider: MediQuoDivider<UIView>? {
+        var divider: MediQuoDivider<UIView>
+    
+        let rect: CGRect = CGRect(origin: .zero, size: CGSize(width: 375, height: 350))
+        let dividerView = DividerTopContentView(frame: rect)
+        divider = MediQuoDivider(view: dividerView)
+    
+        return divider.add(configuration: { [weak self] (cell, view) -> Void in
+            cell.selectionStyle = .none
+            (view as? DividerTopContentView)?.buttonAction = {
+                DispatchQueue.main.async {
+                    let alert: UIAlertController = UIAlertController(title: "Videollamada", message: "Activar videollamada", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+                    alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { (_: UIAlertAction) in
+                        
+                        if let viewController = UIApplication().keyWindow?.rootViewController {
+                            viewController.checkVideoCallPermissions(success: {
+                                viewController.startVideoCall()
+                        })
+                        }
+                        
+                    }))
+                    if let viewController = UIApplication().keyWindow?.rootViewController {
+                        viewController.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        })
+    }
+    
     private func configureStyle() {
         MediQuo.style = MediquoSwiftExampleAppPlugin.style
+        MediQuo.style?.divider = self.mediquoDivider
+        MediQuo.style?.topDivider = self.mediquoTopDivider
+        MediQuo.updateStyle()
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {

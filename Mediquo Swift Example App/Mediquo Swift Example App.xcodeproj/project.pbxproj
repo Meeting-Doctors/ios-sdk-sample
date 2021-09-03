@@ -32,6 +32,10 @@
 		69BC17DF1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
 		7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */; };
 		7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C291026E0BADF0053401E /* UIImage+Extension.swift */; };
+		7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */; };
+		7E1C292E26E0E3EB0053401E /* DividerTopContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1C292D26E0E3EB0053401E /* DividerTopContentView.xib */; };
+		7E1C299826E105810053401E /* DividerContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1C299726E105810053401E /* DividerContentView.xib */; };
+		7E1C299D26E1058F0053401E /* DividerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C299C26E1058F0053401E /* DividerContentView.swift */; };
 		7E225C1E26DCC15000D54957 /* TabBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E225C1D26DCC15000D54957 /* TabBarMenuViewController.swift */; };
 		7E225C2A26DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E225C2926DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift */; };
 		7E5C3A7826CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C3A7726CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift */; };
@@ -85,6 +89,10 @@
 		69BC17DC1FBC8DB20025CC42 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7E1C291026E0BADF0053401E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerTopContentView.swift; sourceTree = "<group>"; };
+		7E1C292D26E0E3EB0053401E /* DividerTopContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DividerTopContentView.xib; sourceTree = "<group>"; };
+		7E1C299726E105810053401E /* DividerContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DividerContentView.xib; sourceTree = "<group>"; };
+		7E1C299C26E1058F0053401E /* DividerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerContentView.swift; sourceTree = "<group>"; };
 		7E225C1D26DCC15000D54957 /* TabBarMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuViewController.swift; sourceTree = "<group>"; };
 		7E225C2926DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediquoSwiftExampleAppPlugin.swift; sourceTree = "<group>"; };
 		7E5C3A7726CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionSelectorTableViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 		69BC17BE1FBC8B7C0025CC42 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E1C292426E0E3BC0053401E /* Views */,
 				69BC17DA1FBC8C7B0025CC42 /* Generated */,
 				69BC17C41FBC8B980025CC42 /* Assets.xcassets */,
 				69BC17BF1FBC8B980025CC42 /* Base.lproj */,
@@ -218,6 +227,17 @@
 				69BC17DC1FBC8DB20025CC42 /* R.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		7E1C292426E0E3BC0053401E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */,
+				7E1C292D26E0E3EB0053401E /* DividerTopContentView.xib */,
+				7E1C299726E105810053401E /* DividerContentView.xib */,
+				7E1C299C26E1058F0053401E /* DividerContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7E225C2726DCC58A00D54957 /* Source */ = {
@@ -396,6 +416,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BC17C51FBC8B980025CC42 /* LaunchScreen.storyboard in Resources */,
+				7E1C292E26E0E3EB0053401E /* DividerTopContentView.xib in Resources */,
+				7E1C299826E105810053401E /* DividerContentView.xib in Resources */,
 				69BC17D21FBC8BC20025CC42 /* Localizable.strings in Resources */,
 				69BC17CB1FBC8B980025CC42 /* Assets.xcassets in Resources */,
 				69BC17C81FBC8B980025CC42 /* Main.storyboard in Resources */,
@@ -607,6 +629,8 @@
 				7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */,
 				7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */,
 				69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */,
+				7E1C299D26E1058F0053401E /* DividerContentView.swift in Sources */,
+				7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */,
 				D585EEF521E6173300D3A21B /* MediQuo+Extension.swift in Sources */,
 				69BC17DD1FBC8DB20025CC42 /* R.generated.swift in Sources */,
 				7E6C710E26CFAD8900DC46E9 /* MenuOptionSelectorTableViewModel.swift in Sources */,

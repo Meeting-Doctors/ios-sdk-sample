@@ -19,19 +19,4 @@ class VideoCallViewController: UIViewController {
         startVideoCall()
         
     }
-    
-    
-    private func startVideoCall() {
-        self.checkVideoCallPermissions {
-            DispatchQueue.main.async {
-                MediQuo.deeplink(.videoCall, origin: self, animated: true) { result in
-                    result.process(doSuccess: { response in
-                        NSLog("[MediQuoLoader] Video call started")
-                    }, doFailure: { error in
-                        NSLog("[MediQuoLoader] Video call error \(error)")
-                    })
-                }
-            }
-        }
-    }
 }

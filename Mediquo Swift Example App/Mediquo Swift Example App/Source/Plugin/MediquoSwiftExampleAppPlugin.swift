@@ -27,10 +27,17 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.navigationBarTintColor = .white
         style.navigationBarOpaque = true
         style.titleColor = .white
+        style.inboxTitle = "Professional List"
+        style.inboxBackgroundColor = .clear
 
-        // style.showMediQuoBackgroundImage = false
+        style.showMediQuoBackgroundImage = false
         style.secondaryTintColor = UIColor(from: 0x0059A6)
 
+        style.messageTextOutgoingColor = UIColor(red: 0x4D / 255.0, green: 0x4E / 255.0, blue: 0x52 / 255.0, alpha: 1.0)
+        style.messageTextIncomingColor = .white
+        style.bubbleBackgroundOutgoingColor = UIColor(from: 0xEEEEEE)
+        style.bubbleBackgroundIncomingColor = UIColor(from: 0x00BAF3)
+        
         style.showCollegiateNumber = true
 
         // MARK: VideoCall
