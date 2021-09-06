@@ -30,6 +30,7 @@
 		69BC17DD1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
 		69BC17DE1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
 		69BC17DF1FBC8DB20025CC42 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17DC1FBC8DB20025CC42 /* R.generated.swift */; };
+		6D74245026E5FBCA0095EB79 /* MediQuo+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D74244F26E5FBC90095EB79 /* MediQuo+Credentials.swift */; };
 		7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */; };
 		7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C291026E0BADF0053401E /* UIImage+Extension.swift */; };
 		7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */; };
@@ -43,7 +44,6 @@
 		7E806C3E26C6497A0028EDE7 /* MenuTypeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E806C3D26C6497A0028EDE7 /* MenuTypeSelectorViewController.swift */; };
 		7EEAC5B826DE365300AC98C1 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAC5B726DE365300AC98C1 /* VideoCallViewController.swift */; };
 		B3565D1CDAFF54941230FBE6 /* Pods_Mediquo_Swift_Example_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57284A39BF8365109D49BDE7 /* Pods_Mediquo_Swift_Example_AppUITests.framework */; };
-		D585EEF521E6173300D3A21B /* MediQuo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D585EEF421E6173300D3A21B /* MediQuo+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +87,7 @@
 		69BC17D81FBC8BDC0025CC42 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = ../es.lproj/Main.strings; sourceTree = "<group>"; };
 		69BC17D91FBC8BDD0025CC42 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69BC17DC1FBC8DB20025CC42 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		6D74244F26E5FBC90095EB79 /* MediQuo+Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MediQuo+Credentials.swift"; sourceTree = "<group>"; };
 		7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7E1C291026E0BADF0053401E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerTopContentView.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		7F1CFB0FFC99E389E8493633 /* Pods-Mediquo Swift Example AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppTests.release.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppTests/Pods-Mediquo Swift Example AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2409A0ED53EEC3681F36976 /* Pods-Mediquo Swift Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example App.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App.debug.xcconfig"; sourceTree = "<group>"; };
 		BCE44589007CE2B913FF75F6 /* Pods_Mediquo_Swift_Example_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D585EEF421E6173300D3A21B /* MediQuo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediQuo+Extension.swift"; sourceTree = "<group>"; };
 		ED50C3CBF6D7E4150331F618 /* Pods-Mediquo Swift Example AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppUITests/Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,7 +277,7 @@
 		D585EEF321E6164A00D3A21B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D585EEF421E6173300D3A21B /* MediQuo+Extension.swift */,
+				6D74244F26E5FBC90095EB79 /* MediQuo+Credentials.swift */,
 				7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */,
 				7E1C291026E0BADF0053401E /* UIImage+Extension.swift */,
 			);
@@ -628,10 +628,10 @@
 				7E225C2A26DCC5AC00D54957 /* MediquoSwiftExampleAppPlugin.swift in Sources */,
 				7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */,
 				7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */,
+				6D74245026E5FBCA0095EB79 /* MediQuo+Credentials.swift in Sources */,
 				69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */,
 				7E1C299D26E1058F0053401E /* DividerContentView.swift in Sources */,
 				7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */,
-				D585EEF521E6173300D3A21B /* MediQuo+Extension.swift in Sources */,
 				69BC17DD1FBC8DB20025CC42 /* R.generated.swift in Sources */,
 				7E6C710E26CFAD8900DC46E9 /* MenuOptionSelectorTableViewModel.swift in Sources */,
 				7E5C3A7826CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift in Sources */,
