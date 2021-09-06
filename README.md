@@ -764,9 +764,9 @@ There are some notifications of events that can be observed by the integrator.
 
         Cuándo se notifica -> Cuando el usuario recibe una push de NPS
 
-        Clave del modelo de datos -> Notification.Key.MediQuo.Message.Read
+        Clave del modelo de datos -> nil
 
-        Clase del modelo de datos -> MediQuoMessage
+        Clase del modelo de datos -> nil
 
 - Notification.Name.MediQuoVideoCall.Push (se envía y se observa en el SDK):
 

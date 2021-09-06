@@ -114,10 +114,100 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 18 images.
   struct image {
+    /// Image `AllergiesIcon`.
+    static let allergiesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergiesIcon")
+    /// Image `AllergyRateOff`.
+    static let allergyRateOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOff")
+    /// Image `AllergyRateOn`.
+    static let allergyRateOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "AllergyRateOn")
+    /// Image `Back`.
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
+    /// Image `CellArrow`.
+    static let cellArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "CellArrow")
+    /// Image `Chat`.
+    static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Chat")
+    /// Image `DerivationsIcon`.
+    static let derivationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DerivationsIcon")
+    /// Image `DiseasesIcon`.
+    static let diseasesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "DiseasesIcon")
     /// Image `Fingerprint`.
     static let fingerprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fingerprint")
+    /// Image `Icon`.
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `MedicalHistory`.
+    static let medicalHistory = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicalHistory")
+    /// Image `MedicationsIcon`.
+    static let medicationsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MedicationsIcon")
+    /// Image `MyDocumentsIcon`.
+    static let myDocumentsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MyDocumentsIcon")
+    /// Image `RecipeIcon`.
+    static let recipeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "RecipeIcon")
+    /// Image `VideoCallCamera`.
+    static let videoCallCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallCamera")
+    /// Image `VideoCallReportIcon`.
+    static let videoCallReportIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoCallReportIcon")
+    /// Image `download`.
+    static let download = Rswift.ImageResource(bundle: R.hostingBundle, name: "download")
+    /// Image `videoCallDoctorNotAssigned`.
+    static let videoCallDoctorNotAssigned = Rswift.ImageResource(bundle: R.hostingBundle, name: "videoCallDoctorNotAssigned")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergiesIcon", bundle: ..., traitCollection: ...)`
+    static func allergiesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergiesIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergyRateOff", bundle: ..., traitCollection: ...)`
+    static func allergyRateOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergyRateOff, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AllergyRateOn", bundle: ..., traitCollection: ...)`
+    static func allergyRateOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.allergyRateOn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "CellArrow", bundle: ..., traitCollection: ...)`
+    static func cellArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cellArrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Chat", bundle: ..., traitCollection: ...)`
+    static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "DerivationsIcon", bundle: ..., traitCollection: ...)`
+    static func derivationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.derivationsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "DiseasesIcon", bundle: ..., traitCollection: ...)`
+    static func diseasesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.diseasesIcon, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Fingerprint", bundle: ..., traitCollection: ...)`
@@ -125,6 +215,103 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.fingerprint, compatibleWith: traitCollection)
     }
     #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MedicalHistory", bundle: ..., traitCollection: ...)`
+    static func medicalHistory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.medicalHistory, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MedicationsIcon", bundle: ..., traitCollection: ...)`
+    static func medicationsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.medicationsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MyDocumentsIcon", bundle: ..., traitCollection: ...)`
+    static func myDocumentsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.myDocumentsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "RecipeIcon", bundle: ..., traitCollection: ...)`
+    static func recipeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recipeIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "VideoCallCamera", bundle: ..., traitCollection: ...)`
+    static func videoCallCamera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallCamera, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "VideoCallReportIcon", bundle: ..., traitCollection: ...)`
+    static func videoCallReportIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallReportIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "download", bundle: ..., traitCollection: ...)`
+    static func download(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.download, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "videoCallDoctorNotAssigned", bundle: ..., traitCollection: ...)`
+    static func videoCallDoctorNotAssigned(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCallDoctorNotAssigned, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `DividerContentView`.
+    static let dividerContentView = _R.nib._DividerContentView()
+    /// Nib `DividerTopContentView`.
+    static let dividerTopContentView = _R.nib._DividerTopContentView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DividerContentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dividerContentView) instead")
+    static func dividerContentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dividerContentView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DividerTopContentView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dividerTopContentView) instead")
+    static func dividerTopContentView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dividerTopContentView)
+    }
+    #endif
+
+    static func dividerContentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerContentView? {
+      return R.nib.dividerContentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerContentView
+    }
+
+    static func dividerTopContentView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerTopContentView? {
+      return R.nib.dividerTopContentView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerTopContentView
+    }
 
     fileprivate init() {}
   }
@@ -204,9 +391,50 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _DividerTopContentView.validate()
+    }
+
+    struct _DividerContentView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DividerContentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerContentView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerContentView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DividerTopContentView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DividerTopContentView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DividerTopContentView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DividerTopContentView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "VideoCallCamera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'VideoCallCamera' is used in nib 'DividerTopContentView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -237,14 +465,32 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = MenuTypeSelectorViewController
 
       let bundle = R.hostingBundle
+      let menuOptionSelectorTableViewController = StoryboardViewControllerResource<MenuOptionSelectorTableViewController>(identifier: "MenuOptionSelectorTableViewController")
+      let menuTypeSelectorViewController = StoryboardViewControllerResource<MenuTypeSelectorViewController>(identifier: "MenuTypeSelectorViewController")
       let name = "Main"
+      let tabBarMenuViewController = StoryboardViewControllerResource<TabBarMenuViewController>(identifier: "TabBarMenuViewController")
+
+      func menuOptionSelectorTableViewController(_: Void = ()) -> MenuOptionSelectorTableViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuOptionSelectorTableViewController)
+      }
+
+      func menuTypeSelectorViewController(_: Void = ()) -> MenuTypeSelectorViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuTypeSelectorViewController)
+      }
+
+      func tabBarMenuViewController(_: Void = ()) -> TabBarMenuViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tabBarMenuViewController)
+      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().menuOptionSelectorTableViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuOptionSelectorTableViewController' could not be loaded from storyboard 'Main' as 'MenuOptionSelectorTableViewController'.") }
+        if _R.storyboard.main().menuTypeSelectorViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuTypeSelectorViewController' could not be loaded from storyboard 'Main' as 'MenuTypeSelectorViewController'.") }
+        if _R.storyboard.main().tabBarMenuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tabBarMenuViewController' could not be loaded from storyboard 'Main' as 'TabBarMenuViewController'.") }
       }
 
       fileprivate init() {}
