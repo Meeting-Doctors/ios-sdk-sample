@@ -8,6 +8,7 @@
 
 import UIKit
 import MediQuo
+import Firebase
 import MediQuoSchema
 import MediQuoController
 import AppTrackingTransparency
@@ -15,6 +16,8 @@ import AppTrackingTransparency
 class MenuTypeSelectorViewController: UIViewController {
     
     private var isAuthenticated: Bool = false
+    
+    var pendingDeeplinkOption: MediQuoDeeplinkOption = .unknown
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -274,10 +277,32 @@ class MenuTypeSelectorViewController: UIViewController {
     
     private func doLogin(completion: ((Bool) -> Void)? = nil) {
         let userToken: String = MediQuo.getUserToken()
-        MediQuo.authenticate(token: userToken) {
-            let success = $0.isSuccess
-            self.isAuthenticated = success
-            if let completion = completion { completion(success) }
+        MediQuo.authenticate(token: userToken) { [weak self] (result: MediQuoResult<Void>) in
+            
+            let success = result.isSuccess
+            
+            if result.isSuccess {
+                self?.isAuthenticated = success
+                
+                Messaging.messaging().token { token, error in
+                    if let token = token {
+                        MediQuo.registerFirebaseForNotifications(token: token) { result in
+                            result.process(doSuccess: { _ in
+                                NSLog("[FirebaseApplicationPlugin] Token registered correctly")
+                                completion?(success)
+                            }, doFailure: { error in
+                                NSLog("[FirebaseApplicationPlugin] Error registering token: \(error)")
+                                completion?(success)
+                            })
+                        }
+                    } else if let error = error {
+                        NSLog("[FirebaseApplicationPlugin] Error getting token from firebase: \(error)")
+                        completion?(success)
+                    }
+                }
+            } else {
+                completion?(success)
+            }
         }
     }
 
@@ -342,5 +367,19 @@ class MenuTypeSelectorViewController: UIViewController {
         }
 
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+}
+
+extension MenuTypeSelectorViewController: MediQuoDeeplinkViewControllerProtocol {
+    public func deeplink(_ deeplinkOption: MediQuoDeeplinkOption, animated _: Bool) -> Bool {
+        if let bottomBarViewController = self.presentedViewController as? MenuTypeSelectorViewController {
+            // deeplinkFromInside
+            return bottomBarViewController.deeplink(deeplinkOption, animated: false)
+        } else {
+            // deeplinkFromOutside
+            self.pendingDeeplinkOption = deeplinkOption
+            return true
+        }
+        return true
     }
 }

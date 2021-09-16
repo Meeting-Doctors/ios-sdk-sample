@@ -8,6 +8,7 @@
 
 import UIKit
 import MediQuo
+import Firebase
 
 class MenuOptionSelectorTableViewController: UIViewController {
 
@@ -43,29 +44,15 @@ class MenuOptionSelectorTableViewController: UIViewController {
         
         tableView.bounces = false
         
-        doLogin { [weak self] (isSuccess) in
-            
-            guard let strongSelf = self else { return }
-            
-            if isSuccess {
-                strongSelf.viewModel.registerCellViewModels(onVC: self)
-                
-                strongSelf.tableView.delegate = self
-                strongSelf.tableView.dataSource = self
-                strongSelf.tableView.reloadData()
-            }
-        }
+        
+        self.viewModel.registerCellViewModels(onVC: self)
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
         
     }
     
-    private func doLogin(completion: ((Bool) -> Void)? = nil) {
-        let userToken: String = MediQuo.getUserToken()
-        MediQuo.authenticate(token: userToken) {
-            let success = $0.isSuccess
-            self.isAuthenticated = success
-            if let completion = completion { completion(success) }
-        }
-    }
 }
 
 extension MenuOptionSelectorTableViewController: UITableViewDelegate, UITableViewDataSource {

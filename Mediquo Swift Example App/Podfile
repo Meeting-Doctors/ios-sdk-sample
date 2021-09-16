@@ -7,8 +7,17 @@ def shared_pods
     pod 'MediQuo'
 end
 
+def firebase_pods
+    pod 'Firebase/Crashlytics'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Installations'
+end
+
 target 'Mediquo Swift Example App' do
   shared_pods
+  firebase_pods
 
   target 'Mediquo Swift Example AppTests' do
     inherit! :search_paths
