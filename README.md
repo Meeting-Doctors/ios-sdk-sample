@@ -472,6 +472,36 @@ extension ApplicationDelegate: MessagingDelegate {
 }
 ````
 
+If the user is not authenticated, the previous function won't succeed so you will have to implement the same function in the succeed's callback of the authenticate function and it will register firebase token:
+
+````swift
+MediQuo.authenticate(token: userToken) { [weak self] (result: MediQuoResult<Void>) in
+    
+    let success = result.isSuccess
+    
+    if result.isSuccess {
+        self?.isAuthenticated = success
+        
+        Messaging.messaging().token { token, error in
+            if let token = token {
+                MediQuo.registerFirebaseForNotifications(token: token) { result in
+                    result.process(doSuccess: { _ in
+                        NSLog("[FirebaseApplicationPlugin] Token registered correctly")
+                        completion?(success)
+                    }, doFailure: { error in
+                        NSLog("[FirebaseApplicationPlugin] Error registering token: \(error)")
+                        completion?(success)
+                    })
+                }
+            } else if let error = error {
+                NSLog("[FirebaseApplicationPlugin] Error getting token from firebase: \(error)")
+                completion?(success)
+            }
+        }
+    }
+    ...
+````
+
 Now, the app can receive chat notifications. After that you must pass notifications to library methods to process the Push Notification info:
 
 ```swift
