@@ -34,6 +34,16 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 
 ---
 
+### 3.1.9: Sep 09, 2021
+  * Add new speciality - veterinary
+
+### 3.1.8: Sep 07, 2021
+ * Update OpenTok to version 2.20.1
+ * Fix Overview to not nullable
+ * Fix multiline disconected professional text
+ * Fix multiple tones on videocall
+ * Fix clear background avatar on professional list
+
 ### 3.1.7
 Released: Aug 09, 2021
 
