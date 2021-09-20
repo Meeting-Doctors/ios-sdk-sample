@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Permisos de micro</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,14 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MediQuoClientName</key>
-	<string>MediQuo</string>
-	<key>MediQuoClientSecret</key>
-	<string>qJbB9tEqtdG4MsVb</string>
-	<key>MediQuoUserToken</key>
-	<string>600000015</string>
 	<key>NSCameraUsageDescription</key>
 	<string>#NSCameraUsageDescription</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Permisos de micro</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>#NSPhotoLibraryUsageDescription</string>
 	<key>NSUserTrackingUsageDescription</key>
@@ -50,8 +44,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
