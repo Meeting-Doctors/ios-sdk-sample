@@ -17,7 +17,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 #### 3.x Releases
 - `3.0.x` Releases - [3.0.7](#307) | [3.0.8](#308) | [3.0.9](#309) | [3.0.10](#3010) | [3.0.11](#3011) | [3.0.12](#3012) | [3.0.13](#3013) | [3.0.14](#3014) | [3.0.15](#3015) | [3.0.16](#3016) | [3.0.17](#3017) | [3.0.18](#3018) | [3.0.19](#3019) | [3.0.20](#3020) | [3.0.21](#3021) | [3.0.22](#3022) | [3.0.23](#3023) | [3.0.24](#3024) | [3.0.25](#3025) | [3.0.26](#3026) | [3.0.27](#3027) | [3.0.28](#3028) | [3.0.29](#3029) | [3.0.30](#3030) | [3.0.31](#3031) | [3.0.32](#3032) | [3.0.33](#3033) | [3.0.34](#3034) | [3.0.35](#3035) | [3.0.36](#3036)
 
-- `3.1.x` Releases - [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.1.6](#316) | [3.1.7](#317)
+- `3.1.x` Releases - [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.1.6](#316) | [3.1.7](#317) | [3.1.8](#318) | [3.1.9](#319) | [3.1.10](#3110)
+
+- `3.2.x` Releases - [3.2.0](#320)
 
 #### 2.x Releases
 - `2.0.x` Releases - [2.0.7](#207)
@@ -34,10 +36,25 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 
 ---
 
-### 3.1.9: Sep 09, 2021
+### 3.2.0
+Released: Sep 22, 2021
+ * Added support to Xcode 13
+ * Fix user token refresh policy
+ 
+### 3.1.10
+Released: Sep 27, 2021
+
+ * Fix user token refresh policy
+ * Force Light mode in UI
+
+### 3.1.9
+Released: Sep 09, 2021
+
   * Add new speciality - veterinary
 
-### 3.1.8: Sep 07, 2021
+### 3.1.8
+Released: Sep 07, 2021
+
  * Update OpenTok to version 2.20.1
  * Fix Overview to not nullable
  * Fix multiline disconected professional text
@@ -47,7 +64,6 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 ### 3.1.7
 Released: Aug 09, 2021
 
-#### Added
   * Launch VC when calling push arrive
   * Bug fixed when an specialist has not a 5 days schedule with the same working hours every day
 
@@ -55,7 +71,6 @@ Released: Aug 09, 2021
 ### 3.1.6
 Released:  Jul 28, 2021
 
-#### Added
   * Added new specialities: doctroGoHealthAdvisor, fitnessCoaching, nutritionalCoaching
   * Fix issue on logout with Medical History active flag
   * Fix issue on VideoCallWaitingViewController buttons and status
@@ -64,46 +79,39 @@ Released:  Jul 28, 2021
 ## 3.1.5
 Released: Jun 29, 2021
 
-#### Added
  * Added new method to allow userInfo to MediQuoDeeplinkOption conversion
 
 
 ## 3.1.4
 Released: May 18, 2021
 
-#### Added
  * Update keychain get/set password to restore it when user unlock device for first time
 
 ## 3.1.3
 Released: May 17, 2021
 
-#### Added
  * Update OpenTok to 2.19.1
 
 ## 3.1.2
 Released: May 14, 2021
 
-#### Added
  * Apply full fixing to videocall workflow
  * Added support to Staging
 
 ## 3.1.1
 Released: April 12, 2021
 
-#### Added
  * First update to JFrog
 
 ## 3.1.0
 Released: March 8, 2021
 
-#### Added
  * Added support to Xcode 12.1
 
 ## 4.0.8
 Released: February 2, 2021
 
-#### Added
-* Fix English strings
+ * Fix English strings
  * Update VideoCall and Prescription English strings
  * Update message when professional is disconnected
  * Added Medical History Options parameter
@@ -144,26 +152,22 @@ Released: February 2, 2021
 ## 3.0.42
 Released: March 30, 2021
 
-#### Added
  * Fix images sended resolution
  * Fix chat input disappear 
 
 ## 3.0.41
 Released: March 29, 2021
 
-#### Added
 * Fix videocall black screen
 
 ## 3.0.40
 Released: March 10, 2021
 
-#### Added
 * Fix medical history tableview footer
 
 ## 3.0.39
 Released: March 09, 2021
 
-#### Added
  * Fix medical history - Referrals literal
  * Fix medical history - appearance of allergies / diseases / medications deleted from another device
  * Fix medical history labels to allow multiline
@@ -171,26 +175,22 @@ Released: March 09, 2021
 ## 3.0.38
 Released: March 05, 2021
 
-#### Added
 * Fix medical history banner height in iPhoneSE
 
 ## 3.0.37
 Released: March 03, 2021
 
-#### Added
 * Fix placeholder when paste more than 256 characters
 
 ## 3.0.36
 Released: March 01, 2021
 
-#### Added
  * Allow possibility to put custom literals on precall view
  * Allow possibility to put custom literals on recipe body/empty
  
 ## 3.0.35
 Released: Feb 25, 2021
 
-#### Added
  * Diseases cell image removed
  * Fix diseases date selection
  * Fix report cell textColor
@@ -198,20 +198,17 @@ Released: Feb 25, 2021
 ## 3.0.34
 Released: Feb 23, 2021
 
-#### Added
  * Fix label counter
  * Remove SwiftyMarkdown
 
 ## 3.0.33
 Released: Feb 22, 2021
 
-#### Added
  * Fix no connection message on placeholder
 
 ## 3.0.32
 Released: Feb 18, 2021
 
-#### Added
  * Added NPS support
  * Added recipe footer
  * Removed Medical history watermark
@@ -226,7 +223,6 @@ Released: Feb 18, 2021
 ## 4.0.8
 Released: Feb 2, 2021
 
-#### Added
  * Fix English strings
  * Update VideoCall and Prescription English strings
  * Update message when professional is disconnected
@@ -258,70 +254,58 @@ Released: Feb 2, 2021
 ## 3.0.31
 Released: Jan 15, 2021
 
-#### Added
  * Fix socket WatchDog behaviour
  * Fix conversation options in iPad
  
 ## 3.0.30
 Released: Dec 28, 2020
  
-#### Added
  * Fix Portuguese strings
 
 ## 3.0.29
 Released: Dec 18, 2020
  
-#### Added
- * Update Dev certificate
+* Update Dev certificate
 
 ## 3.0.28
 Released: Dec 15, 2020
- 
-#### Added
+
  * Added flags to medical history
  * Added new specialty 'customerCareIsaludColectivos'
 
 ## 3.0.27
-Released: Nov 24, 2020
- 
-#### Added
+Released: Nov 24, 2020 
+
  * Added portuguese literals
 
 ## 3.0.26
 Released: Nov 11, 2020
 
-#### Added
  * Update Medical History Texts
 
 ## 3.0.25
 Released: Oct 29, 2020
 
-#### Added
 * Added Medical History Options parameter
 
 ## 3.0.24
 Released: Oct 19, 2020
 
-#### Added
  * Update message when professional is disconnected
-
 
 ## 3.0.23
 Released: Oct 15, 2020
 
-#### Added
  * Fix English strings
 
 ## 3.0.22
 Released: Oct 15, 2020
 
-#### Added
  * Update VideoCall and Prescription English strings
 
 ## 4.0.7
 Released: Sept 17, 2020
 
-#### Added
 * Added firebase token cache, now integrator don't need to resend firebase token after sdk authentication
 * Added new parameter video_call_1to1
 * Added My Documents section in Medical history
@@ -330,92 +314,78 @@ Released: Sept 17, 2020
 ## 3.0.21
 Released: Sept 16, 2020
 
-#### Added
 * Added My Documents section in Medical history
 * Added digital prescription
 
 ## 3.0.20
 Released: Sept 4, 2020
 
-#### Added
 * Added firebase token cache, now integrator don't need to resend firebase token after sdk authentication
 * Added new parameter video_call_1to1
 
 ## 4.0.6
 Released: Aug 17, 2020
 
-#### Added
 * Added support to hide professional schedule in professional list
 
 ## 3.0.19
 Released: Aug 17, 2020
 
-#### Added
 * Added support to hide professional schedule in professional list
 
 ## 3.0.18
 Released: Jul 16, 2020
 
-#### Added
 * Added support to videocall 1to1
 
 ## 4.0.5
 Released: Jul 16, 2020
 
-#### Added
 * Fix force professional list refresh by notification
 * Added support to videocall 1to1
 
 ## 3.0.17
 Released: Jul 15, 2020
 
-#### Added
 * Fix force professional list refresh by notification
 
 ## 4.0.4
 Released: Jul 14 2020
 
-#### Added
 * Added notification to force professional list to update
 * Added emptyView property for professional list
 
 ## 3.0.16
 Released: Jul 14, 2020
 
-#### Added
 * Added notification to force professional list to update
 * Added emptyView property for professional list
 
 ## 4.0.3
 Released: Jul 7, 2020
 
-#### Added
 * Added call to remove auth token from server
 
 ## 3.0.15
 Released: Jul 7, 2020
 
-#### Added
 * Added call to remove auth token from server
 
 ## 4.0.2
 Released: Jun 19, 2020
 
-#### Added
 * Added methods to encrypt sensitive data
 * Remove cached request from backend
 
 ## 3.0.14
 Released: Jun 18, 2020
 
-#### Added
 * Added methods to encrypt sensitive data
 * Remove cached request from backend
 
 ## 4.0.1
 Released: May 15,2020
 
-#### Added
 * Added isAuthenticated flag
 * Added deregister Push Token when integrator calls logout function
 * Added "user not loged" error when integrator tries to register the push notification
@@ -423,7 +393,6 @@ Released: May 15,2020
 ## 3.0.13
 Released: May 15,2020
 
-#### Added
 * Added isAuthenticated flag
 * Added deregister Push Token when integrator calls logout function
 * Added "user not loged" error when integrator tries to register the push notification
@@ -431,14 +400,12 @@ Released: May 15,2020
 ## 3.0.12
 Released: May 5,2020
 
-#### Added
 * Added block Videocall feature for forbidden users (when videocall is disabled for user)
 * Fix UI present feature when sdk uses VideoCall flow (iOS 13 issue)
 
 ## 4.0.0
 Released: May 5,2020
 
-#### Added
 * Added Module stability support (support Xcode 11+)
 * Added block Videocall feature for forbidden users (when videocall is disabled for user)
 * Fix UI present feature when sdk uses VideoCall flow (iOS 13 issue)
@@ -446,55 +413,46 @@ Released: May 5,2020
 ## 3.0.11
 Released 2020-04-05
 
-#### Added
 * Added block Videocall feature for forbidden users (when videocall is disabled for user)
 * Added Portuguese language
 
 ## 3.0.10
 Released: Apr 2,2020
 
-#### Added
 * Added basque language
 
 ### 3.0.9
 Released: Mar 27, 2020
 
-#### Added
 * Change VideoCall waiting screen text ("Danos unos instantes,\nahora verás en pantalla\nla llamada de tu médico...")
 
 ## 3.0.8
 Released: Mar 20, 2020
 
-#### Added
 * Fix inbox title
 * Fix refresh control behaviour in inbox screen
 
 ## 3.0.7
 Released: Mar 5, 2020
 
-#### Added
 * Remove receiveFirstMessage, receive and receiveMessage from MediQuo class.(March 5, 2020)
 * Update RxSwift to fix UIWebView issue
 
 ## 2.0.7
 Released: Mar 5, 2020
 
-#### Added
 * Remove receiveFirstMessage, receive and receiveMessage from MediQuo class.
 * Update RxSwift to fix UIWebView issue
 
 ## 1.0.7
 Released: Mar 5, 2020
 
-#### Added
 * Remove receiveFirstMessage, receive and receiveMessage from MediQuo class
 * Update RxSwift to fix UIWebView issue
-
 
 ## 0.15.5
 Released: Jan 24, 2018
 
-#### Added
 - `MediQuoRole.sexology` speciality.
 
 #### Updated
@@ -520,7 +478,6 @@ Released: Jan 18, 2018
 ## 0.15.2
 Released: Jan 18, 2018
 
-#### Added
 - `navigationBarBackIndicatorImage` style property overrides default image for navigation bar back button.
 
 #### Improved
@@ -542,7 +499,6 @@ Released: Jan 17, 2018
 ## 0.15.0
 Released: Jan 15, 2018
 
-#### Added
 - Contact profile layout and properties.
 - Call to update user information.
 - Navigation to the contact profile from the messages.
@@ -603,7 +559,6 @@ Released: Dec 22, 2017
 ## 0.14.0
 Released: Dec 20, 2017
 
-#### Added
 - Link detector types for links in users conversations.
 - Tap file message event to download content.
 
@@ -623,7 +578,6 @@ Released: Dec 19, 2017
 ## 0.13.0
 Released: Dec 18, 2017
 
-#### Added
 - `shutdown` method dettaches user connections and wipes out stored user information.
 
 #### Fixed
@@ -634,7 +588,6 @@ Released: Dec 18, 2017
 ## 0.12.0
 Released: Dec 11, 2017
 
-#### Added
 - `preferredStatusBarStyle` exposes default `UIStatusBarStyle` used in framework controllers.
 - `MediQuoDividerType` protocol enables interaction with inbox contact list items by allowing to include a custom view and react to user item selections.
 - Generic `MediQuoDivider` builder to configure an inbox list divider view group.
@@ -651,7 +604,6 @@ Released: Dec 11, 2017
 ## 0.11.0
 Released: Dec 3, 2017
 
-#### Added
 - Expose inbox contact list professional schedule.
 - Full database encryption (per device installation keychain key) for release distributions.
 - Sorted inbox contact list by marketing criterias.
