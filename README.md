@@ -34,6 +34,7 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 ## Requirements
 
 **Please make sure you are using the last Xcode compatible with our SDK**
+
 | **Swift** | **Xcode** |   **MediQuo**  | **iOS** | **Status** |
 |-----------|-----------|----------------|---------|------------|
 | 4.2       | 10.0 | 1.x.x | 11.0+ | Deprecated |
