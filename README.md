@@ -41,8 +41,8 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 | 5.0       | 10.2 | 2.x.x | 11.0+ | Deprecated |
 | 5.1       | 11, 11.1 | 3.0.x | 11.0+ | Deprecated |
 | 5.1       | 11.x | 4.0.x | 13.0+ | Deprecated |
-| 5.3       | 12.1 | 3.1.x | 11.0+ | Supported (Deprecate soon) |
-| 5.5       | 13 | 3.2.x | 11.0+ | On testing Process |
+| 5.3       | 12.1 | 3.1.x | 11.0+ | Deprecated |
+| 5.5       | 13 | 3.2.x | 11.0+ | Supported |
 
 In order to check the last updates please check our [changelog](https://bitbucket.org/meetingdoctors-team/ios-sdk-sample/src/master/CHANGELOG.md).
 
