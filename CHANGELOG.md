@@ -38,15 +38,18 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 
 ### 3.2.2
 Released:  Nov 04, 2021
+
  * Fix navigation bar color for iOS 15
 
 ### 3.2.1
 Released: Oct 21, 2021
+
  * Fix chat loading for iOS 15
  * Release candidate
 
 ### 3.2.0
 Released: Sep 22, 2021
+
  * Added support to Xcode 13
  * Fix user token refresh policy
  
