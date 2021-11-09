@@ -19,7 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 
 - `3.1.x` Releases - [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.1.6](#316) | [3.1.7](#317) | [3.1.8](#318) | [3.1.9](#319) | [3.1.10](#3110)
 
-- `3.2.x` Releases - [3.2.0](#320) | [3.2.1](#321)
+- `3.2.x` Releases - [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322)
 
 #### 2.x Releases
 - `2.0.x` Releases - [2.0.7](#207)
@@ -36,6 +36,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 
 ---
 
+### 3.2.2
+Released:  Nov 04, 2021
+ * Fix navigation bar color for iOS 15
 
 ### 3.2.1
 Released: Oct 21, 2021
