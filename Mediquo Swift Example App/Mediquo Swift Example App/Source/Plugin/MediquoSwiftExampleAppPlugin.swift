@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MediQuo
+import MeetingDoctorsSDK
 
 class MediquoSwiftExampleAppPlugin: NSObject {
 
@@ -77,7 +77,7 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.strings.mediQuoVideoCallStrings.videoCallPrepareCallingDoctorCurrentStatusCall = "Preparando videollamada."
         style.strings.mediQuoVideoCallStrings.videoCallPrepareCallingDoctorNextAppointment = "Siguiente cita."
         style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorAssignedDoctor = "Médico asignado."
-        style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorCurrentStatusCall = "Esperando al médico."
+        style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorCurrentStatusCall = "Esperando al médico..."
         style.strings.mediQuoVideoCallStrings.videoCallWaitingDoctorNextAppointment = "Esperando al siguiente médico."
         
         

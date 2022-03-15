@@ -6,19 +6,19 @@
 //  Copyright © 2019 Edgar Paz Moreno. All rights reserved.
 //
 
-import MediQuo
+import MeetingDoctorsSDK
 
 extension MediQuo {
     
     internal static func getUserToken() -> String {
-        return <#your demo user token#>
+        return "MeetingDoctors"
     }
 
     internal static func getClientName() -> String? {
-        return <#your company name#>
+        return "MeetingDoctors"
     }
 
     internal static func getClientSecret() -> String? {
-        return  <#your API Key#>
+        return  "jmUCkN9AqnY25RJS"
     }
 }

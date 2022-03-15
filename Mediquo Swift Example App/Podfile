@@ -4,7 +4,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MediQuo'
+    pod 'MeetingDoctorsSDK', '3.2.8-xcframe.10'
 end
 
 def firebase_pods
