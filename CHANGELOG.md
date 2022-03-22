@@ -12,14 +12,14 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 ## Table of contents
 
 #### 4.x Releases
-- `4.0.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402) | [4.0.3](#403) | [4.0.4](#404) | [4.0.5](#405) | [4.0.6](#406) | [4.0.7](#407) | [4.0.8](#408)  
+- `4.0.x` Releases - [4.0.0](#400)
 
 #### 3.x Releases
 - `3.0.x` Releases - [3.0.7](#307) | [3.0.8](#308) | [3.0.9](#309) | [3.0.10](#3010) | [3.0.11](#3011) | [3.0.12](#3012) | [3.0.13](#3013) | [3.0.14](#3014) | [3.0.15](#3015) | [3.0.16](#3016) | [3.0.17](#3017) | [3.0.18](#3018) | [3.0.19](#3019) | [3.0.20](#3020) | [3.0.21](#3021) | [3.0.22](#3022) | [3.0.23](#3023) | [3.0.24](#3024) | [3.0.25](#3025) | [3.0.26](#3026) | [3.0.27](#3027) | [3.0.28](#3028) | [3.0.29](#3029) | [3.0.30](#3030) | [3.0.31](#3031) | [3.0.32](#3032) | [3.0.33](#3033) | [3.0.34](#3034) | [3.0.35](#3035) | [3.0.36](#3036)
 
 - `3.1.x` Releases - [3.1.0](#310) | [3.1.1](#311) | [3.1.2](#312) | [3.1.3](#313) | [3.1.4](#314) | [3.1.5](#315) | [3.1.6](#316) | [3.1.7](#317) | [3.1.8](#318) | [3.1.9](#319) | [3.1.10](#3110)
 
-- `3.2.x` Releases - [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322)
+- `3.2.x` Releases - [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.2.6](#326) | [3.2.7](#327) | [3.2.8](#328) | [3.2.9](#329)
 
 #### 2.x Releases
 - `2.0.x` Releases - [2.0.7](#207)
@@ -35,6 +35,45 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 - `0.11.x` Releases - [0.11.0](#0110)
 
 ---
+
+### 4.0.0: Mar 21, 2022
+ * Add support to XCFrameworks
+
+### 3.2.9: Feb 14, 2022
+ * Fix setup
+ * Fix socket connection
+ * Medical History title variable
+ * Fix rx MedicalDirectory
+
+### 3.2.8: Feb 02, 2022
+ * Fix rx authenticate
+ * Fix socket
+ * Add T&C
+ * Fix bug Videocall end call button
+ * AR literas
+ * EN literas
+ * Status bar depending on luminance
+ * Hide tabBar on all MedicalHistory screens
+
+### 3.2.7: Jan 17, 2022
+ * Fix async thread on Medical History
+
+### 3.2.6: Dec 20, 2021
+ * Avoid Storage Rx Thread, now use async thread
+
+### 3.2.5: Dec 13, 2021
+ * Fix not responding authenticate SDK call
+
+### 3.2.4: Dec 09, 2021
+ * Check push notifications are enabled before videocall is launched
+ * Fix not responding keyboard after send a message
+ * Fix infinite spiner in chat message screen
+
+### 3.2.3: Nov 23, 2021
+ * Welcome message implemented
+ * Message pushes with professional hash instead of roomId
+ * DEV certificated updated (lasts 16/11/2022)
+ * Check videocall permissions
 
 ### 3.2.2
 Released:  Nov 04, 2021
@@ -79,7 +118,6 @@ Released: Aug 09, 2021
   * Launch VC when calling push arrive
   * Bug fixed when an specialist has not a 5 days schedule with the same working hours every day
 
-
 ### 3.1.6
 Released:  Jul 28, 2021
 
@@ -87,12 +125,10 @@ Released:  Jul 28, 2021
   * Fix issue on logout with Medical History active flag
   * Fix issue on VideoCallWaitingViewController buttons and status
 
-
 ## 3.1.5
 Released: Jun 29, 2021
 
  * Added new method to allow userInfo to MediQuoDeeplinkOption conversion
-
 
 ## 3.1.4
 Released: May 18, 2021
@@ -119,47 +155,6 @@ Released: April 12, 2021
 Released: March 8, 2021
 
  * Added support to Xcode 12.1
-
-## 4.0.8
-Released: February 2, 2021
-
- * Fix English strings
- * Update VideoCall and Prescription English strings
- * Update message when professional is disconnected
- * Added Medical History Options parameter
- * Added portuguese literals
- * Added flags to medical history
- * Added new specialty 'customerCareIsaludColectivos'
- * Update Dev certificate
- * Fix socket WatchDog behaviour
- * Fix conversation options in iPad
- * Added recipe footer
- * Removed Medical history watermark
- * Fix status bar colors
- * Update medical history icons
- * fix conversation options in iPad
- * update bundle from application 
- * fix action sheet on main thread
- * disable send messages when no connection
- * Fix default date today inside Medical History
- * Fix no connection message on placeholder
- * Fix label counter
- * Removed SwiftyMarkdown
- * Diseases cell image removed
- * Fix diseases date selection
- * Fix report cell textColor
- * Allow possibility to put custom literals on precall view
- * Allow possibility to put custom literals on recipe body/empty
- * Fix placeholder when paste more than 256 characters
- * Fix medical history banner height in iPhoneSE
- * Fix medical history - Referrals literal
- * Fix medical history - appearance of allergies / diseases / medications deleted from another device
- * Fix medical history labels to allow multiline
- * Fix medical history tableview footer
- * Fix videocall black screen
- * Fix images sended resolution
- * Fix chat input disappear bug
-
 
 ## 3.0.42
 Released: March 30, 2021
@@ -232,37 +227,6 @@ Released: Feb 18, 2021
  * disable send messages when no connection
  * Fix default date today inside Medical History
 
-## 4.0.8
-Released: Feb 2, 2021
-
- * Fix English strings
- * Update VideoCall and Prescription English strings
- * Update message when professional is disconnected
- * Added Medical History Options parameter
- * Added portuguese literals
- * Added flags to medical history
- * Added new specialty 'customerCareIsaludColectivos'
- * Update Dev certificate
- * Fix socket WatchDog behaviour
- * Fix conversation options in iPad
- * Added recipe footer
- * Removed Medical history watermark
- * Fix status bar colors
- * Update medical history icons
- * fix conversation options in iPad
- * update bundle from application 
- * fix action sheet on main thread
- * disable send messages when no connection
- * Fix default date today inside Medical History
- * Fix no connection message on placeholder
- * Fix label counter
- * Removed SwiftyMarkdown
- * Diseases cell image removed
- * Fix diseases date selection
- * Fix report cell textColor
- * Allow possibility to put custom literals on precall view
- * Allow possibility to put custom literals on recipe body/empty
-
 ## 3.0.31
 Released: Jan 15, 2021
 
@@ -315,14 +279,6 @@ Released: Oct 15, 2020
 
  * Update VideoCall and Prescription English strings
 
-## 4.0.7
-Released: Sept 17, 2020
-
-* Added firebase token cache, now integrator don't need to resend firebase token after sdk authentication
-* Added new parameter video_call_1to1
-* Added My Documents section in Medical history
-* Added digital prescription
-
 ## 3.0.21
 Released: Sept 16, 2020
 
@@ -335,11 +291,6 @@ Released: Sept 4, 2020
 * Added firebase token cache, now integrator don't need to resend firebase token after sdk authentication
 * Added new parameter video_call_1to1
 
-## 4.0.6
-Released: Aug 17, 2020
-
-* Added support to hide professional schedule in professional list
-
 ## 3.0.19
 Released: Aug 17, 2020
 
@@ -350,22 +301,10 @@ Released: Jul 16, 2020
 
 * Added support to videocall 1to1
 
-## 4.0.5
-Released: Jul 16, 2020
-
-* Fix force professional list refresh by notification
-* Added support to videocall 1to1
-
 ## 3.0.17
 Released: Jul 15, 2020
 
 * Fix force professional list refresh by notification
-
-## 4.0.4
-Released: Jul 14 2020
-
-* Added notification to force professional list to update
-* Added emptyView property for professional list
 
 ## 3.0.16
 Released: Jul 14, 2020
@@ -383,24 +322,11 @@ Released: Jul 7, 2020
 
 * Added call to remove auth token from server
 
-## 4.0.2
-Released: Jun 19, 2020
-
-* Added methods to encrypt sensitive data
-* Remove cached request from backend
-
 ## 3.0.14
 Released: Jun 18, 2020
 
 * Added methods to encrypt sensitive data
 * Remove cached request from backend
-
-## 4.0.1
-Released: May 15,2020
-
-* Added isAuthenticated flag
-* Added deregister Push Token when integrator calls logout function
-* Added "user not loged" error when integrator tries to register the push notification
 
 ## 3.0.13
 Released: May 15,2020
@@ -412,13 +338,6 @@ Released: May 15,2020
 ## 3.0.12
 Released: May 5,2020
 
-* Added block Videocall feature for forbidden users (when videocall is disabled for user)
-* Fix UI present feature when sdk uses VideoCall flow (iOS 13 issue)
-
-## 4.0.0
-Released: May 5,2020
-
-* Added Module stability support (support Xcode 11+)
 * Added block Videocall feature for forbidden users (when videocall is disabled for user)
 * Fix UI present feature when sdk uses VideoCall flow (iOS 13 issue)
 

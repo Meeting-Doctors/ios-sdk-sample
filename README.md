@@ -27,7 +27,8 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 - [ Push notifications ](#Push-notifications)
 - [ Videocall ](#Videocall)
 - [ Notifications ](#Notifications)
-- [Migration to 4.0 and 3.0.14+](#Migration-to-4.0-and-3.0.14+)
+- [Migration to 3.0.14+](#Migration-to-3.0.14+)
+- [Migration to 4.0.0+](#Migration-to-4.0.0+)
 - [Uploading app to AppStore](#Uploading-app-to-AppStore)
 
 
@@ -40,7 +41,6 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 | 4.2       | 10.0 | 1.x.x | 11.0+ | Deprecated |
 | 5.0       | 10.2 | 2.x.x | 11.0+ | Deprecated |
 | 5.1       | 11, 11.1 | 3.0.x | 11.0+ | Deprecated |
-| 5.1       | 11.x | 4.0.x | 13.0+ | Deprecated |
 | 5.3       | 12.1 | 3.1.x | 11.0+ | Deprecated |
 | 5.5       | 13, 13.1 | 3.2.x | 11.0+ | Supported |
 
@@ -78,6 +78,7 @@ post_install do |installer|
       end
       config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
     end
   end
 end
@@ -811,9 +812,13 @@ There are some notifications of events that can be observed by the integrator.
 
 
 
-# Migration to 4.0 and 3.0.14+
+# Migration to 3.0.14+
 
-To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new version 4.0 and 3.0.14+, you must change all the references form `MediQuo.Result` to `MediQuoResult`
+To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new 3.0.14+, you must change all the references form `MediQuo.Result` to `MediQuoResult`
+
+# Migration to 4.0.0+
+
+To migrate the SDK from versions 3.2.0 to new version 4.0.0, you must change all the references form `MediQuo.Result` to `MediQuoResult`
 
 # Uploading app to AppStore
 
