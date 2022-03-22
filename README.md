@@ -43,6 +43,7 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 | 5.1       | 11, 11.1 | 3.0.x | 11.0+ | Deprecated |
 | 5.3       | 12.1 | 3.1.x | 11.0+ | Deprecated |
 | 5.5       | 13, 13.1 | 3.2.x | 11.0+ | Supported |
+| 5.5       | x | 4.x.x | 11.0+ | Supported |
 
 In order to check the last updates please check our [changelog](https://bitbucket.org/meetingdoctors-team/ios-sdk-sample/src/master/CHANGELOG.md).
 
@@ -67,7 +68,7 @@ And finally, we include the pod in the target of the project with the latest ver
 pod 'MediQuo'
 ```
 
-At the end of çPodfile, you must add the next lines:
+At the end of Podfile, you must add the next lines:
 
 ```ruby
 post_install do |installer|
@@ -78,7 +79,6 @@ post_install do |installer|
       end
       config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
     end
   end
 end
@@ -818,7 +818,37 @@ To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new 3.0.14+, y
 
 # Migration to 4.0.0+
 
-To migrate the SDK from versions 3.2.0 to new version 4.0.0, you must change all the references form `MediQuo.Result` to `MediQuoResult`
+To migrate the SDK from versions 3.2.x to new version 4.0.0: 
+
+- We change the pod in the target of the project with the latest version form `MediQuo` to `MeetingDoctorsSDK`.
+
+- At the end of Podfile, you must add the following line, `config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"` like the example: 
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if target.name == 'MessageKit'
+        config.build_settings['SWIFT_VERSION'] = '4.2'
+      end
+      config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
+    end
+  end
+end
+```
+
+- You must change all the imports:
+
+| **3.2.x** | **4.x.x** |
+|-----------|-----------|
+| import MediQuo | import MeetingDoctorsSDK |
+| import MediQuoCore | import MeetingDoctorsCore |
+| import MediQuoController | import MeetingDoctorsController |
+| import MediQuoSchema | import MeetingDoctorsSchema |
+| import MediQuoSocket | import MeetingDoctorsSocket |
+| import MediQuoStorage | import MeetingDoctorsStorage |
 
 # Uploading app to AppStore
 
