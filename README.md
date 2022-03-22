@@ -822,6 +822,10 @@ To migrate the SDK from versions 3.2.x to new version 4.0.0:
 
 - We change the pod in the target of the project with the latest version form `MediQuo` to `MeetingDoctorsSDK`.
 
+```ruby
+pod 'MeetingDoctorsSDK'
+```
+
 - At the end of Podfile, you must add the following line, `config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"` like the example: 
 
 ```ruby
