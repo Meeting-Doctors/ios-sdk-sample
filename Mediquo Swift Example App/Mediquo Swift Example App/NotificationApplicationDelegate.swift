@@ -6,9 +6,9 @@
 //  Copyright © 2021 Edgar Paz Moreno. All rights reserved.
 //
 
-import MediQuo
-import MediQuoCore
-import MediQuoSchema
+import MeetingDoctorsSDK
+import MeetingDoctorsCore
+import MeetingDoctorsSchema
 import UserNotifications
 
 class NotificationApplicationDelegate: NSObject, ApplicationServicePlugin {

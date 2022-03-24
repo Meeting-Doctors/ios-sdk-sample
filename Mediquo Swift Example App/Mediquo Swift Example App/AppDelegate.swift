@@ -2,8 +2,8 @@
 //  Copyright © 2017 Edgar Paz Moreno. All rights reserved.
 //
 
-import MediQuo
-import MediQuoCore
+import MeetingDoctorsSDK
+import MeetingDoctorsCore
 
 @UIApplicationMain
 class AppDelegate: ApplicationServiceDelegate {

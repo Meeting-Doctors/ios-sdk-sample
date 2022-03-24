@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import MediQuo
-import MediQuoController
-import MediQuoCore
-import MediQuoSchema
+import MeetingDoctorsSDK
+import MeetingDoctorsController
+import MeetingDoctorsCore
+import MeetingDoctorsSchema
 
 class TabBarMenuViewController: UITabBarController {
 

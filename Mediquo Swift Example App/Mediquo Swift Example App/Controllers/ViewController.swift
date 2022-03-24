@@ -2,10 +2,10 @@
 //  Copyright © 2017 Edgar Paz Moreno. All rights reserved.
 //
 
-import MediQuo
+import MeetingDoctorsSDK
 import AppTrackingTransparency
 import AdSupport
-import MediQuoCore
+import MeetingDoctorsCore
 
 class ViewController: UIViewController {
     @IBOutlet weak var welcomeTitleLabel: UILabel!

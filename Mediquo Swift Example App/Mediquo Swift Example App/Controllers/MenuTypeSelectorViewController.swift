@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import MediQuo
+import MeetingDoctorsSDK
 import Firebase
-import MediQuoSchema
-import MediQuoController
+import MeetingDoctorsSchema
+import MeetingDoctorsController
 import AppTrackingTransparency
 
 class MenuTypeSelectorViewController: UIViewController {
@@ -61,7 +61,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func authenticationSucceded(notification: Notification) {
-        guard let account: MediQuoController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MediQuoController.AccountModel else {
+        guard let account: MeetingDoctorsController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MeetingDoctorsController.AccountModel else {
             NSLog("Account model could not be obtained from successful authentication notification event")
             return
         }
@@ -71,7 +71,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func userUpdated(notification: Notification) {
-        guard let account: MediQuoController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MediQuoController.AccountModel else {
+        guard let account: MeetingDoctorsController.AccountModel = notification.userInfo?[Notification.Key.MediQuo.Authentication] as? MeetingDoctorsController.AccountModel else {
             NSLog("Account model could not be obtained from successful authentication notification event")
             return
         }
@@ -88,7 +88,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func socketMessageRead(notification: Notification) {
-        guard let message: MediQuoSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageRead] as? MediQuoSchema.MessageSchema else {
+        guard let message: MeetingDoctorsSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageRead] as? MeetingDoctorsSchema.MessageSchema else {
             NSLog("Message model could not be obtained from successful message read notification event")
             return
         }
@@ -96,7 +96,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func messageReceived(notification: Notification) {
-        guard let message: MediQuoSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageReceived] as? MediQuoSchema.MessageSchema else {
+        guard let message: MeetingDoctorsSchema.MessageSchema = notification.userInfo?[Notification.Key.MediQuo.Socket.MessageReceived] as? MeetingDoctorsSchema.MessageSchema else {
             NSLog("Message model could not be obtained from successful message received notification event")
             return
         }

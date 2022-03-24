@@ -6,7 +6,7 @@
 //  Copyright © 2019 Edgar Paz Moreno. All rights reserved.
 //
 
-import MediQuo
+import MeetingDoctorsSDK
 
 extension MediQuo {
     
