@@ -810,6 +810,41 @@ There are some notifications of events that can be observed by the integrator.
 
         Clase del modelo de datos -> MediQuoVideoCallStatus
 
+- NSNotification.Name.MediQuo.VideoCall.Assigned (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario realiza una petición de Videocall y se le asigna un professional.
+
+        Clave del modelo de datos -> Notification.Key.VideoCall.videoCallId
+
+        Clase del modelo de datos -> Int
+
+- NSNotification.Name.MediQuo.VideoCall.Calling (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando el usuario recibe una Videocall entrante.
+
+        Clave del modelo de datos -> Notification.Key.VideoCall.videoCallId
+
+        Clase del modelo de datos -> Int
+
+- NSNotification.Name.MediQuo.VideoCall.Cancelled (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando la Videocall actual se cancela.
+
+        Clave del modelo de datos -> Notification.Key.VideoCall.videoCallId
+
+        Clase del modelo de datos -> Int
+
+- NSNotification.Name.MediQuo.VideoCall.Finished (se envía y se observa en el SDK):
+
+        Cuándo se notifica -> Cuando la VideoCall se finaliza.
+
+        Clave del modelo de datos -> Notification.Key.VideoCall.videoCallId
+
+        Clase del modelo de datos -> Int
+
+
+        
+
 
 
 # Migration to 3.0.14+
