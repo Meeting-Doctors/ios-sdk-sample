@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MediQuo
+import MeetingDoctorsSDK
 
 class MenuOptionSelectorTableViewModel {
 

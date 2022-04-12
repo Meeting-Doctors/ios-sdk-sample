@@ -8,8 +8,8 @@
 
 import Firebase
 import FirebaseMessaging
-import MediQuo
-import MediQuoCore
+import MeetingDoctorsSDK
+import MeetingDoctorsCore
 import UserNotifications
 
 open class FirebaseApplicationDelegate: NSObject, ApplicationServicePlugin {

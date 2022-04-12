@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MediQuo
+import MeetingDoctorsSDK
 import Firebase
 
 class MenuOptionSelectorTableViewController: UIViewController {

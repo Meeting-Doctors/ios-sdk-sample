@@ -4,7 +4,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MediQuo'
+    pod 'MeetingDoctorsSDK', '~> 4.0.0'
 end
 
 def firebase_pods
@@ -36,6 +36,7 @@ post_install do |installer|
       end
       config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
       if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].include? "8"
         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = "9.0"
       end
