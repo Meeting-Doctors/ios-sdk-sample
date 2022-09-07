@@ -30,6 +30,7 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 - [Migration to 3.0.14+](#Migration-to-3.0.14+)
 - [Migration to 4.0.0+](#Migration-to-4.0.0+)
 - [Uploading app to AppStore](#Uploading-app-to-AppStore)
+- [Integrators exposed methods](#ProfessionalList, Chat and Medical History)
 
 
 ## Requirements
@@ -892,3 +893,187 @@ end
 # Uploading app to AppStore
 
 When you submit your app to AppStore you must mark the app uses IDFA identifier, then mark the options `Serve advertisements within the app`and `Attribute an action taken within this app to a previously servedadvertisement`. Finally you must select the checkbox at bottom of the page. Now you can submit your app.
+
+# Integrators exposed methods
+
+- To be able to use the methods that will be explained below you have to initialize the SDK and do the authentication before.
+
+## Professional List
+
+- You have to instantiate the class ProfessionalList() and call the method getProfessionalList, this method will return you the raw data of the professional list. 
+
+```swift
+public func getProfessionalList(completion: @escaping (Data?) -> Void)
+```
+
+## Chat
+
+- The public class Chat() has available the methods to join a room, get the professional detail, fetch messages, send messages, photos, videos and documents, delete messages and leave the room.
+
+### Fetch professional detail
+
+- You have to pass the professional hash as a parameter of the function and this method will return the Contact Schema of the professional. Moreover this class will save the professional hash as a class property.
+
+```swift
+public func fetchProfessionalDetail(from id: String,
+                                    _ completion: @escaping (Swift.Result<ContactSchema, Error>) -> Void)
+```
+
+### Join room
+
+- You have to pass the professional hash as a parameter of the function and this method will return the room id of the conversation. Moreover this class will save the room id as a class property.
+
+```swift
+public func joinRoom(with id: String,
+                         _ completion: @escaping (Int) -> Void)
+```
+
+### Fetch messages
+
+- You don't need to pass any parameter to the function and this method will return the array of messages that the room has. The type of the array of messages returned will be MessageModel.
+
+```swift
+public func fetchMessages(completion: @escaping (MediQuoResult<([MessageModel], Changeset?)>) -> Void)
+```
+
+### Send message
+
+- You have to pass the professional speciality and the text of the message as a parameter of the function and this method will warn you when the message is sent.
+
+```swift
+public func sendMessage(professionalSpeciality: String, message text: String, completion: (() -> Void)? = nil)
+```
+
+### Send image
+
+- You have to pass the url of the image and the image itself (UIImage) as a parameter of the function and this method will warn you when the image is sent.
+
+```swift
+public func sendImage(withURL url: URL, image: UIImage, completion: (() -> Void)? = nil)
+```
+
+### Send document
+
+- You have to pass the url of the document as a parameter of the function and this method will warn you when the document is sent.
+
+```swift
+public func sendDocument(withURL url: URL, completion: (() -> Void)? = nil)
+```
+
+### Send video
+
+- You have to pass the name of the video and its url as a parameter of the function and this method will warn you when the video is sent.
+
+```swift
+public func sendVideo(withName name: String, withURL url: URL, completion: (() -> Void)? = nil)
+```
+
+### Delete message
+
+- You don't need to pass any parameter to the function and this method will warn you when all messages of the conversation are deleted.
+
+```swift
+public func deleteMessages(completion: @escaping (() -> Void))
+```
+
+### Leave room
+
+- This method has to be used to leave the room and it will send a Notification Center event that is written below.
+
+```swift
+public func leaveRoom()
+```
+
+- Notification Center event (ChatLeft)
+
+```swift
+NotificationCenter.default.post(name: Notification.Name.MediQuo.Messenger.ChatLeft, object: nil, userInfo: nil)
+```
+
+## Medical History
+
+- The public class MedicalHistory() has available the methods that are needed to get the different lists of allergies, medications, diseases, imcs, videocall reports, electronic prescriptions and derivations and the methods to save, edit or delete one of each kind of models.
+
+### Get list methods
+
+- You don't need to pass any parameter to these methods and they will return to you an array of item models and a Changeset. The different methods and the type of models that are returned are shown below:
+
+```swift
+public func getAllergies(completion: @escaping (([AllergyModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getMedications(completion: @escaping (([MedicationModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getDiseases(completion: @escaping (([DiseaseModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getIMCs(completion: @escaping (([IMCModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getDerivations(completion: @escaping (([DerivationReportModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getVideocallReports(completion: @escaping (([VideoCallReportModel], Changeset?)?) -> Void)
+```
+
+```swift
+public func getPrescriptions(completion: @escaping ([PrescriptionResponseModel]?) -> Void)
+```
+
+### Save, edit and delete item methods
+
+- You have to pass the model of the item that you want to save/edit/delete as a parameter and this method will warn you when the video is sent.
+
+```swift
+public func saveAllergy(model: AllergyModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func editAllergy(model: AllergyModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func deleteAllergy(model: AllergyModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func saveMedication(model: MedicationModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func editMedication(model: MedicationModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func deleteMedication(model: MedicationModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func saveDisease(model: DiseaseModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func editDisease(model: DiseaseModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func deleteDisease(model: DiseaseModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func saveIMC(model: IMCModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func editIMC(model: IMCModel, _ completion: @escaping () -> Void)
+```
+
+```swift
+public func deleteIMC(model: IMCModel, _ completion: @escaping () -> Void)
+```
