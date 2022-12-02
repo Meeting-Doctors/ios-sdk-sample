@@ -893,7 +893,11 @@ end
 
 # Migration to 5.0.0+
 
-TODO
+- You must change the references:
+
+| **4.x.x** | **5.0.x** |
+|-----------|-----------|
+| MediQuo | MeetingDoctors |
 
 # Uploading app to AppStore
 
