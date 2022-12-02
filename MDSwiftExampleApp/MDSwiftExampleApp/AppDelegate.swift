@@ -16,7 +16,7 @@ class AppDelegate: ApplicationServiceDelegate {
         
         if let clientName: String = MeetingDoctors.getClientName(),
             let clientSecret: String = MeetingDoctors.getClientSecret() {
-            let configuration = MeetingDoctors.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .development)
+            let configuration = MeetingDoctors.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .staging)
             let uuid: UUID? = MeetingDoctors.initialize(application,
                                                         with: configuration,
                                                         options: launchOptions) {

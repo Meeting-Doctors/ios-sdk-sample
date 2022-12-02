@@ -5,14 +5,14 @@ import MeetingDoctorsSDK
 extension MeetingDoctors {
     
     internal static func getUserToken() -> String {
-        return "686211358"
+        return "carles.canadas@meetingdoctors.com"
     }
 
     internal static func getClientName() -> String? {
-        return "MapfreVets"
+        return "MeetingDoctors"
     }
 
     internal static func getClientSecret() -> String? {
-        return  "92a6cde5591cb5b3"
+        return  "jmUCkN9AqnY25RJS"
     }
 }

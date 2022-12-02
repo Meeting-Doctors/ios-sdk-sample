@@ -5,7 +5,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MeetingDoctorsSDK', '4.2.7-beta.2'
+    pod 'MeetingDoctorsSDK', '4.2.7-beta.4'
 end
 
 def firebase_pods

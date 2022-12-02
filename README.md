@@ -29,8 +29,9 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 - [ Notifications ](#Notifications)
 - [Migration to 3.0.14+](#Migration-to-3.0.14+)
 - [Migration to 4.0.0+](#Migration-to-4.0.0+)
+- [Migration to 5.0.0+](#Migration-to-5.0.0+)
 - [Uploading app to AppStore](#Uploading-app-to-AppStore)
-- [Integrators exposed methods](#ProfessionalList, Chat and Medical History)
+- [Integrators exposed methods](#ProfessionalList-Chat-and-Medical-History)
 
 
 ## Requirements
@@ -889,6 +890,10 @@ end
 | import MediQuoSchema | import MeetingDoctorsSchema |
 | import MediQuoSocket | import MeetingDoctorsSocket |
 | import MediQuoStorage | import MeetingDoctorsStorage |
+
+# Migration to 5.0.0+
+
+TODO
 
 # Uploading app to AppStore
 
