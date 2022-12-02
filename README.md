@@ -27,10 +27,11 @@ Here are the steps to follow to include the MediQuo library to an iOS applicatio
 - [ Push notifications ](#Push-notifications)
 - [ Videocall ](#Videocall)
 - [ Notifications ](#Notifications)
+- [Uploading app to AppStore](#Uploading-app-to-AppStore)
+- [Integrators exposed methods](#ProfessionalList,-Chat-and-Medical-History)
 - [Migration to 3.0.14+](#Migration-to-3.0.14+)
 - [Migration to 4.0.0+](#Migration-to-4.0.0+)
-- [Uploading app to AppStore](#Uploading-app-to-AppStore)
-- [Integrators exposed methods](#ProfessionalList, Chat and Medical History)
+- [Migration to 5.0.0+](#Migration-to-5.0.0+)
 
 
 ## Requirements
@@ -844,52 +845,6 @@ There are some notifications of events that can be observed by the integrator.
         Clase del modelo de datos -> Int
 
 
-        
-
-
-
-# Migration to 3.0.14+
-
-To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new 3.0.14+, you must change all the references form `MediQuo.Result` to `MediQuoResult`
-
-# Migration to 4.0.0+
-
-To migrate the SDK from versions 3.2.x to new version 4.0.0: 
-
-- We change the pod in the target of the project with the latest version form `MediQuo` to `MeetingDoctorsSDK`.
-
-```ruby
-pod 'MeetingDoctorsSDK'
-```
-
-- At the end of Podfile, you must add the following line, `config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"` like the example: 
-
-```ruby
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      if target.name == 'MessageKit'
-        config.build_settings['SWIFT_VERSION'] = '4.2'
-      end
-      config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
-      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
-    end
-  end
-end
-```
-
-- You must change all the imports:
-
-| **3.2.x** | **4.x.x** |
-|-----------|-----------|
-| import MediQuo | import MeetingDoctorsSDK |
-| import MediQuoCore | import MeetingDoctorsCore |
-| import MediQuoController | import MeetingDoctorsController |
-| import MediQuoSchema | import MeetingDoctorsSchema |
-| import MediQuoSocket | import MeetingDoctorsSocket |
-| import MediQuoStorage | import MeetingDoctorsStorage |
-
 # Uploading app to AppStore
 
 When you submit your app to AppStore you must mark the app uses IDFA identifier, then mark the options `Serve advertisements within the app`and `Attribute an action taken within this app to a previously servedadvertisement`. Finally you must select the checkbox at bottom of the page. Now you can submit your app.
@@ -1077,3 +1032,59 @@ public func editIMC(model: IMCModel, _ completion: @escaping () -> Void)
 ```swift
 public func deleteIMC(model: IMCModel, _ completion: @escaping () -> Void)
 ```
+
+
+# Migration to 3.0.14+
+
+To migrate the SDK from versions 1.0.x, 2.0.x and prior 3.0.14 to new 3.0.14+, you must change all the references form `MediQuo.Result` to `MediQuoResult`
+
+# Migration to 4.0.0+
+
+To migrate the SDK from versions 3.2.x to new version 4.0.0: 
+
+- We change the pod in the target of the project with the latest version form `MediQuo` to `MeetingDoctorsSDK`.
+
+```ruby
+pod 'MeetingDoctorsSDK'
+```
+
+- At the end of Podfile, you must add the following line, `config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"` like the example: 
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if target.name == 'MessageKit'
+        config.build_settings['SWIFT_VERSION'] = '4.2'
+      end
+      config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
+    end
+  end
+end
+```
+
+- You must change all the imports:
+
+| **3.2.x** | **4.x.x** |
+|-----------|-----------|
+| import MediQuo | import MeetingDoctorsSDK |
+| import MediQuoCore | import MeetingDoctorsCore |
+| import MediQuoController | import MeetingDoctorsController |
+| import MediQuoSchema | import MeetingDoctorsSchema |
+| import MediQuoSocket | import MeetingDoctorsSocket |
+| import MediQuoStorage | import MeetingDoctorsStorage |
+
+# Migration to 5.0.0+
+
+- You must change the references:
+
+| **4.x.x** | **5.0.x** |
+|-----------|-----------|
+| MediQuo | MeetingDoctors |
+| MediQuo... | MeetingDoctors... | 
+| MediQuoStyle.images.mediquo... | | MeetingDoctorsStyle.images.meetingDoctors... |
+| MediQuoStyle.strings.mediquo... | | MeetingDoctorsStyle.strings.meetingDoctors... |
+| Notification.Name.MediQuo... | Notification.Name.MeetingDoctors... |
+
