@@ -1084,7 +1084,7 @@ end
 |-----------|-----------|
 | MediQuo | MeetingDoctors |
 | MediQuo... | MeetingDoctors... | 
-| MediQuoStyle.images.mediquo... | | MeetingDoctorsStyle.images.meetingDoctors... |
-| MediQuoStyle.strings.mediquo... | | MeetingDoctorsStyle.strings.meetingDoctors... |
+| MediQuoStyle.images.mediquo... | MeetingDoctorsStyle.images.meetingDoctors... |
+| MediQuoStyle.strings.mediquo... | MeetingDoctorsStyle.strings.meetingDoctors... |
 | Notification.Name.MediQuo... | Notification.Name.MeetingDoctors... |
 
