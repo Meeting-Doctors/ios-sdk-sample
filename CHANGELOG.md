@@ -38,7 +38,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) starting from 
 - `0.11.x` Releases - [0.11.0](#0110)
 
 ---
-### 5.0.0: Coming soon
+### 5.0.0: Feb 07, 2023
  * References changed from MediQuo to MeetingDoctors
 
 ### 4.0.0: Coming soon
