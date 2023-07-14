@@ -34,7 +34,7 @@ class MenuOptionSelectorTableViewModel {
     }
     
     private func unreadMessageCount() {
-        MediQuo.unreadMessageCount {
+        MeetingDoctors.unreadMessageCount {
             if let count = $0.value {
                 UIApplication.shared.applicationIconBadgeNumber = count
                 NSLog("[LaunchScreenViewController] Pending messages to read '\(count)'")
@@ -47,7 +47,7 @@ class MenuOptionSelectorTableViewModel {
         
         
         
-        let messengerResult = MediQuo.messengerViewController()
+        let messengerResult = MeetingDoctors.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             presentedViewController = controller
             controller.modalPresentationStyle = .overFullScreen
@@ -60,7 +60,7 @@ class MenuOptionSelectorTableViewModel {
     private func startVideoCall(onVC origin: UIViewController? = nil) {
         origin?.checkVideoCallPermissions {
             DispatchQueue.main.async {
-                MediQuo.deeplink(.videoCall, origin: origin, animated: true) { result in
+                MeetingDoctors.deeplink(.videoCall, origin: origin, animated: true) { result in
                     result.process(doSuccess: { _ in
                         NSLog("[MediQuoLoader] Video call started")
                     }, doFailure: { error in
@@ -73,9 +73,9 @@ class MenuOptionSelectorTableViewModel {
     
     private func presentMedicalHistory(onVC presenter: UIViewController? = nil) {
         do {
-            let hxView = try MediQuo.medicalHistoryViewController().unwrap()
+            let hxView = try MeetingDoctors.medicalHistoryViewController().unwrap()
             
-            hxView.navigationItem.leftBarButtonItem = MediQuo.style?.rootLeftBarButtonItem
+            hxView.navigationItem.leftBarButtonItem = MeetingDoctors.style?.rootLeftBarButtonItem
             hxView.navigationController?.navigationBar.isOpaque = true
             let hxMQView = UINavigationController(rootViewController: hxView)
             hxMQView.extendedLayoutIncludesOpaqueBars = true // set true if tabbar is opaque

@@ -35,10 +35,9 @@ class TabBarMenuViewController: UITabBarController {
         self.viewControllers = []
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let messengerResult = MediQuo.messengerViewController()
+        let messengerResult = MeetingDoctors.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
-            self.chatViewController.tabBarItem.image = R.image.chat()?.imageByMakingWhiteBackgroundTransparent()
             self.viewControllers?.insert(self.chatViewController, at: 0)
         } else {
             NSLog("[BottomBarViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
@@ -46,20 +45,20 @@ class TabBarMenuViewController: UITabBarController {
         
         let navController = UINavigationController(rootViewController: VideoCallViewController())
         navController.title = "VideoCall"
-        navController.tabBarItem.image = R.image.videocallCamera()?.image(alpha: 1)
+        navController.tabBarItem.image = UIImage(named: "VideocallCamera")?.image(alpha: 1)
         self.viewControllers?.insert(navController, at: 1)
         
         do {
-            let hxView = try MediQuo.medicalHistoryViewController().unwrap()
+            let hxView = try MeetingDoctors.medicalHistoryViewController().unwrap()
             
-            hxView.navigationItem.leftBarButtonItem = MediQuo.style?.rootLeftBarButtonItem
+            hxView.navigationItem.leftBarButtonItem = MeetingDoctors.style?.rootLeftBarButtonItem
             hxView.navigationController?.navigationBar.isOpaque = true
             let hxMQView = UINavigationController(rootViewController: hxView)
             hxMQView.extendedLayoutIncludesOpaqueBars = false // set true if tabbar is opaque
             
             self.medicalHistoryViewController = hxMQView
             self.medicalHistoryViewController.title = "Medical History"
-            self.medicalHistoryViewController.tabBarItem.image = R.image.medicalHistory()
+            self.medicalHistoryViewController.tabBarItem.image = UIImage(named: "MedicalHistory")
             self.viewControllers?.insert(self.medicalHistoryViewController, at: 2)
             
         } catch {
@@ -78,7 +77,7 @@ class TabBarMenuViewController: UITabBarController {
     
     private func configMediQuoStyle() {
 
-        MediQuo.style?.rootLeftBarButtonItem = UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(self.backBtnPressed))
+        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backBtnPressed))
         
     }
     
@@ -99,7 +98,7 @@ class TabBarMenuViewController: UITabBarController {
     private func presentProfessionalList(onVC presenter: UIViewController? = nil) {
         guard let presenter = presenter else { return }
         
-        let messengerResult = MediQuo.messengerViewController()
+        let messengerResult = MeetingDoctors.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             controller.modalPresentationStyle = .overFullScreen
             presenter.present(controller, animated: true)

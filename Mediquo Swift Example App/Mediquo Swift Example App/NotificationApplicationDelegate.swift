@@ -22,8 +22,8 @@ class NotificationApplicationDelegate: NSObject, ApplicationServicePlugin {
     func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        MediQuo.didReceiveRemoteNotification(application, with: userInfo) {
-            (result: MediQuoResult<UIBackgroundFetchResult>) in
+        MeetingDoctors.didReceiveRemoteNotification(application, with: userInfo) {
+            (result: MeetingDoctorsResult<UIBackgroundFetchResult>) in
             print("[NotificationApplicationDelegate] Case 1")
             do {
                 completionHandler(try result.unwrap())
@@ -41,7 +41,7 @@ extension NotificationApplicationDelegate: UNUserNotificationCenterDelegate {
                                        willPresent notification: UNNotification,
                                        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        MediQuo.userNotificationCenter(userNotificationCenter, willPresent: notification) { result in
+        MeetingDoctors.userNotificationCenter(userNotificationCenter, willPresent: notification) { result in
             print("[NotificationApplicationDelegate] Case 2")
             do {
                 completionHandler(try result.unwrap())
@@ -58,24 +58,18 @@ extension NotificationApplicationDelegate: UNUserNotificationCenterDelegate {
         print("[NotificationApplicationDelegate] didReceive response")
         
         print("[NotificationApplicationDelegate] mustAttendPush")
-        MediQuo.userNotificationCenter(userNotificationCenter, didReceive: response) { result in
+        MeetingDoctors.userNotificationCenter(userNotificationCenter, didReceive: response) { result in
             print("[NotificationApplicationDelegate] Case 3")
             result.process(doSuccess: { _ in
                 completionHandler()
             }, doFailure: { error in
-                if let mediQuoError = error as? MediQuoError,
+                if let mediQuoError = error as? MeetingDoctorsError,
                     case let .messenger(reason) = mediQuoError,
                     case let .cantNavigateTopViewControllerIsNotMessengerViewController(deeplinkOption) = reason,
                     let launchScreen: MenuTypeSelectorViewController = UIApplication.shared.keyWindow?.rootViewController as? MenuTypeSelectorViewController {
                     _ = launchScreen.deeplink(.messenger(option: deeplinkOption), animated: false)
                     completionHandler()
-                } else if let mediQuoError = error as? MediQuoError,
-                    case let .groups(reason) = mediQuoError,
-                    case let .cantNavigateTopViewControllerIsNotGroupsViewController(deeplinkOption) = reason,
-                    let launchScreen: MenuTypeSelectorViewController = UIApplication.shared.keyWindow?.rootViewController as? MenuTypeSelectorViewController {
-                    _ = launchScreen.deeplink(.groups(option: deeplinkOption), animated: false)
-                    completionHandler()
-                } else if let mediQuoError = error as? MediQuoError,
+                } else if let mediQuoError = error as? MeetingDoctorsError,
                     case let .videoCall(reason) = mediQuoError,
                         case .cantNavigateExternalOriginIsRequired = reason,
                     let launchScreen: MenuTypeSelectorViewController = UIApplication.shared.keyWindow?.rootViewController as? MenuTypeSelectorViewController {

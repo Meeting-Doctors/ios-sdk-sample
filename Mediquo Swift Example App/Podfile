@@ -1,10 +1,10 @@
+source 'https://cdn.cocoapods.org/'
 source 'https://bitbucket.org/meetingdoctors-team/cocoapods-specs.git'
-source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '11.0'
-use_frameworks!
+use_frameworks! 
 
 def shared_pods
-    pod 'MeetingDoctorsSDK', '~> 4.0.0'
+    pod 'MeetingDoctorsSDK', '~> 4.2.13'
 end
 
 def firebase_pods
@@ -36,7 +36,7 @@ post_install do |installer|
       end
       config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf' # avoid too many symbols
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = "YES"
+      
       if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].include? "8"
         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = "9.0"
       end

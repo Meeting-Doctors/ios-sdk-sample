@@ -6,6 +6,7 @@ import MeetingDoctorsSDK
 import AppTrackingTransparency
 import AdSupport
 import MeetingDoctorsCore
+import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var welcomeTitleLabel: UILabel!
@@ -22,9 +23,9 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if var style = MediQuo.style {
+        if var style = MeetingDoctors.style {
             style.rootLeftBarButtonItem = buildFingerPrintButtonItem()
-            MediQuo.style = style
+            MeetingDoctors.style = style
         }
     }
 
@@ -43,24 +44,24 @@ class ViewController: UIViewController {
     }
     
     private func setTexts() {
-        self.welcomeTitleLabel.text = R.string.localizable.mainWelcomeText()
-        self.openChatButton.setTitle(R.string.localizable.mainButtonText(), for: .normal)
+        self.welcomeTitleLabel.text = "Bienvenido a la demo de Mediquo.\nPulsa el botón para continuar"
+        self.openChatButton.setTitle("Abrir el chat", for: .normal)
     }
     
     private func configureStyle() {
-        if var style = MediQuo.style {
+        if var style = MeetingDoctors.style {
             style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
             style.accentTintColor = UIColor(red: 0, green: 244 / 255, blue: 187 / 255, alpha: 1)
             style.preferredStatusBarStyle = .lightContent
             style.navigationBarTintColor = .white
             style.navigationBarOpaque = true
             style.titleColor = .white
-            MediQuo.style = style
+            MeetingDoctors.style = style
         }
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
-        let image = R.image.fingerprint()
+        let image = UIImage(named: "Fingerprint")
         let style: UIBarButtonItem.Style = .plain
         let target = self
         let action = #selector(authenticationState)
@@ -68,7 +69,7 @@ class ViewController: UIViewController {
     }
 
     private func unreadMessageCount() {
-        MediQuo.unreadMessageCount {
+        MeetingDoctors.unreadMessageCount {
             if let count = $0.value {
                 UIApplication.shared.applicationIconBadgeNumber = count
                 NSLog("[LaunchScreenViewController] Pending messages to read '\(count)'")
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
     }
 
     private func present() {
-        let messengerResult = MediQuo.messengerViewController()
+        let messengerResult = MeetingDoctors.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             controller.modalPresentationStyle = .overFullScreen
             self.present(controller, animated: true)
@@ -92,7 +93,7 @@ class ViewController: UIViewController {
     }
     
     private func changeColorFingerPrintByAuthState() {
-        if let style = MediQuo.style, let buttonItem = style.rootLeftBarButtonItem {
+        if let style = MeetingDoctors.style, let buttonItem = style.rootLeftBarButtonItem {
             buttonItem.tintColor = isAuthenticated ? .red : view.tintColor
         }
     }
@@ -106,8 +107,8 @@ class ViewController: UIViewController {
     }
     
     private func doLogin(completion: ((Bool) -> Void)? = nil) {
-        let userToken: String = MediQuo.getUserToken()
-        MediQuo.authenticate(token: userToken) {
+        let userToken: String = MeetingDoctors.getUserToken()
+        MeetingDoctors.authenticate(token: userToken) {
             let success = $0.isSuccess
             self.isAuthenticated = success
             if let completion = completion { completion(success) }
@@ -115,7 +116,7 @@ class ViewController: UIViewController {
     }
 
     private func doLogout() {
-        MediQuo.shutdown { _ in self.isAuthenticated = false }
+        MeetingDoctors.shutdown { _ in self.isAuthenticated = false }
     }
     
     //NEWLY ADDED PERMISSIONS FOR iOS 14
@@ -186,7 +187,7 @@ extension UIViewController {
     func startVideoCall() {
         self.checkVideoCallPermissions {
             DispatchQueue.main.async {
-                MediQuo.deeplink(.videoCall, origin: self, animated: true) { result in
+                MeetingDoctors.deeplink(.videoCall, origin: self, animated: true) { result in
                     result.process(doSuccess: { response in
                         NSLog("[MediQuoLoader] Video call started")
                     }, doFailure: { error in

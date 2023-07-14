@@ -15,11 +15,10 @@ class AppDelegate: ApplicationServiceDelegate {
     
     public override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        if let clientName: String = MediQuo.getClientName(),
-            let clientSecret: String = MediQuo.getClientSecret() {
-            let configuration = MediQuo.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .development)
-            let uuid: UUID? = MediQuo.initialize(with: configuration, options: launchOptions) {  result in
+        if let clientName: String = MeetingDoctors.getClientName(),
+            let clientSecret: String = MeetingDoctors.getClientSecret() {
+            let configuration = MeetingDoctors.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .staging)
+            let uuid: UUID? = MeetingDoctors.initialize(with: configuration, options: launchOptions) {  result in
                 guard let value = result.value else {
                     NSLog("[AppDelegate] Installation failed: '\(String(describing: result.error))'")
                     return
