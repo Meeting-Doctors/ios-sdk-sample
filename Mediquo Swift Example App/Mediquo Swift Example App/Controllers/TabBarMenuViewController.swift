@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
-import MeetingDoctorsController
-import MeetingDoctorsCore
-import MeetingDoctorsSchema
+import MDChatSDK
 
 class TabBarMenuViewController: UITabBarController {
 
@@ -35,7 +32,7 @@ class TabBarMenuViewController: UITabBarController {
         self.viewControllers = []
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let messengerResult = MeetingDoctors.messengerViewController()
+        let messengerResult = MDChat.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
             self.viewControllers?.insert(self.chatViewController, at: 0)
@@ -49,9 +46,9 @@ class TabBarMenuViewController: UITabBarController {
         self.viewControllers?.insert(navController, at: 1)
         
         do {
-            let hxView = try MeetingDoctors.medicalHistoryViewController().unwrap()
+            let hxView = try MDChat.medicalHistoryViewController().unwrap()
             
-            hxView.navigationItem.leftBarButtonItem = MeetingDoctors.style?.rootLeftBarButtonItem
+            hxView.navigationItem.leftBarButtonItem = MDChat.style?.rootLeftBarButtonItem
             hxView.navigationController?.navigationBar.isOpaque = true
             let hxMQView = UINavigationController(rootViewController: hxView)
             hxMQView.extendedLayoutIncludesOpaqueBars = false // set true if tabbar is opaque
@@ -77,7 +74,7 @@ class TabBarMenuViewController: UITabBarController {
     
     private func configMediQuoStyle() {
 
-        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backBtnPressed))
+        MDChat.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backBtnPressed))
         
     }
     
@@ -98,7 +95,7 @@ class TabBarMenuViewController: UITabBarController {
     private func presentProfessionalList(onVC presenter: UIViewController? = nil) {
         guard let presenter = presenter else { return }
         
-        let messengerResult = MeetingDoctors.messengerViewController()
+        let messengerResult = MDChat.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             controller.modalPresentationStyle = .overFullScreen
             presenter.present(controller, animated: true)

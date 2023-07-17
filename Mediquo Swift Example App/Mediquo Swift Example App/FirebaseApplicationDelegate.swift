@@ -8,8 +8,7 @@
 
 import Firebase
 import FirebaseMessaging
-import MeetingDoctorsSDK
-import MeetingDoctorsCore
+import MDChatSDK
 import UserNotifications
 
 open class FirebaseApplicationDelegate: NSObject, ApplicationServicePlugin {
@@ -26,11 +25,11 @@ extension FirebaseApplicationDelegate: MessagingDelegate {
     public func messaging(_: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         if let token = fcmToken {
             print("[FirebaseApplicationDelegate] Firebase registration token: \(token)")
-            
+
             let dataDict: [String: String] = ["token": token]
             NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
             // Note: This callback is fired at each app startup and whenever a new token is generated.
-            MeetingDoctors.registerFirebaseForNotifications(token: token) { result in
+            MDChat.registerFirebaseForNotifications(token: token) { result in
                 result.process(doSuccess: { _ in
                     print("[FirebaseApplicationDelegate] Token registered correctly")
                 }, doFailure: { error in

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
+import MDChatSDK
 
 class MenuOptionSelectorTableViewModel {
 
@@ -20,9 +20,6 @@ class MenuOptionSelectorTableViewModel {
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Professional List", action: {
             self.professionalListCellAction(onVC: onVC)
         }, tag: .professionalList))
-        cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Videocall", action: {
-            self.startVideoCall(onVC: onVC)
-        }, tag: .videoCall))
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Medical History", action: {
             self.presentMedicalHistory(onVC: onVC)
         }, tag: .medicalHistory))
@@ -34,7 +31,7 @@ class MenuOptionSelectorTableViewModel {
     }
     
     private func unreadMessageCount() {
-        MeetingDoctors.unreadMessageCount {
+        MDChat.unreadMessageCount {
             if let count = $0.value {
                 UIApplication.shared.applicationIconBadgeNumber = count
                 NSLog("[LaunchScreenViewController] Pending messages to read '\(count)'")
@@ -47,7 +44,7 @@ class MenuOptionSelectorTableViewModel {
         
         
         
-        let messengerResult = MeetingDoctors.messengerViewController()
+        let messengerResult = MDChat.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             presentedViewController = controller
             controller.modalPresentationStyle = .overFullScreen
@@ -57,25 +54,11 @@ class MenuOptionSelectorTableViewModel {
         }
     }
     
-    private func startVideoCall(onVC origin: UIViewController? = nil) {
-        origin?.checkVideoCallPermissions {
-            DispatchQueue.main.async {
-                MeetingDoctors.deeplink(.videoCall, origin: origin, animated: true) { result in
-                    result.process(doSuccess: { _ in
-                        NSLog("[MediQuoLoader] Video call started")
-                    }, doFailure: { error in
-                        NSLog("[MediQuoLoader] Video call error \(error)")
-                    })
-                }
-            }
-        }
-    }
-    
     private func presentMedicalHistory(onVC presenter: UIViewController? = nil) {
         do {
-            let hxView = try MeetingDoctors.medicalHistoryViewController().unwrap()
+            let hxView = try MDChat.medicalHistoryViewController().unwrap()
             
-            hxView.navigationItem.leftBarButtonItem = MeetingDoctors.style?.rootLeftBarButtonItem
+            hxView.navigationItem.leftBarButtonItem = MDChat.style?.rootLeftBarButtonItem
             hxView.navigationController?.navigationBar.isOpaque = true
             let hxMQView = UINavigationController(rootViewController: hxView)
             hxMQView.extendedLayoutIncludesOpaqueBars = true // set true if tabbar is opaque

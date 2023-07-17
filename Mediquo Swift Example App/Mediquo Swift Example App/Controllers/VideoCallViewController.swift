@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
+import MDChatSDK
 
 class VideoCallViewController: UIViewController {
     
@@ -15,8 +15,5 @@ class VideoCallViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .gray
-        
-        startVideoCall()
-        
     }
 }

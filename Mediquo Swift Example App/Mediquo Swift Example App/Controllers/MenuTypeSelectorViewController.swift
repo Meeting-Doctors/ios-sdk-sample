@@ -7,17 +7,15 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
+import MDChatSDK
 import Firebase
-import MeetingDoctorsSchema
-import MeetingDoctorsController
 import AppTrackingTransparency
 
 class MenuTypeSelectorViewController: UIViewController {
     
     private var isAuthenticated: Bool = false
     
-    var pendingDeeplinkOption: MeetingDoctorsDeeplinkOption = .unknown
+    var pendingDeeplinkOption: MDChatDeeplinkOption = .unknown
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,12 +54,10 @@ class MenuTypeSelectorViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.chatLeft), name: Notification.Name.MeetingDoctors.Messenger.ChatLeft, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.prepareNpsButton), name: Notification.Name.MeetingDoctors.NPS.NPSSendSucceed, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.pushNotification(notification:)), name: Notification.Name.MeetingDoctorsVideoCall.Push, object: nil)
     }
     
     @objc func authenticationSucceded(notification: Notification) {
-        guard let account: MeetingDoctorsController.AccountModel = notification.userInfo?[Notification.Key.MeetingDoctors.Authentication] as? MeetingDoctorsController.AccountModel else {
+        guard let account: AccountModel = notification.userInfo?[Notification.Key.MeetingDoctors.Authentication] as? AccountModel else {
             NSLog("Account model could not be obtained from successful authentication notification event")
             return
         }
@@ -71,7 +67,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func userUpdated(notification: Notification) {
-        guard let account: MeetingDoctorsController.AccountModel = notification.userInfo?[Notification.Key.MeetingDoctors.Authentication] as? MeetingDoctorsController.AccountModel else {
+        guard let account: AccountModel = notification.userInfo?[Notification.Key.MeetingDoctors.Authentication] as? AccountModel else {
             NSLog("Account model could not be obtained from successful authentication notification event")
             return
         }
@@ -80,7 +76,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func styleChanged(notification: Notification) {
-        guard let style: MeetingDoctorsStyle = notification.userInfo?[Notification.Key.MeetingDoctors.Style] as? MeetingDoctorsStyle else {
+        guard let style: MDChatStyle = notification.userInfo?[Notification.Key.MeetingDoctors.Style] as? MDChatStyle else {
             NSLog("Style could not be obtained from successful style changed notification event")
             return
         }
@@ -88,7 +84,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func socketMessageRead(notification: Notification) {
-        guard let message: MeetingDoctorsSchema.MessageSchema = notification.userInfo?[Notification.Key.MeetingDoctors.Socket.MessageRead] as? MeetingDoctorsSchema.MessageSchema else {
+        guard let message: MessageSchema = notification.userInfo?[Notification.Key.MeetingDoctors.Socket.MessageRead] as? MessageSchema else {
             NSLog("Message model could not be obtained from successful message read notification event")
             return
         }
@@ -96,7 +92,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func messageReceived(notification: Notification) {
-        guard let message: MeetingDoctorsSchema.MessageSchema = notification.userInfo?[Notification.Key.MeetingDoctors.Socket.MessageReceived] as? MeetingDoctorsSchema.MessageSchema else {
+        guard let message: MessageSchema = notification.userInfo?[Notification.Key.MeetingDoctors.Socket.MessageReceived] as? MessageSchema else {
             NSLog("Message model could not be obtained from successful message received notification event")
             return
         }
@@ -116,7 +112,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func messageSent(notification: Notification) {
-        guard let message: MeetingDoctorsMessageType = notification.userInfo?[Notification.Key.MeetingDoctors.Message.Sent] as? MeetingDoctorsMessageType else {
+        guard let message: MDChatMessageType = notification.userInfo?[Notification.Key.MeetingDoctors.Message.Sent] as? MDChatMessageType else {
             NSLog("Message sent could not be obtained from successful message notification event")
             return
         }
@@ -124,7 +120,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     @objc func messageRead(notification: Notification) {
-        guard let message: MeetingDoctorsMessageType = notification.userInfo?[Notification.Key.MeetingDoctors.Message.Read] as? MeetingDoctorsMessageType else {
+        guard let message: MDChatMessageType = notification.userInfo?[Notification.Key.MeetingDoctors.Message.Read] as? MDChatMessageType else {
             NSLog("Message read could not be obtained from successful message notification event")
             return
         }
@@ -141,15 +137,6 @@ class MenuTypeSelectorViewController: UIViewController {
     
     @objc func prepareNpsButton() {
         NSLog("You are observing the NPS send succeed left event")
-    }
-    
-    @objc private func pushNotification(notification: Notification) {
-        guard let status = notification.userInfo?[Notification.Key.MeetingDoctorsVideoCall.Push] as? MeetingDoctorsVideoCallStatus else {
-            NSLog("MediQuoVideoCallStatus could not be obtained from successful message notification event")
-            return
-        }
-        
-        NSLog("MediQuoVideoCallStatus is available to use")
     }
 
     @IBAction func navControllerBtnPressed(_ sender: Any) {
@@ -177,11 +164,11 @@ class MenuTypeSelectorViewController: UIViewController {
         }
     }
     
-    private var mediquoDivider: MeetingDoctorsDivider<UIView>? {
-        var divider: MeetingDoctorsDivider<UIView>
+    private var mediquoDivider: MDChatDivider<UIView>? {
+        var divider: MDChatDivider<UIView>
         let rect: CGRect = CGRect(origin: .zero, size: CGSize(width: 375, height: 350))
         let dividerView: DividerContentView = DividerContentView(frame: rect)
-        divider = MeetingDoctorsDivider(view: dividerView)
+        divider = MDChatDivider(view: dividerView)
 
         return divider.add(configuration: { (cell, _) -> Void in
             cell.selectionStyle = .none
@@ -192,12 +179,12 @@ class MenuTypeSelectorViewController: UIViewController {
         })
     }
 
-    private var mediquoTopDivider: MeetingDoctorsDivider<UIView>? {
-        var divider: MeetingDoctorsDivider<UIView>
+    private var mediquoTopDivider: MDChatDivider<UIView>? {
+        var divider: MDChatDivider<UIView>
     
         let rect: CGRect = CGRect(origin: .zero, size: CGSize(width: 375, height: 350))
         let dividerView = DividerTopContentView(frame: rect)
-        divider = MeetingDoctorsDivider(view: dividerView)
+        divider = MDChatDivider(view: dividerView)
     
         return divider.add(configuration: { [weak self] (cell, view) -> Void in
             cell.selectionStyle = .none
@@ -207,11 +194,6 @@ class MenuTypeSelectorViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
                     alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { (_: UIAlertAction) in
                         
-                        if let viewController = UIApplication().keyWindow?.rootViewController {
-                            viewController.checkVideoCallPermissions(success: {
-                                viewController.startVideoCall()
-                        })
-                        }
                         
                     }))
                     if let viewController = UIApplication().keyWindow?.rootViewController {
@@ -223,13 +205,13 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     private func configureStyle() {
-        MeetingDoctors.style = MediquoSwiftExampleAppPlugin.style
-        MeetingDoctors.style?.divider = self.mediquoDivider
+        MDChat.style = MediquoSwiftExampleAppPlugin.style
+        MDChat.style?.divider = self.mediquoDivider
         
         if let professionalListTopDividerView = self.mediquoTopDivider {
-            MeetingDoctors.style?.topDividers?.append(professionalListTopDividerView)
+            MDChat.style?.topDividers?.append(professionalListTopDividerView)
         }
-        MeetingDoctors.updateStyle()
+        MDChat.updateStyle()
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
@@ -241,7 +223,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 
     private func unreadMessageCount() {
-        MeetingDoctors.unreadMessageCount {
+        MDChat.unreadMessageCount {
             if let count = $0.value {
                 UIApplication.shared.applicationIconBadgeNumber = count
                 NSLog("[LaunchScreenViewController] Pending messages to read '\(count)'")
@@ -250,7 +232,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 
     private func present() {
-        let messengerResult = MeetingDoctors.messengerViewController()
+        let messengerResult = MDChat.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             controller.modalPresentationStyle = .overFullScreen
             self.present(controller, animated: true)
@@ -265,7 +247,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     private func changeColorFingerPrintByAuthState() {
-        if let style = MeetingDoctors.style, let buttonItem = style.rootLeftBarButtonItem {
+        if let style = MDChat.style, let buttonItem = style.rootLeftBarButtonItem {
             buttonItem.tintColor = isAuthenticated ? .red : view.tintColor
         }
     }
@@ -279,8 +261,8 @@ class MenuTypeSelectorViewController: UIViewController {
     }
     
     private func doLogin(completion: ((Bool) -> Void)? = nil) {
-        let userToken: String = MeetingDoctors.getUserToken()
-        MeetingDoctors.authenticate(token: userToken) { [weak self] (result: MeetingDoctorsResult<Void>) in
+        let userToken: String = MDChat.getUserToken()
+        MDChat.authenticate(token: userToken) { [weak self] (result: MDChatResult<Void>) in
             
             let success = result.isSuccess
             
@@ -289,7 +271,7 @@ class MenuTypeSelectorViewController: UIViewController {
                 
                 Messaging.messaging().token { token, error in
                     if let token = token {
-                        MeetingDoctors.registerFirebaseForNotifications(token: token) { result in
+                        MDChat.registerFirebaseForNotifications(token: token) { result in
                             result.process(doSuccess: { _ in
                                 NSLog("[FirebaseApplicationPlugin] Token registered correctly")
                                 completion?(success)
@@ -310,7 +292,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 
     private func doLogout() {
-        MeetingDoctors.shutdown { _ in self.isAuthenticated = false }
+        MDChat.shutdown { _ in self.isAuthenticated = false }
     }
     
     //NEWLY ADDED PERMISSIONS FOR iOS 14
@@ -373,8 +355,8 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 }
 
-extension MenuTypeSelectorViewController: MeetingDoctorsDeeplinkViewControllerProtocol {
-    public func deeplink(_ deeplinkOption:  MeetingDoctorsDeeplinkOption, animated _: Bool) -> Bool {
+extension MenuTypeSelectorViewController: MDChatDeeplinkViewControllerProtocol {
+    public func deeplink(_ deeplinkOption:  MDChatDeeplinkOption, animated _: Bool) -> Bool {
         if let bottomBarViewController = self.presentedViewController as? MenuTypeSelectorViewController {
             // deeplinkFromInside
             return bottomBarViewController.deeplink(deeplinkOption, animated: false)

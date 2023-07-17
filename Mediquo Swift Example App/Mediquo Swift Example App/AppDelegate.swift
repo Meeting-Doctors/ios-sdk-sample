@@ -2,8 +2,7 @@
 //  Copyright © 2017 Edgar Paz Moreno. All rights reserved.
 //
 
-import MeetingDoctorsSDK
-import MeetingDoctorsCore
+import MDChatSDK
 
 @UIApplicationMain
 class AppDelegate: ApplicationServiceDelegate {
@@ -15,10 +14,9 @@ class AppDelegate: ApplicationServiceDelegate {
     
     public override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if let clientName: String = MeetingDoctors.getClientName(),
-            let clientSecret: String = MeetingDoctors.getClientSecret() {
-            let configuration = MeetingDoctors.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .staging)
-            let uuid: UUID? = MeetingDoctors.initialize(with: configuration, options: launchOptions) {  result in
+        if let clientSecret: String = MDChat.getClientSecret() {
+            let configuration = MDChat.Configuration(secret: clientSecret, environment: .staging)
+            let uuid: UUID? = MDChat.initialize(with: configuration, options: launchOptions) {  result in
                 guard let value = result.value else {
                     NSLog("[AppDelegate] Installation failed: '\(String(describing: result.error))'")
                     return

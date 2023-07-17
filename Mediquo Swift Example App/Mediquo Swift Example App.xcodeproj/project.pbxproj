@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2702E51629C0AEB50083E304 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2702E51529C0AEB50083E304 /* FirebaseAnalytics */; };
-		2702E51829C0AEB50083E304 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2702E51729C0AEB50083E304 /* FirebaseCrashlytics */; };
-		277CED932A265FBE0022FCC8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 277CED922A265FBE0022FCC8 /* FirebaseMessaging */; };
-		27F279002A268C840029F113 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 27F278FF2A268C840029F113 /* Lottie */; };
+		19B1D07F470BC6556012A1F9 /* Pods_Mediquo_Swift_Example_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237912FDDCC9EBBF62EE47D /* Pods_Mediquo_Swift_Example_AppUITests.framework */; };
+		1B11E81E6EEBD2CAA0BC0152 /* Pods_Mediquo_Swift_Example_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074DE981464D781619C4F0E /* Pods_Mediquo_Swift_Example_AppTests.framework */; };
 		69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17891FBC83380025CC42 /* AppDelegate.swift */; };
 		69BC179F1FBC83380025CC42 /* Mediquo_Swift_Example_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC179E1FBC83380025CC42 /* Mediquo_Swift_Example_AppTests.swift */; };
 		69BC17AA1FBC83380025CC42 /* Mediquo_Swift_Example_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17A91FBC83380025CC42 /* Mediquo_Swift_Example_AppUITests.swift */; };
@@ -30,6 +28,7 @@
 		69BC17D31FBC8BC20025CC42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69BC17D61FBC8BC20025CC42 /* Localizable.strings */; };
 		69BC17D41FBC8BC20025CC42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69BC17D61FBC8BC20025CC42 /* Localizable.strings */; };
 		6D74245026E5FBCA0095EB79 /* MediQuo+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D74244F26E5FBC90095EB79 /* MediQuo+Credentials.swift */; };
+		6D9F857DD383BCC1BDD6938B /* Pods_Mediquo_Swift_Example_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE0B2F2EE94EF6F748A525 /* Pods_Mediquo_Swift_Example_App.framework */; };
 		7E1C28E026E0B5300053401E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */; };
 		7E1C291126E0BADF0053401E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C291026E0BADF0053401E /* UIImage+Extension.swift */; };
 		7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */; };
@@ -78,7 +77,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		274EB7922A265651007E729F /* TestSPM-iOS */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "TestSPM-iOS"; path = "../../TestSPM-iOS"; sourceTree = "<group>"; };
+		214591CDEFB733C506CBD313 /* Pods-Mediquo Swift Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example App.release.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App.release.xcconfig"; sourceTree = "<group>"; };
+		21B9AC5B294AA9C0D9231595 /* Pods-Mediquo Swift Example AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppTests/Pods-Mediquo Swift Example AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4074DE981464D781619C4F0E /* Pods_Mediquo_Swift_Example_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5237912FDDCC9EBBF62EE47D /* Pods_Mediquo_Swift_Example_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F363B07145780EC74EC32D /* Pods-Mediquo Swift Example AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppUITests/Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		69BC17861FBC83380025CC42 /* Mediquo Swift Example App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mediquo Swift Example App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BC17891FBC83380025CC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BC17951FBC83380025CC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +116,10 @@
 		7E7D6BF026F3876700871DAD /* Mediquo Swift Example AppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mediquo Swift Example AppDebug.entitlements"; sourceTree = "<group>"; };
 		7E806C3D26C6497A0028EDE7 /* MenuTypeSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTypeSelectorViewController.swift; sourceTree = "<group>"; };
 		7EEAC5B726DE365300AC98C1 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		80D60363CF1B655591F73685 /* Pods-Mediquo Swift Example AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppTests.release.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppTests/Pods-Mediquo Swift Example AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		83F43FB0656EFFFB0A47571D /* Pods-Mediquo Swift Example AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppUITests/Pods-Mediquo Swift Example AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8545498AB9B2004D7A3EA2A8 /* Pods-Mediquo Swift Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example App.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App.debug.xcconfig"; sourceTree = "<group>"; };
+		9DBE0B2F2EE94EF6F748A525 /* Pods_Mediquo_Swift_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277CED932A265FBE0022FCC8 /* FirebaseMessaging in Frameworks */,
-				2702E51829C0AEB50083E304 /* FirebaseCrashlytics in Frameworks */,
-				2702E51629C0AEB50083E304 /* FirebaseAnalytics in Frameworks */,
-				27F279002A268C840029F113 /* Lottie in Frameworks */,
+				6D9F857DD383BCC1BDD6938B /* Pods_Mediquo_Swift_Example_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B11E81E6EEBD2CAA0BC0152 /* Pods_Mediquo_Swift_Example_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,15 +143,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B1D07F470BC6556012A1F9 /* Pods_Mediquo_Swift_Example_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244DF87289879117DD9812F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8545498AB9B2004D7A3EA2A8 /* Pods-Mediquo Swift Example App.debug.xcconfig */,
+				214591CDEFB733C506CBD313 /* Pods-Mediquo Swift Example App.release.xcconfig */,
+				21B9AC5B294AA9C0D9231595 /* Pods-Mediquo Swift Example AppTests.debug.xcconfig */,
+				80D60363CF1B655591F73685 /* Pods-Mediquo Swift Example AppTests.release.xcconfig */,
+				68F363B07145780EC74EC32D /* Pods-Mediquo Swift Example AppUITests.debug.xcconfig */,
+				83F43FB0656EFFFB0A47571D /* Pods-Mediquo Swift Example AppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		279BCBEB29F6E4C100121947 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DBE0B2F2EE94EF6F748A525 /* Pods_Mediquo_Swift_Example_App.framework */,
+				4074DE981464D781619C4F0E /* Pods_Mediquo_Swift_Example_AppTests.framework */,
+				5237912FDDCC9EBBF62EE47D /* Pods_Mediquo_Swift_Example_AppUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,7 +176,6 @@
 		279BF8F82A01426300DC400E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				274EB7922A265651007E729F /* TestSPM-iOS */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -168,6 +189,7 @@
 				69BC17A81FBC83380025CC42 /* Mediquo Swift Example AppUITests */,
 				69BC17871FBC83380025CC42 /* Products */,
 				279BCBEB29F6E4C100121947 /* Frameworks */,
+				244DF87289879117DD9812F0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,22 +323,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BC17AE1FBC83380025CC42 /* Build configuration list for PBXNativeTarget "Mediquo Swift Example App" */;
 			buildPhases = (
+				31F40F9C04641B857ABE8230 /* [CP] Check Pods Manifest.lock */,
 				69BC17821FBC83380025CC42 /* Sources */,
 				69BC17831FBC83380025CC42 /* Frameworks */,
 				69BC17841FBC83380025CC42 /* Resources */,
 				273C6CE22A261D47003AAF08 /* Embed Frameworks */,
+				FE3C8CF6D1CE8570AAB31C46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Mediquo Swift Example App";
-			packageProductDependencies = (
-				2702E51529C0AEB50083E304 /* FirebaseAnalytics */,
-				2702E51729C0AEB50083E304 /* FirebaseCrashlytics */,
-				277CED922A265FBE0022FCC8 /* FirebaseMessaging */,
-				27F278FF2A268C840029F113 /* Lottie */,
-			);
 			productName = "Mediquo Swift Example App";
 			productReference = 69BC17861FBC83380025CC42 /* Mediquo Swift Example App.app */;
 			productType = "com.apple.product-type.application";
@@ -325,6 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BC17B11FBC83380025CC42 /* Build configuration list for PBXNativeTarget "Mediquo Swift Example AppTests" */;
 			buildPhases = (
+				FEE9730D44A2ACB5BA876F3A /* [CP] Check Pods Manifest.lock */,
 				69BC17961FBC83380025CC42 /* Sources */,
 				69BC17971FBC83380025CC42 /* Frameworks */,
 				69BC17981FBC83380025CC42 /* Resources */,
@@ -343,6 +362,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BC17B41FBC83380025CC42 /* Build configuration list for PBXNativeTarget "Mediquo Swift Example AppUITests" */;
 			buildPhases = (
+				2FBA431CD9D04A1B52004096 /* [CP] Check Pods Manifest.lock */,
 				69BC17A11FBC83380025CC42 /* Sources */,
 				69BC17A21FBC83380025CC42 /* Frameworks */,
 				69BC17A31FBC83380025CC42 /* Resources */,
@@ -398,10 +418,6 @@
 				es,
 			);
 			mainGroup = 69BC177D1FBC83380025CC42;
-			packageReferences = (
-				2702E51429C0AEB50083E304 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				27F278FE2A268C840029F113 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-			);
 			productRefGroup = 69BC17871FBC83380025CC42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -451,6 +467,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FBA431CD9D04A1B52004096 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mediquo Swift Example AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31F40F9C04641B857ABE8230 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mediquo Swift Example App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE3C8CF6D1CE8570AAB31C46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseSessions/FirebaseSessions.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MDChatSDK/MDChatSDK.framework/MDChatSDK",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSessions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDChatSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE9730D44A2ACB5BA876F3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mediquo Swift Example AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69BC17821FBC83380025CC42 /* Sources */ = {
@@ -543,7 +682,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -606,7 +745,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -651,8 +790,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 x86_64";
@@ -661,8 +799,8 @@
 		};
 		69BC17AF1FBC83380025CC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8545498AB9B2004D7A3EA2A8 /* Pods-Mediquo Swift Example App.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Mediquo Swift Example App/Mediquo Swift Example AppDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -670,10 +808,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Mediquo Swift Example App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.proyectoejemplo.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -687,18 +822,15 @@
 		};
 		69BC17B01FBC83380025CC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214591CDEFB733C506CBD313 /* Pods-Mediquo Swift Example App.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7386W3K6BN;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Mediquo Swift Example App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.proyectoejemplo.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -713,16 +845,12 @@
 		};
 		69BC17B21FBC83380025CC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B9AC5B294AA9C0D9231595 /* Pods-Mediquo Swift Example AppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Mediquo Swift Example AppTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iSalud.Mediquo-Swift-Example-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -736,16 +864,12 @@
 		};
 		69BC17B31FBC83380025CC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D60363CF1B655591F73685 /* Pods-Mediquo Swift Example AppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Mediquo Swift Example AppTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iSalud.Mediquo-Swift-Example-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -759,15 +883,11 @@
 		};
 		69BC17B51FBC83380025CC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68F363B07145780EC74EC32D /* Pods-Mediquo Swift Example AppUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Mediquo Swift Example AppUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iSalud.Mediquo-Swift-Example-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -778,15 +898,11 @@
 		};
 		69BC17B61FBC83380025CC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83F43FB0656EFFFB0A47571D /* Pods-Mediquo Swift Example AppUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Mediquo Swift Example AppUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iSalud.Mediquo-Swift-Example-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -835,48 +951,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2702E51429C0AEB50083E304 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-		27F278FE2A268C840029F113 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
-			requirement = {
-				kind = exactVersion;
-				version = 4.1.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2702E51529C0AEB50083E304 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2702E51429C0AEB50083E304 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		2702E51729C0AEB50083E304 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2702E51429C0AEB50083E304 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		277CED922A265FBE0022FCC8 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2702E51429C0AEB50083E304 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		27F278FF2A268C840029F113 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 27F278FE2A268C840029F113 /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 69BC177E1FBC83380025CC42 /* Project object */;
 }

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
-import Firebase
+import MDChatSDK
 
 class MenuOptionSelectorTableViewController: UIViewController {
 
@@ -40,7 +39,7 @@ class MenuOptionSelectorTableViewController: UIViewController {
         
         self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(dismissOptionSelector)), animated: false)
         
-        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(dismissPage))
+        MDChat.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(dismissPage))
         
         tableView.bounces = false
         

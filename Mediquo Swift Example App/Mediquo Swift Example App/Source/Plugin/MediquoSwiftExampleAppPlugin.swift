@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import MeetingDoctorsSDK
+import MDChatSDK
 
 class MediquoSwiftExampleAppPlugin: NSObject {
 
-    static let style:  MeetingDoctorsStyleType = {
-        var style: MeetingDoctorsStyle = MeetingDoctorsStyle()
+    static let style:  MDChatStyleType = {
+        var style: MDChatStyleType = MDChatStyle()
         style.navigationBarColor = UIColor(from: 0x00BAF3)
         style.inboxCellStyle = .meetingDoctors(overlay: .clear,
                                         badge: UIColor(from: 0x00BAF3),
@@ -69,7 +69,6 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         
         emptyView.addSubviewFullViewFit(to: button)
         style.emptyView = emptyView
-        style.medicalHistoryOptions = [.allergy(nil), .disease(nil), .medication(nil), .myDocuments, .videoCallReport(nil), .prescription]
         
         style.preferredStatusBarStyle = .lightContent
         

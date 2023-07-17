@@ -2,10 +2,9 @@
 //  Copyright © 2017 Edgar Paz Moreno. All rights reserved.
 //
 
-import MeetingDoctorsSDK
+import MDChatSDK
 import AppTrackingTransparency
 import AdSupport
-import MeetingDoctorsCore
 import UIKit
 
 class ViewController: UIViewController {
@@ -23,9 +22,9 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if var style = MeetingDoctors.style {
+        if var style = MDChat.style {
             style.rootLeftBarButtonItem = buildFingerPrintButtonItem()
-            MeetingDoctors.style = style
+            MDChat.style = style
         }
     }
 
@@ -49,14 +48,14 @@ class ViewController: UIViewController {
     }
     
     private func configureStyle() {
-        if var style = MeetingDoctors.style {
+        if var style = MDChat.style {
             style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
             style.accentTintColor = UIColor(red: 0, green: 244 / 255, blue: 187 / 255, alpha: 1)
             style.preferredStatusBarStyle = .lightContent
             style.navigationBarTintColor = .white
             style.navigationBarOpaque = true
             style.titleColor = .white
-            MeetingDoctors.style = style
+            MDChat.style = style
         }
     }
 
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
     }
 
     private func unreadMessageCount() {
-        MeetingDoctors.unreadMessageCount {
+        MDChat.unreadMessageCount {
             if let count = $0.value {
                 UIApplication.shared.applicationIconBadgeNumber = count
                 NSLog("[LaunchScreenViewController] Pending messages to read '\(count)'")
@@ -78,7 +77,7 @@ class ViewController: UIViewController {
     }
 
     private func present() {
-        let messengerResult = MeetingDoctors.messengerViewController()
+        let messengerResult = MDChat.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             controller.modalPresentationStyle = .overFullScreen
             self.present(controller, animated: true)
@@ -93,7 +92,7 @@ class ViewController: UIViewController {
     }
     
     private func changeColorFingerPrintByAuthState() {
-        if let style = MeetingDoctors.style, let buttonItem = style.rootLeftBarButtonItem {
+        if let style = MDChat.style, let buttonItem = style.rootLeftBarButtonItem {
             buttonItem.tintColor = isAuthenticated ? .red : view.tintColor
         }
     }
@@ -107,8 +106,8 @@ class ViewController: UIViewController {
     }
     
     private func doLogin(completion: ((Bool) -> Void)? = nil) {
-        let userToken: String = MeetingDoctors.getUserToken()
-        MeetingDoctors.authenticate(token: userToken) {
+        let userToken: String = MDChat.getUserToken()
+        MDChat.authenticate(token: userToken) {
             let success = $0.isSuccess
             self.isAuthenticated = success
             if let completion = completion { completion(success) }
@@ -116,7 +115,7 @@ class ViewController: UIViewController {
     }
 
     private func doLogout() {
-        MeetingDoctors.shutdown { _ in self.isAuthenticated = false }
+        MDChat.shutdown { _ in self.isAuthenticated = false }
     }
     
     //NEWLY ADDED PERMISSIONS FOR iOS 14
@@ -178,96 +177,5 @@ class ViewController: UIViewController {
         }
 
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-}
-
-
-extension UIViewController {
-    
-    func startVideoCall() {
-        self.checkVideoCallPermissions {
-            DispatchQueue.main.async {
-                MeetingDoctors.deeplink(.videoCall, origin: self, animated: true) { result in
-                    result.process(doSuccess: { response in
-                        NSLog("[MediQuoLoader] Video call started")
-                    }, doFailure: { error in
-                        NSLog("[MediQuoLoader] Video call error \(error)")
-                    })
-                }
-            }
-        }
-    }
-    
-    func checkVideoCallPermissions(success: @escaping () -> Void) {
-        self.checkCameraPermissions { granted in
-            if granted {
-                self.checkMicPermission(completion: { granted in
-                    if granted {
-                        success()
-                    }
-                })
-            }
-        }
-    }
-
-    func checkCameraPermissions(completion: @escaping (Bool) -> Void) {
-        DispatchQueue.main.async {
-            PermissionWrapper.checkVideoCameraAvailable(completion: { status in
-                switch status {
-                case .authorized:
-                    // show mic permission
-                    completion(true)
-                default:
-                    completion(false)
-                    // show message
-                    //                R.string.localizable.permissionCameraMessage()
-                    let alert = UIAlertController(title: "Permisos de cámara", message: "Hpabilita los ermisos de cámara", preferredStyle: .alert)
-
-                    let actionSettings = UIAlertAction(title: "Permisos de cámara", style: .default, handler: { _ in
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            if UIApplication.shared.canOpenURL(url) {
-                                UIApplication.shared.open(url, completionHandler: { _ in
-                                })
-                            }
-                        }
-                    })
-                    let actionCancel = UIAlertAction(title: "Cancelar", style: .default, handler: { _ in })
-                    alert.addAction(actionSettings)
-                    alert.addAction(actionCancel)
-
-                    DispatchQueue.main.async {
-                        self.present(alert, animated: true, completion: {})
-                    }
-                }
-            })
-        }
-    }
-
-    func checkMicPermission(completion: @escaping (Bool) -> Void) {
-        DispatchQueue.main.async {
-            PermissionWrapper.checkMicrophoneAvailable { granted in
-                if !granted {
-                    // show message
-                    let alert = UIAlertController(title: "Permisos de micro", message: "Habilita los permisos de micro", preferredStyle: .alert)
-
-                    let actionSettings = UIAlertAction(title: "Permisos de micro", style: .default, handler: { _ in
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            if UIApplication.shared.canOpenURL(url) {
-                                UIApplication.shared.open(url, completionHandler: { _ in
-                                })
-                            }
-                        }
-                    })
-                    let actionCancel = UIAlertAction(title: "Cancelar", style: .default, handler: { _ in })
-                    alert.addAction(actionSettings)
-                    alert.addAction(actionCancel)
-
-                    DispatchQueue.main.async {
-                        self.present(alert, animated: true, completion: {})
-                    }
-                }
-                completion(granted)
-            }
-        }
     }
 }
