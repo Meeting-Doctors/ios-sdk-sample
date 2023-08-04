@@ -1,7 +1,7 @@
 [![Language](https://img.shields.io/badge/Swift-5.1-orange.svg)](https://swift.org/)
 [![Bintray](https://api.bintray.com/packages/meetingdoctors/iOS/legacy-library/images/download.svg)](https://bintray.com/meetingdoctors/iOS/legacy-library/_latestVersion)
 
-# MeetingDoctors SDK (formerly Mediquo SDK)
+# MeetingDoctors SDK
 
 Here are the steps to follow to include the MediQuo library to an iOS application project.
 

@@ -6,16 +6,12 @@
 //  Copyright © 2019 Edgar Paz Moreno. All rights reserved.
 //
 
-import MeetingDoctorsSDK
+import MDChatSDK
 
-extension MediQuo {
+extension MDChat {
     
     internal static func getUserToken() -> String {
         return <#your demo user token#>
-    }
-
-    internal static func getClientName() -> String? {
-        return <#your company name#>
     }
 
     internal static func getClientSecret() -> String? {

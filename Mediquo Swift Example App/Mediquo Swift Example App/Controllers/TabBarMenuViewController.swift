@@ -12,7 +12,7 @@ import MDChatSDK
 class TabBarMenuViewController: UITabBarController {
 
     private var chatViewController: UIViewController!
-    private var videoCallViewController: UIViewController!
+    private var chatHighlightedViewController: UIViewController!
     private var medicalHistoryViewController: UIViewController!
     
     static func storyboardInstance()-> TabBarMenuViewController? {
@@ -31,19 +31,29 @@ class TabBarMenuViewController: UITabBarController {
         
         self.viewControllers = []
         
+        let image = UIImage(named: "iconMenuChat")
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let messengerResult = MDChat.messengerViewController()
+        let messengerResult = MDChat.messengerViewController(withTitle: "Default List")
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
             self.viewControllers?.insert(self.chatViewController, at: 0)
+            self.viewControllers?[0].tabBarItem = UITabBarItem(title: "Consultas", image: image, selectedImage: image)
         } else {
             NSLog("[BottomBarViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
         }
         
-        let navController = UINavigationController(rootViewController: VideoCallViewController())
-        navController.title = "VideoCall"
-        navController.tabBarItem.image = UIImage(named: "VideocallCamera")?.image(alpha: 1)
-        self.viewControllers?.insert(navController, at: 1)
+        let filter = MDChatFilter(profiles: [.nutrition], excludeRoles: true)
+        let messengerHighlightedResult = MDChat.messengerViewController(withTitle:"Highlighted List", highlightedSpecialities: filter)
+
+        if let controller: UINavigationController = messengerHighlightedResult.value {
+            self.chatHighlightedViewController = controller
+            self.viewControllers?.insert(self.chatHighlightedViewController, at: 1)
+            self.viewControllers?[1].tabBarItem = UITabBarItem(title: "Consultas Highlighted", image: image, selectedImage: image)
+        } else {
+            NSLog("[BottomBarViewController] Failed to instantiate messenger with error '\(String(describing: messengerHighlightedResult.error))'")
+        }
+        
         
         do {
             let hxView = try MDChat.medicalHistoryViewController().unwrap()

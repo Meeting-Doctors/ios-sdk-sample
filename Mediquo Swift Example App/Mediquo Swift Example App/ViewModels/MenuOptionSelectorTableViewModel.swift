@@ -20,6 +20,9 @@ class MenuOptionSelectorTableViewModel {
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Professional List", action: {
             self.professionalListCellAction(onVC: onVC)
         }, tag: .professionalList))
+        cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Professional List Highlighted", action: {
+            self.professionalListHighlightedCellAction(onVC: onVC)
+        }, tag: .professionalList))
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Medical History", action: {
             self.presentMedicalHistory(onVC: onVC)
         }, tag: .medicalHistory))
@@ -28,6 +31,11 @@ class MenuOptionSelectorTableViewModel {
     private func professionalListCellAction(onVC: UIViewController? = nil) {
         self.unreadMessageCount()
         self.presentProfessionalList(onVC: onVC)
+    }
+    
+    private func professionalListHighlightedCellAction(onVC: UIViewController? = nil) {
+        self.unreadMessageCount()
+        self.presentProfessionalListHighlighted(onVC: onVC)
     }
     
     private func unreadMessageCount() {
@@ -42,9 +50,21 @@ class MenuOptionSelectorTableViewModel {
     private func presentProfessionalList(onVC presenter: UIViewController? = nil) {
         guard let presenter = presenter else { return }
         
+        let messengerResult = MDChat.messengerViewController(withTitle: "Default List")
+        if let controller: UINavigationController = messengerResult.value {
+            presentedViewController = controller
+            controller.modalPresentationStyle = .overFullScreen
+            presenter.present(controller, animated: true)
+        } else {
+            NSLog("[ViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
+        }
+    }
+    
+    private func presentProfessionalListHighlighted(onVC presenter: UIViewController? = nil) {
+        guard let presenter = presenter else { return }
         
-        
-        let messengerResult = MDChat.messengerViewController()
+        let filter = MDChatFilter(profiles: [.nutrition], excludeRoles: true)
+        let messengerResult = MDChat.messengerViewController(withTitle: "Highlighted List", highlightedSpecialities: filter)
         if let controller: UINavigationController = messengerResult.value {
             presentedViewController = controller
             controller.modalPresentationStyle = .overFullScreen

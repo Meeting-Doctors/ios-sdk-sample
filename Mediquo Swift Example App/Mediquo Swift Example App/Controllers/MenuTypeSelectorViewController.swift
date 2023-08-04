@@ -206,11 +206,11 @@ class MenuTypeSelectorViewController: UIViewController {
     
     private func configureStyle() {
         MDChat.style = MediquoSwiftExampleAppPlugin.style
-        MDChat.style?.divider = self.mediquoDivider
-        
-        if let professionalListTopDividerView = self.mediquoTopDivider {
-            MDChat.style?.topDividers?.append(professionalListTopDividerView)
-        }
+//        MDChat.style?.divider = self.mediquoDivider
+//        
+//        if let professionalListTopDividerView = self.mediquoTopDivider {
+//            MDChat.style?.topDividers?.append(professionalListTopDividerView)
+//        }
         MDChat.updateStyle()
     }
 

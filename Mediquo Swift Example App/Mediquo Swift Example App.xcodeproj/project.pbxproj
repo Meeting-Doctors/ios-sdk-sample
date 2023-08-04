@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		19B1D07F470BC6556012A1F9 /* Pods_Mediquo_Swift_Example_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237912FDDCC9EBBF62EE47D /* Pods_Mediquo_Swift_Example_AppUITests.framework */; };
 		1B11E81E6EEBD2CAA0BC0152 /* Pods_Mediquo_Swift_Example_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074DE981464D781619C4F0E /* Pods_Mediquo_Swift_Example_AppTests.framework */; };
+		27A822BC2A7D1E88000A277A /* ChatBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A822BA2A7D1E88000A277A /* ChatBackgroundView.xib */; };
+		27A822BD2A7D1E88000A277A /* ChatBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A822BB2A7D1E88000A277A /* ChatBackgroundView.swift */; };
 		69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17891FBC83380025CC42 /* AppDelegate.swift */; };
 		69BC179F1FBC83380025CC42 /* Mediquo_Swift_Example_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC179E1FBC83380025CC42 /* Mediquo_Swift_Example_AppTests.swift */; };
 		69BC17AA1FBC83380025CC42 /* Mediquo_Swift_Example_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17A91FBC83380025CC42 /* Mediquo_Swift_Example_AppUITests.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		214591CDEFB733C506CBD313 /* Pods-Mediquo Swift Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example App.release.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example App/Pods-Mediquo Swift Example App.release.xcconfig"; sourceTree = "<group>"; };
 		21B9AC5B294AA9C0D9231595 /* Pods-Mediquo Swift Example AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppTests/Pods-Mediquo Swift Example AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		27A822BA2A7D1E88000A277A /* ChatBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatBackgroundView.xib; sourceTree = "<group>"; };
+		27A822BB2A7D1E88000A277A /* ChatBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBackgroundView.swift; sourceTree = "<group>"; };
 		4074DE981464D781619C4F0E /* Pods_Mediquo_Swift_Example_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5237912FDDCC9EBBF62EE47D /* Pods_Mediquo_Swift_Example_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mediquo_Swift_Example_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F363B07145780EC74EC32D /* Pods-Mediquo Swift Example AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mediquo Swift Example AppUITests/Pods-Mediquo Swift Example AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 		7E1C292426E0E3BC0053401E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27A822BB2A7D1E88000A277A /* ChatBackgroundView.swift */,
+				27A822BA2A7D1E88000A277A /* ChatBackgroundView.xib */,
 				7E1C292526E0E3DD0053401E /* DividerTopContentView.swift */,
 				7E1C292D26E0E3EB0053401E /* DividerTopContentView.xib */,
 				7E1C299726E105810053401E /* DividerContentView.xib */,
@@ -436,6 +442,7 @@
 			files = (
 				69BC17C51FBC8B980025CC42 /* LaunchScreen.storyboard in Resources */,
 				7E7D6BDB26F340F900871DAD /* GoogleService-Info.plist in Resources */,
+				27A822BC2A7D1E88000A277A /* ChatBackgroundView.xib in Resources */,
 				7E1C292E26E0E3EB0053401E /* DividerTopContentView.xib in Resources */,
 				7E1C299826E105810053401E /* DividerContentView.xib in Resources */,
 				69BC17D21FBC8BC20025CC42 /* Localizable.strings in Resources */,
@@ -610,6 +617,7 @@
 				7E6C710E26CFAD8900DC46E9 /* MenuOptionSelectorTableViewModel.swift in Sources */,
 				7E5C3A7826CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift in Sources */,
 				7EEAC5B826DE365300AC98C1 /* VideoCallViewController.swift in Sources */,
+				27A822BD2A7D1E88000A277A /* ChatBackgroundView.swift in Sources */,
 				7E806C3E26C6497A0028EDE7 /* MenuTypeSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,7 +690,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -745,7 +752,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

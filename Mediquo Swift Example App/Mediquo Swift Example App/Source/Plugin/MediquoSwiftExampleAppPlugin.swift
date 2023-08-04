@@ -27,22 +27,18 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.navigationBarTintColor = .white
         style.navigationBarOpaque = true
         style.titleColor = .white
-        style.inboxTitle = "Professional List"
-        
-
         
         style.secondaryTintColor = UIColor(from: 0x0059A6)
 
         style.messageTextOutgoingColor = UIColor(red: 0x4D / 255.0, green: 0x4E / 255.0, blue: 0x52 / 255.0, alpha: 1.0)
         style.messageTextIncomingColor = .white
-        style.bubbleBackgroundOutgoingColor = UIColor(from: 0xEEEEEE)
+        style.bubbleBackgroundOutgoingColor = UIColor(from: 0xFFFFFF)
         style.bubbleBackgroundIncomingColor = UIColor(from: 0x00BAF3)
         
-        style.showCollegiateNumber = true
+        style.showCollegiateNumber = false
+        style.chatBackgroundView = ChatBackgroundView()
 
         // MARK: VideoCall
-
-        
         
         ///Customizable images
         style.images.meetingDoctorsMedicalHistoryImages.allergiesIcon = UIImage(named: "AllergiesIcon")
@@ -58,6 +54,7 @@ class MediquoSwiftExampleAppPlugin: NSObject {
         style.strings.meetingDoctorsMedicalHistoryStrings.recipeDisclaimerDescription = "Texto descriptivo del disclaimer de la receta médica."
         style.strings.meetingDoctorsMedicalHistoryStrings.recipeDisclaimerTitle = "Título del disclaimer de la receta médica."
         style.strings.meetingDoctorsMedicalHistoryStrings.recipeEmptyMessage = "Texto de receta vacía."
+        style.strings.meetingDoctorsProfessionalListStrings.listTitleHeader = "Chatea con expertos"
         
         style.conditionsDismiss = {}
         

@@ -68,7 +68,7 @@ extension NotificationApplicationDelegate: UNUserNotificationCenterDelegate {
                     _ = launchScreen.deeplink(.messenger(option: deeplinkOption), animated: false)
                     completionHandler()
                 } else {
-                    NSLog("[MediQuoApplicationPlugin] Error user notification center: \(error)")
+                    NSLog("[NotificationApplicationDelegate] Error user notification center: \(error)")
                     completionHandler()
                 }
             })
