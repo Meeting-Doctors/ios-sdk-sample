@@ -71,6 +71,8 @@ class TabBarMenuViewController: UITabBarController {
         } catch {
             NSLog("[MediQuoLoader] Failed to instantiate messenger with error '\(error)'")
         }
+        
+        self.bindNotifications()
          
     }
     
@@ -112,6 +114,21 @@ class TabBarMenuViewController: UITabBarController {
         } else {
             NSLog("[ViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
         }
+    }
+    
+    private func bindNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.termsDeclined(notification:)), name: Notification.Name.MeetingDoctors.TermsAndConditions.Declined, object: nil)
+    }
+    
+    @objc func termsDeclined(notification: Notification) {
+        guard let viewController = notification.userInfo?[Notification.Key.MeetingDoctors.TermsAndConditions.Declined] as? UIViewController else {
+            NSLog("[TabBarMenuViewController] Message sent could not be obtained from successful message notification event")
+            return
+        }
+
+        NSLog("[TabBarMenuViewController] Terms Declined: \(viewController)")
+
+        viewController.dismiss(animated: false)
     }
 
 }

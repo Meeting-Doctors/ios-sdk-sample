@@ -50,6 +50,23 @@ class MenuOptionSelectorTableViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.reloadData()
         
+        self.bindNotifications()
+        
+    }
+    
+    private func bindNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.termsDeclined(notification:)), name: Notification.Name.MeetingDoctors.TermsAndConditions.Declined, object: nil)
+    }
+    
+    @objc func termsDeclined(notification: Notification) {
+        guard let viewController = notification.userInfo?[Notification.Key.MeetingDoctors.TermsAndConditions.Declined] as? UIViewController else {
+            NSLog("[MenuOptionSelectorTableViewController] Message sent could not be obtained from successful message notification event")
+            return
+        }
+
+        NSLog("[MenuOptionSelectorTableViewController] Terms Declined: \(viewController)")
+
+        viewController.dismiss(animated: false)
     }
     
 }

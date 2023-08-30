@@ -4,7 +4,7 @@ platform :ios, '13.0'
 use_frameworks! 
 
 def shared_pods
-    pod 'MDChatSDK', '1.0.0-carrefour.1'
+    pod 'MDChatSDK', '1.0.1-carrefour.1'
 end
 
 def firebase_pods
