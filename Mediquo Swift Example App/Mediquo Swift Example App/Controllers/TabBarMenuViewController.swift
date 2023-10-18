@@ -44,7 +44,7 @@ class TabBarMenuViewController: UITabBarController {
         }
         
         let filter = MDChatFilter(profiles: [.nutrition], excludeRoles: true)
-        let messengerHighlightedResult = MDChat.messengerViewController(withTitle:"Highlighted List", highlightedSpecialities: filter)
+        let messengerHighlightedResult = MDChat.messengerViewController(withTitle: "Highlighted List", highlightedSpecialities: filter)
 
         if let controller: UINavigationController = messengerHighlightedResult.value {
             self.chatHighlightedViewController = controller

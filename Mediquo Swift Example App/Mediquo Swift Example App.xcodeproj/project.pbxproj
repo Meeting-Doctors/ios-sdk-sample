@@ -372,6 +372,7 @@
 				69BC17A11FBC83380025CC42 /* Sources */,
 				69BC17A21FBC83380025CC42 /* Frameworks */,
 				69BC17A31FBC83380025CC42 /* Resources */,
+				27A10BF02AA8B6E800CDFFE0 /* Delete Languages */,
 			);
 			buildRules = (
 			);
@@ -476,6 +477,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		27A10BF02AA8B6E800CDFFE0 /* Delete Languages */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Delete Languages";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path. \n#supportedLanguages=(\"es\", \"pt\", \"en\", \"ar\", \"ca-ES\")\nsupportedLanguages=(\"es\")\n# App languages\nallFiles=($(ls ${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/ | grep .proj))\n\nfor currentLanguage in ${supportedLanguages[@]} \ndo\n    for file in \"${allFiles[@]}\"; do\n        echo \"check element: $file\"\n        if [[ $file == *\"$currentLanguage\"* ]]; then\n            echo \"valid language: $file\"\n            allFiles=( \"${allFiles[@]/$file/}\" )\n        fi\n    done\ndone\n\necho \"languages to remove: ${allFiles[@]}\"\nfor file in ${allFiles[@]}\ndo\n    echo \"remove file: $file\"\n    rm -r ${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/\"$file\"\ndone\n\n\n# SwiftDates languages\nallDateFiles=($(ls ${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/Frameworks/SwiftDate.framework/SwiftDate.bundle/ | grep .proj))\n\nfor currentLanguage in ${supportedLanguages[@]} \ndo\n    for file in \"${allDateFiles[@]}\"; do\n        echo \"check element: $file\"\n        if [[ $file == *\"$currentLanguage\"* ]]; then\n            echo \"valid language: $file\"\n            allDateFiles=( \"${allDateFiles[@]/$file/}\" )\n        fi\n    done\ndone\n\necho \"languages to remove: ${allDateFiles[@]}\"\nfor file in ${allDateFiles[@]}\ndo\n    echo \"remove file: $file\"\n    rm -r ${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/Frameworks/SwiftDate.framework/SwiftDate.bundle/\"$file\"\ndone\n\n";
+		};
 		2FBA431CD9D04A1B52004096 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
