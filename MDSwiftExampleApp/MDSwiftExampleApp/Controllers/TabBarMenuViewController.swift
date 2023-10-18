@@ -28,11 +28,13 @@ class TabBarMenuViewController: UITabBarController {
         
         self.viewControllers = []
         
+        let image = UIImage(named: "iconMenuChat")
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         let messengerResult = MeetingDoctors.messengerViewController()
         if let controller: UINavigationController = messengerResult.value {
             self.chatViewController = controller
-            self.chatViewController.tabBarItem.image = R.image.chat()?.imageByMakingWhiteBackgroundTransparent()
+            self.chatViewController.tabBarItem.image = image
             self.viewControllers?.insert(self.chatViewController, at: 0)
         } else {
             NSLog("[BottomBarViewController] Failed to instantiate messenger with error '\(String(describing: messengerResult.error))'")
@@ -40,7 +42,7 @@ class TabBarMenuViewController: UITabBarController {
         
         let navController = UINavigationController(rootViewController: VideoCallViewController())
         navController.title = "VideoCall"
-        navController.tabBarItem.image = R.image.videocallCamera()?.image(alpha: 1)
+        navController.tabBarItem.image = UIImage(named: "VideoCallCamera")
         self.viewControllers?.insert(navController, at: 1)
         
         do {
@@ -53,7 +55,7 @@ class TabBarMenuViewController: UITabBarController {
             
             self.medicalHistoryViewController = hxMQView
             self.medicalHistoryViewController.title = "Medical History"
-            self.medicalHistoryViewController.tabBarItem.image = R.image.medicalHistory()
+            self.medicalHistoryViewController.tabBarItem.image = UIImage(named: "MedicalHistory")
             self.viewControllers?.insert(self.medicalHistoryViewController, at: 2)
             
         } catch {
@@ -72,7 +74,7 @@ class TabBarMenuViewController: UITabBarController {
     
     private func configMeetingDoctorsStyle() {
 
-        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(self.backBtnPressed))
+        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backBtnPressed))
         
     }
     

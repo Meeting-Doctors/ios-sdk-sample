@@ -41,8 +41,8 @@ class ViewController: UIViewController {
     }
     
     private func setTexts() {
-        self.welcomeTitleLabel.text = R.string.localizable.mainWelcomeText()
-        self.openChatButton.setTitle(R.string.localizable.mainButtonText(), for: .normal)
+        self.welcomeTitleLabel.text = "Bienvenido a la demo de Mediquo.\nPulsa el botón para continuar"
+        self.openChatButton.setTitle("Abrir el chat", for: .normal)
     }
     
     private func configureStyle() {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
-        let image = R.image.fingerprint()
+        let image = UIImage(named: "Fingerprint")
         let style: UIBarButtonItem.Style = .plain
         let target = self
         let action = #selector(authenticationState)

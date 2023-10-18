@@ -32,9 +32,9 @@ class MenuOptionSelectorTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(dismissOptionSelector)), animated: false)
+        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(dismissOptionSelector)), animated: false)
         
-        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: R.image.back(), style: .plain, target: self, action: #selector(dismissPage))
+        MeetingDoctors.style?.rootLeftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(dismissPage))
         
         tableView.bounces = false
         

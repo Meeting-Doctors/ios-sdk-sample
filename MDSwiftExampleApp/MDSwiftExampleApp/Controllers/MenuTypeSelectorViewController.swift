@@ -225,7 +225,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
-        let image = R.image.fingerprint()
+        let image = UIImage(named: "Fingerprint")
         let style: UIBarButtonItem.Style = .plain
         let target = self
         let action = #selector(authenticationState)

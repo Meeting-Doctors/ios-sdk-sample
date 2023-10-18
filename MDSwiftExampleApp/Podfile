@@ -1,11 +1,11 @@
 source 'https://cdn.cocoapods.org/'
 source 'https://bitbucket.org/meetingdoctors-team/cocoapods-specs.git'
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MeetingDoctorsSDK', '~> 5.0.0'
+    pod 'MeetingDoctorsSDK', '5.4.3'
 end
 
 def firebase_pods
