@@ -48,7 +48,6 @@ class ViewController: UIViewController {
     private func configureStyle() {
         if var style = MeetingDoctors.style {
             style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
-            style.accentTintColor = UIColor(red: 0, green: 244 / 255, blue: 187 / 255, alpha: 1)
             style.preferredStatusBarStyle = .lightContent
             style.navigationBarTintColor = .white
             style.navigationBarOpaque = true

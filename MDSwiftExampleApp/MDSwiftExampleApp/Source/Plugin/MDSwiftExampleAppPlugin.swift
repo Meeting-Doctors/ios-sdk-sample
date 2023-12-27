@@ -13,22 +13,17 @@ class MDSwiftExampleAppPlugin: NSObject {
                                         speciality: UIColor(from: 0x00BAF3),
                                         specialityIcon: .clear,
                                         hideSchedule: false)
-        style.accentTintColor = UIColor(from: 0x00BAF3)
         style.navigationBarBackIndicatorImage = UIImage(named: "Back")
         style.preferredStatusBarStyle = .lightContent
-        style.showMeetingDoctorsBackgroundImage = true
         style.navigationBarTintColor = .white
         style.navigationBarOpaque = true
         style.titleColor = .white
         style.inboxTitle = "Professional List"
 
-        style.showMeetingDoctorsBackgroundImage = false
-        style.secondaryTintColor = UIColor(from: 0x0059A6)
-
-        style.messageTextOutgoingColor = UIColor(red: 0x4D / 255.0, green: 0x4E / 255.0, blue: 0x52 / 255.0, alpha: 1.0)
-        style.messageTextIncomingColor = .white
-        style.bubbleBackgroundOutgoingColor = UIColor(from: 0xEEEEEE)
-        style.bubbleBackgroundIncomingColor = UIColor(from: 0x00BAF3)
+        style.colors.chat.messageTextOutgoing = UIColor(red: 0x4D / 255.0, green: 0x4E / 255.0, blue: 0x52 / 255.0, alpha: 1.0)
+        style.colors.chat.messageTextIncoming = .white
+        style.colors.chat.bubbleBackgroundOutgoing = UIColor(from: 0xEEEEEE)
+        style.colors.chat.bubbleBackgroundIncoming = UIColor(from: 0x00BAF3)
         
         style.showCollegiateNumber = true
 
@@ -47,8 +42,6 @@ class MDSwiftExampleAppPlugin: NSObject {
         style.strings.meetingDoctorsMedicalHistoryStrings.recipeDisclaimerTitle = "Título del disclaimer de la receta médica."
         style.strings.meetingDoctorsMedicalHistoryStrings.recipeEmptyMessage = "Texto de receta vacía."
         
-        style.conditionsDismiss = {}
-        
         let emptyView = UIView()
         emptyView.backgroundColor = .yellow
         let button = UIButton()
@@ -57,7 +50,6 @@ class MDSwiftExampleAppPlugin: NSObject {
         
         emptyView.addSubviewFullViewFit(to: button)
         style.emptyView = emptyView
-        style.medicalHistoryOptions = [.allergy(nil), .disease(nil), .medication(nil), .myDocuments, .videoCallReport(nil), .prescription]
         
         style.preferredStatusBarStyle = .lightContent
         

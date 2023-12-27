@@ -307,6 +307,7 @@
 				69BC17831FBC83380025CC42 /* Frameworks */,
 				69BC17841FBC83380025CC42 /* Resources */,
 				65D706A27FDDC001985FCD0D /* [CP] Embed Pods Frameworks */,
+				4D21329CD4A3A0742C58B571 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -447,6 +448,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4D21329CD4A3A0742C58B571 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MDSwiftExampleApp/Pods-MDSwiftExampleApp-resources.sh",
+				"${PODS_ROOT}/OTXCFramework/OpenTok.xcframework/ios-arm64/OpenTok.framework/selfie_segmentation.tflite",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/selfie_segmentation.tflite",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MDSwiftExampleApp/Pods-MDSwiftExampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		65D706A27FDDC001985FCD0D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
