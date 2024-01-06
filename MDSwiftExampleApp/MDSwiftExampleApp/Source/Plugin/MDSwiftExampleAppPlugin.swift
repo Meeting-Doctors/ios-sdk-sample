@@ -13,11 +13,6 @@ class MDSwiftExampleAppPlugin: NSObject {
                                         speciality: UIColor(from: 0x00BAF3),
                                         specialityIcon: .clear,
                                         hideSchedule: false)
-        style.navigationBarBackIndicatorImage = UIImage(named: "Back")
-        style.preferredStatusBarStyle = .lightContent
-        style.navigationBarTintColor = .white
-        style.navigationBarOpaque = true
-        style.titleColor = .white
         style.inboxTitle = "Professional List"
 
         style.colors.chat.messageTextOutgoing = UIColor(red: 0x4D / 255.0, green: 0x4E / 255.0, blue: 0x52 / 255.0, alpha: 1.0)
@@ -50,8 +45,6 @@ class MDSwiftExampleAppPlugin: NSObject {
         
         emptyView.addSubviewFullViewFit(to: button)
         style.emptyView = emptyView
-        
-        style.preferredStatusBarStyle = .lightContent
         
         return style
     }()

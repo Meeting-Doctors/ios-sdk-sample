@@ -48,10 +48,6 @@ class ViewController: UIViewController {
     private func configureStyle() {
         if var style = MeetingDoctors.style {
             style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
-            style.preferredStatusBarStyle = .lightContent
-            style.navigationBarTintColor = .white
-            style.navigationBarOpaque = true
-            style.titleColor = .white
             MeetingDoctors.style = style
         }
     }
