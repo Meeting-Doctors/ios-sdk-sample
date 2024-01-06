@@ -41,24 +41,19 @@ class ViewController: UIViewController {
     }
     
     private func setTexts() {
-        self.welcomeTitleLabel.text = R.string.localizable.mainWelcomeText()
-        self.openChatButton.setTitle(R.string.localizable.mainButtonText(), for: .normal)
+        self.welcomeTitleLabel.text = "Bienvenido a la demo de Mediquo.\nPulsa el botón para continuar"
+        self.openChatButton.setTitle("Abrir el chat", for: .normal)
     }
     
     private func configureStyle() {
         if var style = MeetingDoctors.style {
             style.navigationBarColor = UIColor(red: 84 / 255, green: 24 / 255, blue: 172 / 255, alpha: 1)
-            style.accentTintColor = UIColor(red: 0, green: 244 / 255, blue: 187 / 255, alpha: 1)
-            style.preferredStatusBarStyle = .lightContent
-            style.navigationBarTintColor = .white
-            style.navigationBarOpaque = true
-            style.titleColor = .white
             MeetingDoctors.style = style
         }
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
-        let image = R.image.fingerprint()
+        let image = UIImage(named: "Fingerprint")
         let style: UIBarButtonItem.Style = .plain
         let target = self
         let action = #selector(authenticationState)

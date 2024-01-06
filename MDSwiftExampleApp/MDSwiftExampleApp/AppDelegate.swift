@@ -14,9 +14,9 @@ class AppDelegate: ApplicationServiceDelegate {
     public override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let clientName: String = MeetingDoctors.getClientName(),
-            let clientSecret: String = MeetingDoctors.getClientSecret() {
-            let configuration = MeetingDoctors.Configuration(id: clientName, secret: clientSecret, enableVideoCall: true, environment: .staging)
+        if let clientSecret: String = MeetingDoctors.getClientSecret() {
+            let configuration = MeetingDoctors.Configuration(secret: clientSecret,
+                                                             environment: .staging)
             let uuid: UUID? = MeetingDoctors.initialize(application,
                                                         with: configuration,
                                                         options: launchOptions) {

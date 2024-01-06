@@ -8,10 +8,6 @@ extension MeetingDoctors {
         return <#your demo user token#>
     }
 
-    internal static func getClientName() -> String? {
-        return <#your company name#>
-    }
-
     internal static func getClientSecret() -> String? {
         return  <#your API Key#>
     }

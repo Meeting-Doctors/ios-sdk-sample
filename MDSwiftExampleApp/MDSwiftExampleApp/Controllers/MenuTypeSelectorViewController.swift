@@ -51,7 +51,6 @@ class MenuTypeSelectorViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.prepareNpsButton), name: Notification.Name.MeetingDoctors.NPS.NPSSendSucceed, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.pushNotification(notification:)), name: Notification.Name.MeetingDoctorsVideoCall.Push, object: nil)
     }
     
     @objc func authenticationSucceded(notification: Notification) {
@@ -137,15 +136,6 @@ class MenuTypeSelectorViewController: UIViewController {
         NSLog("You are observing the NPS send succeed left event")
     }
     
-    @objc private func pushNotification(notification: Notification) {
-        guard let status = notification.userInfo?[Notification.Key.MeetingDoctorsVideoCall.Push] as? MeetingDoctorsVideoCallStatus else {
-            NSLog("MeetingDoctorsVideoCallStatus could not be obtained from successful message notification event")
-            return
-        }
-        
-        NSLog("MeetingDoctorsVideoCallStatus is available to use")
-    }
-
     @IBAction func navControllerBtnPressed(_ sender: Any) {
         doLogin { (succeed) in
             DispatchQueue.main.async {
@@ -225,7 +215,7 @@ class MenuTypeSelectorViewController: UIViewController {
     }
 
     private func buildFingerPrintButtonItem() -> UIBarButtonItem {
-        let image = R.image.fingerprint()
+        let image = UIImage(named: "Fingerprint")
         let style: UIBarButtonItem.Style = .plain
         let target = self
         let action = #selector(authenticationState)
