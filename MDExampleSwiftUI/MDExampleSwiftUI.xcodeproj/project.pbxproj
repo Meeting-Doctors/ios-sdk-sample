@@ -15,6 +15,12 @@
 		272571702B6001720088F120 /* MDExampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725716F2B6001720088F120 /* MDExampleSwiftUITests.swift */; };
 		2725717A2B6001730088F120 /* MDExampleSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272571792B6001730088F120 /* MDExampleSwiftUIUITests.swift */; };
 		2725717C2B6001730088F120 /* MDExampleSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725717B2B6001730088F120 /* MDExampleSwiftUIUITestsLaunchTests.swift */; };
+		277BA78B2B91C542004AA20C /* MedicalHistoryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA78A2B91C542004AA20C /* MedicalHistoryRepresentable.swift */; };
+		277BA78E2B91C6F6004AA20C /* UIViewController+AddContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA78D2B91C6F6004AA20C /* UIViewController+AddContentController.swift */; };
+		277BA7912B91C73A004AA20C /* UIView+AddFullSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA7902B91C73A004AA20C /* UIView+AddFullSubview.swift */; };
+		277BA7932B91CA48004AA20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA7922B91CA48004AA20C /* AppDelegate.swift */; };
+		277BA7972B91D041004AA20C /* MDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA7962B91D041004AA20C /* MDNavigationController.swift */; };
+		277BA79A2B91D7F1004AA20C /* ProfessionalListRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA7992B91D7F1004AA20C /* ProfessionalListRepresentable.swift */; };
 		27A3DB592B84D48F00E20478 /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3DB582B84D48F00E20478 /* Bundle+AppInfo.swift */; };
 		674DADE7AB11C56D232EACF7 /* Pods_MDExampleSwiftUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211D5D3BB2788F7E057F92EC /* Pods_MDExampleSwiftUIUITests.framework */; };
 		CB17ACDF2813F630938771FD /* Pods_MDExampleSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2330C40D13CB461D04F65791 /* Pods_MDExampleSwiftUITests.framework */; };
@@ -51,6 +57,13 @@
 		272571752B6001730088F120 /* MDExampleSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDExampleSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272571792B6001730088F120 /* MDExampleSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDExampleSwiftUIUITests.swift; sourceTree = "<group>"; };
 		2725717B2B6001730088F120 /* MDExampleSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDExampleSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		277BA78A2B91C542004AA20C /* MedicalHistoryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryRepresentable.swift; sourceTree = "<group>"; };
+		277BA78D2B91C6F6004AA20C /* UIViewController+AddContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddContentController.swift"; sourceTree = "<group>"; };
+		277BA7902B91C73A004AA20C /* UIView+AddFullSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddFullSubview.swift"; sourceTree = "<group>"; };
+		277BA7922B91CA48004AA20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		277BA7962B91D041004AA20C /* MDNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDNavigationController.swift; sourceTree = "<group>"; };
+		277BA7992B91D7F1004AA20C /* ProfessionalListRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalListRepresentable.swift; sourceTree = "<group>"; };
+		277BA79C2B91DED7004AA20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A3DB582B84D48F00E20478 /* Bundle+AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+AppInfo.swift"; sourceTree = "<group>"; };
 		6EB9DCEDAD42863B89D30371 /* Pods_MDExampleSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDExampleSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815AE3D9E9D9408978DA3248 /* Pods-MDExampleSwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDExampleSwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-MDExampleSwiftUIUITests/Pods-MDExampleSwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +126,7 @@
 		2725715D2B6001710088F120 /* MDExampleSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				277BA79B2B91DEB4004AA20C /* Resources */,
 				27A3DB532B84D45200E20478 /* Source */,
 				2725715E2B6001710088F120 /* MDExampleSwiftUIApp.swift */,
 				272571622B6001720088F120 /* Assets.xcassets */,
@@ -146,11 +160,61 @@
 			path = MDExampleSwiftUIUITests;
 			sourceTree = "<group>";
 		};
+		277BA7892B91C4FB004AA20C /* MedicaHistory */ = {
+			isa = PBXGroup;
+			children = (
+				277BA78A2B91C542004AA20C /* MedicalHistoryRepresentable.swift */,
+			);
+			path = MedicaHistory;
+			sourceTree = "<group>";
+		};
+		277BA78C2B91C6E2004AA20C /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				277BA78D2B91C6F6004AA20C /* UIViewController+AddContentController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		277BA78F2B91C725004AA20C /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				277BA7902B91C73A004AA20C /* UIView+AddFullSubview.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		277BA7942B91D023004AA20C /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				277BA7962B91D041004AA20C /* MDNavigationController.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		277BA7982B91D783004AA20C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				277BA7992B91D7F1004AA20C /* ProfessionalListRepresentable.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		277BA79B2B91DEB4004AA20C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				277BA79C2B91DED7004AA20C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		27A3DB532B84D45200E20478 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				277BA7942B91D023004AA20C /* UIComponent */,
 				27A3DB542B84D45800E20478 /* Feature */,
 				27A3DB562B84D46A00E20478 /* Extension */,
+				277BA7922B91CA48004AA20C /* AppDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -159,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				27A3DB552B84D45D00E20478 /* Main */,
+				277BA7982B91D783004AA20C /* Chat */,
+				277BA7892B91C4FB004AA20C /* MedicaHistory */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -174,6 +240,8 @@
 		27A3DB562B84D46A00E20478 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				277BA78F2B91C725004AA20C /* UIView */,
+				277BA78C2B91C6E2004AA20C /* UIViewController */,
 				27A3DB572B84D47400E20478 /* Bundle */,
 			);
 			path = Extension;
@@ -449,9 +517,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277BA79A2B91D7F1004AA20C /* ProfessionalListRepresentable.swift in Sources */,
 				272571612B6001710088F120 /* MainMasterView.swift in Sources */,
 				27A3DB592B84D48F00E20478 /* Bundle+AppInfo.swift in Sources */,
 				2725715F2B6001710088F120 /* MDExampleSwiftUIApp.swift in Sources */,
+				277BA78E2B91C6F6004AA20C /* UIViewController+AddContentController.swift in Sources */,
+				277BA7972B91D041004AA20C /* MDNavigationController.swift in Sources */,
+				277BA7932B91CA48004AA20C /* AppDelegate.swift in Sources */,
+				277BA78B2B91C542004AA20C /* MedicalHistoryRepresentable.swift in Sources */,
+				277BA7912B91C73A004AA20C /* UIView+AddFullSubview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +696,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MDExampleSwiftUI/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -657,6 +732,7 @@
 				DEVELOPMENT_TEAM = 7386W3K6BN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MDExampleSwiftUI/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

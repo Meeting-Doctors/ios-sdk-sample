@@ -3,28 +3,34 @@
 import SwiftUI
 
 struct MainMasterView: View {
+    
+    @State private var isPresentingMedicalHistory = false
+    
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("main_master_section_components_title")) {
-                    NavigationLink("main_master_buttons") {
-                        
+                Section(header: Text("Title")) {
+                    NavigationLink("Professional List") {
+                        ProfessionalListRepresentable()
+                            .edgesIgnoringSafeArea(.all)
+                            .navigationBarHidden(true)
                     }
-                    
-                    NavigationLink("main_master_labels") {
-                       
+                    NavigationLink("Medical History") {
+                        MedicalHistoryRepresentable()
+                            .edgesIgnoringSafeArea(.all)
+                            .navigationBarHidden(true)
                     }
                 }
                 
-                Section(header: Text("main_master_section_about_title")) {
+                Section(header: Text("Title")) {
                     HStack {
-                        Text("main_master_section_about_text")
+                        Text("Section")
                         Spacer()
                         Text("\(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
                     }
                 }
             }
-            .navigationTitle("main_master_title")
+            .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

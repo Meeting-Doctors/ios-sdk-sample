@@ -4,7 +4,7 @@ platform :ios, '13.0'
 use_frameworks!
 
 def shared_pods
-    pod 'MeetingDoctorsSDK', '5.5.1'
+    pod 'MeetingDoctorsSDK', '5.5.5'
 end
 
 target 'MDExampleSwiftUI' do
