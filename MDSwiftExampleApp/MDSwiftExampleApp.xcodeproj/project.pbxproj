@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		18AC3A1438B11C1460E263E3 /* Pods_MDSwiftExampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6883D54886D889658F728247 /* Pods_MDSwiftExampleAppUITests.framework */; };
+		27A4A5CE2BA0428400A29479 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A4A5CA2BA0428400A29479 /* ChatViewController.xib */; };
+		27A4A5CF2BA0428400A29479 /* ChatResourcesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5CB2BA0428400A29479 /* ChatResourcesProvider.swift */; };
+		27A4A5D02BA0428400A29479 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5CC2BA0428400A29479 /* ChatViewController.swift */; };
+		27A4A5D12BA0428400A29479 /* ChatAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5CD2BA0428400A29479 /* ChatAssembler.swift */; };
+		27A4A5D52BA0430900A29479 /* UIViewController+LoadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5D32BA0430900A29479 /* UIViewController+LoadFromNib.swift */; };
+		27A4A5D62BA0430900A29479 /* UIViewController+AddContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5D42BA0430900A29479 /* UIViewController+AddContentController.swift */; };
+		27A4A5D92BA043CF00A29479 /* String+ToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5D82BA043CF00A29479 /* String+ToImage.swift */; };
+		27A4A5DB2BA0447700A29479 /* UIViewController+GetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5DA2BA0447700A29479 /* UIViewController+GetTitleView.swift */; };
+		27A4A5DD2BA044A600A29479 /* String+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5DC2BA044A600A29479 /* String+Empty.swift */; };
+		27A4A5E02BA047D500A29479 /* UIView+AddFullSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4A5DF2BA047D500A29479 /* UIView+AddFullSubview.swift */; };
 		69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17891FBC83380025CC42 /* AppDelegate.swift */; };
 		69BC179F1FBC83380025CC42 /* MDSwiftExampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC179E1FBC83380025CC42 /* MDSwiftExampleAppTests.swift */; };
 		69BC17AA1FBC83380025CC42 /* MDSwiftExampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BC17A91FBC83380025CC42 /* MDSwiftExampleAppUITests.swift */; };
@@ -65,6 +75,16 @@
 
 /* Begin PBXFileReference section */
 		195F9FB385249C1D333C2D70 /* Pods-MDSwiftExampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDSwiftExampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-MDSwiftExampleAppTests/Pods-MDSwiftExampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		27A4A5CA2BA0428400A29479 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		27A4A5CB2BA0428400A29479 /* ChatResourcesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatResourcesProvider.swift; sourceTree = "<group>"; };
+		27A4A5CC2BA0428400A29479 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		27A4A5CD2BA0428400A29479 /* ChatAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAssembler.swift; sourceTree = "<group>"; };
+		27A4A5D32BA0430900A29479 /* UIViewController+LoadFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadFromNib.swift"; sourceTree = "<group>"; };
+		27A4A5D42BA0430900A29479 /* UIViewController+AddContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddContentController.swift"; sourceTree = "<group>"; };
+		27A4A5D82BA043CF00A29479 /* String+ToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToImage.swift"; sourceTree = "<group>"; };
+		27A4A5DA2BA0447700A29479 /* UIViewController+GetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GetTitleView.swift"; sourceTree = "<group>"; };
+		27A4A5DC2BA044A600A29479 /* String+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Empty.swift"; sourceTree = "<group>"; };
+		27A4A5DF2BA047D500A29479 /* UIView+AddFullSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddFullSubview.swift"; sourceTree = "<group>"; };
 		6883D54886D889658F728247 /* Pods_MDSwiftExampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDSwiftExampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BC17861FBC83380025CC42 /* MDSwiftExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDSwiftExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BC17891FBC83380025CC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +157,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27A4A5C82BA0426300A29479 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				27A4A5E12BA04D1A00A29479 /* MedicalHistory */,
+				27A4A5C92BA0426D00A29479 /* Chat */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		27A4A5C92BA0426D00A29479 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				27A4A5CD2BA0428400A29479 /* ChatAssembler.swift */,
+				27A4A5CB2BA0428400A29479 /* ChatResourcesProvider.swift */,
+				27A4A5CC2BA0428400A29479 /* ChatViewController.swift */,
+				27A4A5CA2BA0428400A29479 /* ChatViewController.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		27A4A5D22BA042F400A29479 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				27A4A5D42BA0430900A29479 /* UIViewController+AddContentController.swift */,
+				27A4A5D32BA0430900A29479 /* UIViewController+LoadFromNib.swift */,
+				27A4A5DA2BA0447700A29479 /* UIViewController+GetTitleView.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		27A4A5D72BA043B300A29479 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				27A4A5D82BA043CF00A29479 /* String+ToImage.swift */,
+				27A4A5DC2BA044A600A29479 /* String+Empty.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		27A4A5DE2BA0476100A29479 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				27A4A5DF2BA047D500A29479 /* UIView+AddFullSubview.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		27A4A5E12BA04D1A00A29479 /* MedicalHistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MedicalHistory;
+			sourceTree = "<group>";
+		};
 		69BC177D1FBC83380025CC42 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +325,7 @@
 		7E225C2726DCC58A00D54957 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				27A4A5C82BA0426300A29479 /* Features */,
 				7E225C2826DCC59500D54957 /* Plugin */,
 			);
 			path = Source;
@@ -275,6 +350,9 @@
 		D585EEF321E6164A00D3A21B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				27A4A5DE2BA0476100A29479 /* UIView */,
+				27A4A5D72BA043B300A29479 /* String */,
+				27A4A5D22BA042F400A29479 /* UIViewController */,
 				6D74244F26E5FBC90095EB79 /* MeetingDoctors+Credentials.swift */,
 				7E1C28DF26E0B5300053401E /* UIColor+Extension.swift */,
 				7E1C291026E0BADF0053401E /* UIImage+Extension.swift */,
@@ -419,6 +497,7 @@
 				7E1C299826E105810053401E /* DividerContentView.xib in Resources */,
 				69BC17D21FBC8BC20025CC42 /* Localizable.strings in Resources */,
 				69BC17CB1FBC8B980025CC42 /* Assets.xcassets in Resources */,
+				27A4A5CE2BA0428400A29479 /* ChatViewController.xib in Resources */,
 				69BC17C81FBC8B980025CC42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A4A5D52BA0430900A29479 /* UIViewController+LoadFromNib.swift in Sources */,
 				69BC17BB1FBC8B6C0025CC42 /* ViewController.swift in Sources */,
 				7E225C1E26DCC15000D54957 /* TabBarMenuViewController.swift in Sources */,
 				7E225C2A26DCC5AC00D54957 /* MDSwiftExampleAppPlugin.swift in Sources */,
@@ -611,10 +691,18 @@
 				7E7D6BCB26F33C0C00871DAD /* FirebaseApplicationDelegate.swift in Sources */,
 				69BC178A1FBC83380025CC42 /* AppDelegate.swift in Sources */,
 				7E1C299D26E1058F0053401E /* DividerContentView.swift in Sources */,
+				27A4A5E02BA047D500A29479 /* UIView+AddFullSubview.swift in Sources */,
+				27A4A5D92BA043CF00A29479 /* String+ToImage.swift in Sources */,
 				7E1C292626E0E3DD0053401E /* DividerTopContentView.swift in Sources */,
+				27A4A5D02BA0428400A29479 /* ChatViewController.swift in Sources */,
 				7E6C710E26CFAD8900DC46E9 /* MenuOptionSelectorTableViewModel.swift in Sources */,
+				27A4A5DB2BA0447700A29479 /* UIViewController+GetTitleView.swift in Sources */,
+				27A4A5CF2BA0428400A29479 /* ChatResourcesProvider.swift in Sources */,
 				7E5C3A7826CEA7920057DBAD /* MenuOptionSelectorTableViewController.swift in Sources */,
 				7EEAC5B826DE365300AC98C1 /* VideoCallViewController.swift in Sources */,
+				27A4A5D12BA0428400A29479 /* ChatAssembler.swift in Sources */,
+				27A4A5D62BA0430900A29479 /* UIViewController+AddContentController.swift in Sources */,
+				27A4A5DD2BA044A600A29479 /* String+Empty.swift in Sources */,
 				7E806C3E26C6497A0028EDE7 /* MenuTypeSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

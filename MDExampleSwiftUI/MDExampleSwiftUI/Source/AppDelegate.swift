@@ -12,18 +12,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                                                          environment: .staging)
         if let uuid: UUID = MeetingDoctors.initialize(with: configuration, options: launchOptions) {
             NSLog("[AppDelegate] Synchronous installation identifier: '\(uuid.uuidString)'")
-            let token: String = <#your demo user token#>
-            MeetingDoctors.authenticate(token: token) { (result: MeetingDoctorsResult<Void>) in
-                switch result {
-                case .success:
-                    NSLog("[AppDelegate] authenticate Success")
-                    self.configureStyle()
-                case .failure(let error):
-                    NSLog("[AppDelegate] authenticate Failure: '\(error)'")
-                @unknown default:
-                    NSLog("[AppDelegate] authenticate default")
-                }
-            }
+            self.configureStyle()
         }
         return true
     }

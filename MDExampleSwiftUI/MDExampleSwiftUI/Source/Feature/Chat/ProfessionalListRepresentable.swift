@@ -23,8 +23,26 @@ class ProfessionalListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.present()
+        self.doLogin()
+        
+    }
+    
+    private func doLogin() {
+        let token: String = <#your demo user token#>
+        MeetingDoctors.authenticate(token: token) { (result: MeetingDoctorsResult<Void>) in
+            switch result {
+            case .success:
+                NSLog("[AppDelegate] authenticate Success")
+                DispatchQueue.main.async {
+                    self.setupUI()
+                    self.present()
+                }
+            case .failure(let error):
+                NSLog("[AppDelegate] authenticate Failure: '\(error)'")
+            @unknown default:
+                NSLog("[AppDelegate] authenticate default")
+            }
+        }
     }
     
     private func setupUI() {

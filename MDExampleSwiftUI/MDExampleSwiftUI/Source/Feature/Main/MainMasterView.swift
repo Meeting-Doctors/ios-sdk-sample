@@ -4,8 +4,6 @@ import SwiftUI
 
 struct MainMasterView: View {
     
-    @State private var isPresentingMedicalHistory = false
-    
     var body: some View {
         NavigationView {
             List {
