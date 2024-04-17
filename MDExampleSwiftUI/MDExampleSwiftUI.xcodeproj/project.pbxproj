@@ -14,7 +14,7 @@
 		272571702B6001720088F120 /* MDExampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725716F2B6001720088F120 /* MDExampleSwiftUITests.swift */; };
 		2725717A2B6001730088F120 /* MDExampleSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272571792B6001730088F120 /* MDExampleSwiftUIUITests.swift */; };
 		2725717C2B6001730088F120 /* MDExampleSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725717B2B6001730088F120 /* MDExampleSwiftUIUITestsLaunchTests.swift */; };
-		273293DA2B99FE2B00E0C1A9 /* MeetingDoctorsSDKWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 273293D92B99FE2B00E0C1A9 /* MeetingDoctorsSDKWrapper */; };
+		272EB44A2BCFD34600207573 /* MeetingDoctorsSDKWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 272EB4492BCFD34600207573 /* MeetingDoctorsSDKWrapper */; };
 		277BA78B2B91C542004AA20C /* MedicalHistoryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA78A2B91C542004AA20C /* MedicalHistoryRepresentable.swift */; };
 		277BA78E2B91C6F6004AA20C /* UIViewController+AddContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA78D2B91C6F6004AA20C /* UIViewController+AddContentController.swift */; };
 		277BA7912B91C73A004AA20C /* UIView+AddFullSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BA7902B91C73A004AA20C /* UIView+AddFullSubview.swift */; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				273293DA2B99FE2B00E0C1A9 /* MeetingDoctorsSDKWrapper in Frameworks */,
+				272EB44A2BCFD34600207573 /* MeetingDoctorsSDKWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +265,7 @@
 			);
 			name = MDExampleSwiftUI;
 			packageProductDependencies = (
-				273293D92B99FE2B00E0C1A9 /* MeetingDoctorsSDKWrapper */,
+				272EB4492BCFD34600207573 /* MeetingDoctorsSDKWrapper */,
 			);
 			productName = MDExampleSwiftUI;
 			productReference = 2725715B2B6001710088F120 /* MDExampleSwiftUI.app */;
@@ -341,7 +341,7 @@
 			);
 			mainGroup = 272571522B6001710088F120;
 			packageReferences = (
-				273293D82B99FE2B00E0C1A9 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */,
+				272EB4482BCFD34600207573 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */,
 			);
 			productRefGroup = 2725715C2B6001710088F120 /* Products */;
 			projectDirPath = "";
@@ -736,20 +736,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		273293D82B99FE2B00E0C1A9 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */ = {
+		272EB4482BCFD34600207573 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Meeting-Doctors/meetingdoctors-sdk-spm";
 			requirement = {
-				kind = revision;
-				revision = f5b5677a7b64f85f8a98c9cc7d66b6c50b8896c4;
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		273293D92B99FE2B00E0C1A9 /* MeetingDoctorsSDKWrapper */ = {
+		272EB4492BCFD34600207573 /* MeetingDoctorsSDKWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 273293D82B99FE2B00E0C1A9 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */;
+			package = 272EB4482BCFD34600207573 /* XCRemoteSwiftPackageReference "meetingdoctors-sdk-spm" */;
 			productName = MeetingDoctorsSDKWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
