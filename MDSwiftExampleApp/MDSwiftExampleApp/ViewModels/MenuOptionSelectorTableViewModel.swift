@@ -14,6 +14,9 @@ class MenuOptionSelectorTableViewModel {
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Professional List", action: {
             self.professionalListCellAction(onVC: onVC)
         }, tag: .professionalList))
+        cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Professional List without nab bar", action: {
+            self.professionalListWithoutCellAction(onVC: onVC)
+        }, tag: .professionalListWithoutNavBar))
         cellViewModels.append(MenuOptionCellViewModel(titleLabel: "Videocall", action: {
             self.startVideoCall(onVC: onVC)
         }, tag: .videoCall))
@@ -25,6 +28,11 @@ class MenuOptionSelectorTableViewModel {
     private func professionalListCellAction(onVC: UIViewController? = nil) {
         self.unreadMessageCount()
         self.presentProfessionalList(onVC: onVC)
+    }
+    
+    private func professionalListWithoutCellAction(onVC: UIViewController? = nil) {
+        self.unreadMessageCount()
+        self.professionalListWithout(onVC: onVC)
     }
     
     private func unreadMessageCount() {
@@ -51,6 +59,12 @@ class MenuOptionSelectorTableViewModel {
         }
     }
     
+    private func professionalListWithout(onVC presenter: UIViewController? = nil) {
+        guard let presenter = presenter,
+        let viewController = ChatAssembler().viewController() else { return }
+        presenter.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     private func startVideoCall(onVC origin: UIViewController? = nil) {
         origin?.checkVideoCallPermissions {
             DispatchQueue.main.async {
@@ -75,9 +89,8 @@ class MenuOptionSelectorTableViewModel {
             hxMQView.extendedLayoutIncludesOpaqueBars = true // set true if tabbar is opaque
             hxMQView.modalPresentationStyle = .overFullScreen
             
-            presentedViewController = hxMQView
-            
-            presenter?.present(hxMQView, animated: true, completion: nil)
+            presentedViewController = hxView
+            presenter?.navigationController?.pushViewController(hxView, animated: true)
         } catch {
             NSLog("[MeetingDoctorsLoader] Failed to instantiate messenger with error '\(error)'")
         }
@@ -88,6 +101,7 @@ class MenuOptionSelectorTableViewModel {
 
 enum MenuOption {
     case professionalList
+    case professionalListWithoutNavBar
     case videoCall
     case medicalHistory
 }
