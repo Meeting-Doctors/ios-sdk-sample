@@ -47,6 +47,27 @@ class MenuOptionSelectorTableViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.updateView()
+    }
+
+    func updateView() {
+        self.setupNavigationBar()
+    }
+}
+
+extension MenuOptionSelectorTableViewController {
+    private func setupNavigationBar() {
+        let image = "TextLogo".toImage
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .red
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        self.navigationController?.navigationItem.titleView = self.getTitleView(image: image)
+    }
 }
 
 extension MenuOptionSelectorTableViewController: UITableViewDelegate, UITableViewDataSource {
